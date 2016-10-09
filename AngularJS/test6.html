@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="bwlCtrl">
+    <form ng-submit="todoAdd()">
+    <input type="text" ng-model="todoInput" placeholder="新增">
+    <input type="submit" value="新增">
+    </form>
+
+    <div ng-repeat="x in todoList">
+        <input type="checkbox" ng-model="x.done"><sapn>{{x.todoText}}</sapn>
+    </div>
+
+    <p><button ng-click="remove()">删除记录</button></p>
+
+</div>
+
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.controller('bwlCtrl',function($scope){
+        $scope.todoList = [{todoText:'clean house',done:false}];
+        $scope.todoAdd=function()  {
+            $scope.todoList.push({todoText:$scope.todoInput,done:false});
+            $scope.todoInput = "";
+        }
+        $scope.remove = function(){
+            var oldList = $scope.todoList;
+            $scope.todoList = [];
+            angular.forEach(oldList,function(x){
+                if(!x.done) $scope.todoList.push(x);
+            });
+        }
+    });
+</script>
+
+</body>
+</html>

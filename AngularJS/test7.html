@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+<div ng-app="myApp" ng-controller="noteController">
+    <h3>我的笔记</h3><br>
+    <textarea ng-model="noteInput"></textarea><br>
+    <button ng-click="save()">保存</button>
+    <button ng-click="clear()">清除</button><br>
+    剩余字数：{{fontCount()}}
+</div>
+
+<script>
+    var app = angular.module("myApp",[]);
+    app.controller('noteController',function($scope){
+        $scope.noteInput = "";
+        $scope.save = function(){
+            alert('note saved');
+        }
+        $scope.clear = function(){
+            $scope.noteInput = '';
+        }
+        $scope.fontCount  = function() {
+            return 100 - $scope.noteInput.length;
+        };
+
+
+    });
+</script>
+
+</body>
+</html>

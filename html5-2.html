@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            p::first-line{
+                background-color:grey;
+                color:white;
+            }
+            p::first-letter{
+                background-color:green;
+                color:white;
+                border:thin black solid;
+                padding:4px;
+            }
+            a:before{
+                content:"Click here to";
+            }
+            a:after{
+                content:"!";
+            }
+            body{
+                counter-reset:paracount;   /*定义计数器 counter-reset:paracount 10;指定默认值 */
+            }
+            p:before{
+                content:counter(paracount)". ";/*显示计数器*/
+                counter-increment:paracount; /*指定计数器增量 counter-increment:paracount 2;2递增*/
+            }
+            :root{
+                border: thin black solid;
+                padding:4px;
+            }
+            :first-child{
+                border: thin black solid;
+                padding:4px;
+            }
+            p > span:first-child{
+                border: thin black solid;
+                padding:4px;
+            }
+            :last-child{
+                border: thin green solid;
+                padding:4px;
+            }
+            :only-child{
+                border: thin red solid;
+                padding:4px;
+            }
+            :only-of-type{    /*唯一元素*/
+                border: thin blue solid;
+                padding:4px;
+            }
+            body > :nth-child(2){ /*选择指定索引的元素*/
+                border: thin #af00f0 solid;
+                padding:4px;
+            }
+
+            :enabled{
+                border: thin #af00f0 solid;
+                padding:4px;
+            }
+
+            :checked + span{ /*兄弟选择器*/
+                background-color:red;
+                color:white;
+                padding:5px;
+                border:medium solid black;
+            }
+
+            :default{
+                outline:medium solid red;
+            }
+
+            #p1 > input:invalid{ /*验证选择器*/
+                outline:medium solid red;
+            }
+
+            #p1 > input:valid{
+                outline:medium solid green;
+            }
+
+            #p2 > input:required{ /*required属性选择器*/
+                outline:medium solid green;
+            }
+            #p2 > input:optional{ /*无required属性选择器*/
+                outline:medium solid red;
+            }
+
+            :link{
+                border: thin black solid;
+                background-color:lightgrey;
+                padding:4px;
+                color:red;
+            }
+            :visited{
+                background-color:black;
+                color:white;
+            }
+            :hover{
+                border:thin red solid;
+                padding:4px;
+            }
+            :active{
+                border:thin blue solid;
+                padding:4px;
+            }
+            :focus{
+                border:thin yellow solid;
+                padding:4px;
+            }
+
+            a:not([href*="apress"]){
+                border:thin yellow solid;
+                padding:4px;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        CSS3
+        <p>first-line<br/>
+        tow-line</p>
+        <p>second-line</p>
+
+        <a href="http://www.baidu.com">Visit the Apress website</a>
+        <br/>
+        <a href="http://www.baidu.com/aas.apress.com/">Visit the w3c website</a>
+        <br/><br/><br/>
+        <p>I like <span>apples</span> and <span>oranges</span></p>
+        <p>I like <span>apples</span> and oranges</p>
+        <h1>asasa</h1>
+<br/><br/><br/>
+
+        <textarea>This is an enabled textarea</textarea>
+        <textarea disabled>This is an disabled textarea</textarea>
+
+<br/><br/><br/>
+        <input type="checkbox" id="apples" name="apples">
+        <span>This will go red when checked</span>
+<br/><br/><br/>
+        <form>
+        <div id="p1">
+        <input required />
+        <br/><br/>
+        <input required />
+        <br/><br/>
+        </div>
+        <div id="p2">
+        <input required />
+        <br/><br/>
+        <input  />
+        <br/><br/>
+        </div>
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        </form>
+
+
+
+
+    </body>
+</html> 

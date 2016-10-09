@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+<div ng-app="myApp" ng-controller="namesCtrl">
+
+    <p><input type="text" ng-model="test"/> </p>
+
+    <ul>
+        <li ng-repeat="x in names |filter:test| orderBy:'name'">
+            {{ (x.name| uppercase) + ', ' + x.country }}
+        </li>
+    </ul>
+        <br/>
+    {{myUrl}}
+    <br/>
+    {{myWelcome}}
+    <br/>
+    {{myHeader}}
+    <br/>
+    {{theTime}}
+    <br/>
+    {{hex}}
+    <br/>
+
+    <ul>
+        <li ng-repeat="x in counts">{{x|myFormat}}</li>
+    </ul>
+
+    <select ng-model="selectedName" >
+        <option ng-repeat="x in names" value="{{x.name}}">{{x.country}}</option>
+    </select>
+
+    <h1>你选择的是: {{selectedName.site}}</h1>
+    <p>网址为: {{selectedName.url}}</p>
+
+    <!--<ul>-->
+        <!--<li ng-repeat="x in newNames">{{x.Name+","+x.Country}}</li>-->
+    <!--</ul>-->
+
+    <div>
+<!--<div ng-app="myApp" ng-controller="costCtrl">-->
+
+    <!--<input type="number" ng-model="quantity">-->
+    <!--<input type="number" ng-model="price">-->
+
+    <!--<p>总价 = {{ (quantity * price) | currency }}</p>-->
+
+<!--</div>-->
+
+<script>
+    var app = angular.module('myApp',[]);
+    app.service("hexafy",function(){
+        this.myFunc = function(x){
+            return x.toString(16);
+        }
+    });
+
+    app.filter("myFormat",['hexafy',function(hexafy){
+        return function(x){
+            return hexafy.myFunc(x);;
+        };
+    }]);
+
+    app.controller("namesCtrl",function($scope,$location,$http,$timeout,$interval,hexafy){
+        $scope.names = [{"name":"Kai","country":"Denmark"},{"name":"Jani","country":"Norway"},{"name":"Hege","country":"Sweden"}];
+        $scope.myUrl = $location.absUrl();
+        $http.get("welcome.html").then(function(response){
+            $scope.myWelcome = response.data;
+        });
+
+        $scope.myHeader = "Hello World!";
+        $timeout(function(){
+            $scope.myHeader = "How are you today!";
+        },2000);
+
+        $scope.theTime = new Date().toLocaleTimeString();
+        $interval(function(){
+            $scope.theTime = new Date().toLocaleTimeString();
+        },1000);
+
+        $scope.hex = hexafy.myFunc(255);
+
+        $scope.counts = [255, 251, 200];
+
+//        $http.get("").success(function(response){
+//            alert(response);
+//            $scope.newNames = response.records;
+//        });
+
+    });
+//    var app = angular.module('myApp', []);
+//    app.controller('costCtrl', function($scope) {
+//        $scope.quantity = 1;
+//        $scope.price = 9.99;
+//    });
+</script>
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+    <!--名：<input type="text" ng-model="firstName"><br/>-->
+    <!--姓：<input type="text" ng-model="lastName"><br/>-->
+    <!--<br/>-->
+    <!--姓名：{{fullName()}}-->
+
+    <!--{{lastName | uppercase}}-->
+<!--</div>-->
+<!--<script>-->
+    <!--var app = angular.module('myApp',[]);-->
+
+    <!--app.controller('myCtrl',function($scope){-->
+        <!--$scope.firstName = "Jhon";-->
+        <!--$scope.lastName = "Doe";-->
+        <!--$scope.fullName = function(){-->
+            <!--return $scope.firstName+" "+$scope.lastName;-->
+        <!--}-->
+    <!--});-->
+
+<!--</script>-->
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+
+    <!--<h1>我的名字是 {{carname}} {{lastName}}</h1>-->
+
+    <!--<ul>-->
+        <!--<li ng-repeat="x in names">{{x}} {{carname}} {{lastName}}</li>-->
+    <!--</ul>-->
+
+<!--</div>-->
+
+<!--<script>-->
+    <!--var app = angular.module('myApp', []);-->
+
+    <!--app.controller('myCtrl', function($scope,$rootScope) {-->
+        <!--$scope.carname = "John Dow";-->
+        <!--$scope.names = ['Emil',"Tobias","Linus"];-->
+        <!--$rootScope.lastName = "Refsnes";-->
+    <!--});-->
+
+<!--</script>-->
+
+<!--<form ng-app="" name="myForm" ng-init="myText = 'test@runoob.com'">-->
+    <!--Email:-->
+    <!--<input type="email" name="myAddress" ng-model="myText" required></p>-->
+    <!--<h1>状态</h1>-->
+    <!--{{myForm.myAddress.$valid}}-->
+    <!--{{myForm.myAddress.$dirty}}-->
+    <!--{{myForm.myAddress.$touched}}-->
+<!--</form>-->
+
+<!--<form ng-app="" name="myForm">
+    Email:
+    <input type="email" name="myAddress" ng-model="text">
+    <span ng-show="myForm.myAddress.$error.email">不是一个合法的邮箱地址</span>
+</form>
+
+<p>在输入框中输入你的邮箱地址，如果不是一个合法的邮箱地址，会弹出提示信息。</p>-->
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">-->
+    <!--名字: <input ng-model="name">-->
+    <!--<h1>你输入了: {{name}}</h1>-->
+<!--</div>-->
+
+<!--<script>-->
+    <!--var app = angular.module('myApp', []);-->
+    <!--app.controller('myCtrl', function($scope) {-->
+        <!--$scope.name = "John Doe";-->
+    <!--});-->
+<!--</script>-->
+
+<!--<div ng-app="myApp">
+    <runoob-directive></runoob-directive>
+
+
+
+</div>
+<script>
+    var app = angular.module("myApp", []);
+    app.directive("runoobDirective", function() {
+        return {
+            template : "<h1>自定义指令!</h1>"
+        };
+    });
+</script>-->
+<!--<div ng-app="" ng-init="names=[
+{name:'Jani',country:'Norway'},
+{name:'Hege',country:'Sweden'},
+{name:'Kai',country:'Denmark'}]">
+
+    <p>循环对象：</p>
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x.name + ', ' + x.country }}
+        </li>
+    </ul>
+
+</div>-->
+
+<!--<div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <p>使用 ng-repeat 来循环数组</p>
+    <ul>
+        <li ng-repeat="x in names">
+            {{ x }}
+        </li>
+    </ul>
+</div>-->
+
+<!--<div ng-app="" ng-init="points=[1,15,19,2,40]">
+    <p>第三个值为：{{points[2]}}</p>
+</div>-->
+
+<!--<div ng-app="" ng-init="person={firstName:'Jhon',lastName:'Doe'}">
+    <p>姓为：{{person.lastName}}</p>
+
+</div>-->
+
+
+<!--
+<div ng-app="" ng-init="firstName='Jhon';lastName='Doe';">
+    <p>姓名：{{firstName+" "+lastName}}</p>
+
+</div>
+-->
+
+
+<!--<div ng-app="" ng-init="quantity=2;cost=5;">
+    <p> 总价：{{quantity*cost}}</p>
+</div>-->
+
+
+<!--<div ng-app="myApp" ng-controller="myCtrl">
+    名: <input type="text" ng-model="firstName"><br>
+    姓: <input type="text" ng-model="lastName"><br>
+    <br>
+    姓名: {{firstName + " " + lastName}}
+
+</div>
+
+<script>
+    var app = angular.module('myApp',[]);
+
+    app.controller('myCtrl',function($scope){
+        $scope.firstName = "John";
+        $scope.lastName = "Doe";
+    });
+
+</script>-->
+
+<!--<div ng-app="" data-ng-init="firstName='John'">
+    <p>名字 : <input type="text" ng-model="name"></p>
+    <h1>Hello {{name}}</h1>
+
+
+    <p>姓名为 <span ng-bind="firstName"></span></p>
+
+    <p>我的第一个表达式： {{ 5 + 5 }}</p>
+
+</div>-->
+
+</body>
+</html>

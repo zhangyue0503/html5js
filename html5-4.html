@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+
+        <style type="text/css" media="screen">
+            p{
+                padding:5px;
+                border: medium double black;
+                background-color: lightgray;
+                font-family: sans-serif;
+            }
+            #banana{
+                font-size: large;
+                border:medium solid black;
+                
+                -webkit-transition-delay: 10ms; /*过渡开始之前的延迟时间*/
+                -webkit-transition-duration: 250ms; /*过渡的持续时间*/
+            }
+            #banana:hover{
+                font-size: x-large;
+                border: medium solid white;
+                background-color: green;
+                color:white;
+                padding:4px;
+                -webkit-transition-delay: 100ms;
+                -webkit-transition-property: background-color,color,padding,font-size,border;/*指定过渡的属性*/
+                -webkit-transition-duration: 500ms;
+                -webkit-transition-timing-function: linear;/*过渡的期间的中间值 ease,ease-in,ease-out,ease-in-out,linear*/
+            }
+            #banana1{
+                font-size:large;
+                border:medium solid black;
+            }
+            #banana1:hover{
+                -webkit-animation-delay: 100ms;
+                -webkit-animation-duration:1000ms;
+                -webkit-animation-iteration-count: infinite;/*动画播放次数*/
+                -webkit-animation-timing-function: linear;
+                -webkit-animation-name: 'GrowShrink'; /*动画名称*/
+                -webkit-animation-direction: alternate;/*动画重复方向,alternate:先向前，然后向后*/
+            }
+            /*动画关键帧*/
+            @-webkit-keyframes GrowShrink{
+                from{
+                    font-size:xx-small;
+                    background-color: red;
+                }
+                50%{
+                    background-color: yellow;
+                    padding:1px;
+                }
+                70%{
+                    color:white;
+                    padding:2px;
+                }
+                to{
+                    font-size:x-large;
+                    border:medium solid white;
+                    background-color: green;
+                    color:white;
+                    padding:4px;
+                }
+            }
+
+            #banana3{
+                font-size:x-large;
+                border:medium solid white;
+                background-color: green;
+                color: white;
+                padding:4px;
+                -webkit-transform:rotate(-30deg);
+            }
+            #banana3:hover{
+                -webkit-transition-duration:1.5s;
+                -webkit-transform:rotate(360deg);
+            }
+            a{
+                opacity: 0.4;  /*透明度*/
+            }
+            a:hover{
+                color:red;
+                
+            }
+        </style>
+
+    </head>
+    <body>
+        <p>
+            过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试<span id="banana">过渡动画测试过渡动画测试</span>过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试
+        </p>
+
+        <p>
+            过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试<span id="banana1">过渡动画测试过渡动画测试</span>过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试
+        </p>
+        <p>
+            <button>Running</button>
+            <button>Paused</button>
+        </p>
+        <script type="text/javascript">
+        var buttons = document.getElementsByTagName("BUTTON");
+        for(var i = 0;i< buttons.length;i++){
+            buttons[i].onclick = function(e){
+                document.getElementById("banana1").style.webkitAnimationPlayState = e.target.innerHTML;
+            }
+        }
+        </script>
+
+        <p>
+            过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试<span id="banana3">旋转变形测试</span>过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画<a href="www.baidu.com">试过渡动画测试过</a>测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试过渡动画测试
+        </p>
+    </body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            canvas {border:medium double black;margin:4px;}
+        </style>
+    </head>
+    <body>
+        <h1>35.canvas.1</h1>
+        <canvas id="canvas" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+
+        <canvas id="canvas2" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+
+        <canvas id="canvas3" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+        <canvas id="canvas4" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+        <canvas id="canvas5" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+        <canvas id="canvas6" width="500" height="200">
+            Your browser doesn't support the <code>canvas</code> element
+        </canvas>
+        <script>
+        var ctx = document.getElementById("canvas").getContext("2d");
+
+        var offset = 10;
+        var size = 50;
+        var count = 5;
+        ctx.lineWidth = 3;
+        var fillColors = ["black","grey","lightgrey","red","blue"];
+        var strokeColors = ["rgb(0,0,0)","rgb(100,100,100)","rgb(200,200,200)","rgb(255,0,0)","rgb(0,0,255)"];
+        for(var i=0;i<count;i++){
+            ctx.fillStyle = fillColors[i];
+            ctx.strokeStyle = strokeColors[i];
+            ctx.fillRect(i*(offset+size)+offset, offset, size, size);
+            ctx.strokeRect(i*(offset+size)+offset, (offset*2)+size, size, size);
+            ctx.clearRect(i*(offset+size)+offset, offset+5, size, size-10);
+        }
+
+        var ctx = document.getElementById("canvas2").getContext("2d");
+
+        ctx.lineWidth = 2;
+        ctx.strokeRect(10, 10, 50, 50);
+        ctx.lineWidth = 4;
+        ctx.strokeRect(70, 10, 50, 50);
+        ctx.lineWidth = 6;
+        ctx.strokeRect(130, 10, 50, 50);
+        ctx.strokeRect(190, 10, 50, 50);
+
+        var ctx = document.getElementById("canvas3").getContext("2d");
+
+        ctx.lineWidth = 20;
+
+        ctx.lineJoin = "round";
+        ctx.strokeRect(20, 20, 100, 100);
+        ctx.lineJoin = "bevel";
+        ctx.strokeRect(160, 20, 100, 100);
+        ctx.lineJoin = "miter";
+        ctx.strokeRect(300, 20, 100, 100);
+
+        var ctx = document.getElementById("canvas4").getContext("2d");
+
+        var grad = ctx.createLinearGradient(0, 0, 500, 140);
+        grad.addColorStop(0, "red");
+        grad.addColorStop(0.5, "white");
+        grad.addColorStop(1, "black");
+
+        ctx.fillStyle = grad;
+        ctx.fillRect(0,0,500,140);
+
+
+        var ctx = document.getElementById("canvas5").getContext("2d");
+        ctx.fillStyle = "yellow";
+        ctx.strokeStyle = "black";
+        ctx.lineWidth = 4;
+
+        ctx.beginPath();
+        ctx.moveTo(10, 10);
+        ctx.lineTo(110, 10);
+        ctx.lineTo(110,120);
+        ctx.closePath();
+        ctx.fill();
+
+        ctx.beginPath();
+        ctx.moveTo(150,10);
+        ctx.lineTo(200, 10);
+        ctx.lineTo(200,120);
+        ctx.lineTo(190,120);
+
+        ctx.rect(300,10,100,90);
+        ctx.rect(300,100,130,30);
+        ctx.fill();
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.moveTo(250, 10);
+        ctx.lineTo(250, 120);
+        ctx.stroke();
+
+        var ctx = document.getElementById("canvas6").getContext("2d");
+        var canvasElem = document.getElementById("canvas6");
+
+        var point1 = [100,10];
+        var point2 = [200,10];
+        var point3 = [200,110];
+
+        
+
+        draw();
+
+        canvasElem.onmousemove = function(e){
+            if(e.ctrlKey){
+                point1 = [e.clientX,e.clientY];
+            }else if(e.shiftKey){
+                point2 = [e.clientX,e.clientY];
+            }else{
+                point3 = [e.clientX,e.clientY];
+            }
+            ctx.clearRect(0,0,540,140);
+            draw();
+        }
+
+        function draw(){
+
+            ctx.fillStyle = "yellow";
+            ctx.strokeStyle = "black";
+            ctx.lineWidth = 4;
+
+            ctx.beginPath();
+            ctx.moveTo(point1[0], point1[1]);
+            ctx.arcTo(point2[0], point2[1], point3[0], point3[1], 100);
+            ctx.stroke();
+
+            drawPoint(point1[0],point1[1]);
+            drawPoint(point2[0],point2[1]);
+            drawPoint(point3[0],point3[1]);
+
+            ctx.beginPath();
+            ctx.moveTo(point1[0], point1[1]);
+            ctx.lineTo(point2[0], point2[1]);
+            ctx.lineTo(point3[0], point3[1]);
+            ctx.stroke();
+        }
+
+        function drawPoint(x,y){
+            ctx.lineWidth = 1;
+            ctx.strokeStyle = "red";
+            ctx.strokeRect(x-2, y-2, 4, 4);
+        }
+
+
+
+        </script>
+    </body>
+</html>

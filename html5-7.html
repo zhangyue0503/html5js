@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        
+    </head>
+    <body>
+        <p id="msg">
+
+        </p>
+        <p id="name">
+
+        </p>
+        <p>
+            <button type="button" id="scroll">Scroll</button>
+            <button type="button" id="print">Print</button>
+            <button type="button" id="close">Close</button>
+
+            <button type="button" id="alert">Alert</button>
+            <button type="button" id="confirm">Confirm</button>
+            <button type="button" id="prompt">Prompt</button>
+            <button type="button" id="modal">Modal Dialog</button>
+
+            <button type="button" id="banana">Banana</button>
+            <button type="button" id="apple">Apple</button>
+        </p>
+        <p>
+            window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象window对象
+
+        </p>
+
+        <p>
+            <iframe name="nested" src="html5-1.html" width="90%" height="150px"></iframe>
+            <button type="button" id="send">Send</button>
+            <p id="status"></p>
+        </p>
+
+
+        <script type="text/javascript">
+
+
+        
+
+        document.getElementById("send").onclick = function(){
+            window['nested'].postMessage("I like apples","file:///");
+            document.getElementById("status").innerHTML = "Send Ok";
+        }
+        
+
+
+
+
+        var sel = "No selection made."
+        if(window.location.search == "?banana"){
+            sel = "Selection:Banana";
+        }else if(window.location.search == "?apple"){
+            sel = "Selection:Apple";
+        }
+
+        document.getElementById("msg").innerHTML = sel;
+
+
+        var buttons = document.getElementsByTagName("button");
+        for(var i = 0;i<buttons.length;i++){
+            buttons[i].onclick = handleButtonsPress;
+        }
+        function handleButtonsPress(e){
+            if(e.target.id == "print"){
+                window.print();
+            }else if(e.target.id == "close"){
+                window.close();
+            }else if(e.target.id == "alert"){
+                window.alert("This is an alert");
+            }else if(e.target.id == "confirm"){
+                var confirmed = window.confirm("This is a confirm - do you want to proceed?");
+                alert("Comfirmd "+confirmed);
+            }else if(e.target.id == "prompt"){
+                var response = window.prompt("enter a word","hello");
+                alert("The word was "+response);
+            }else if(e.target.id == "modal"){
+                window.showModalDialog("http://www.baidu.com");
+            }else if(e.target.id == "banana"){
+                document.getElementById("msg").innerHTML = e.target.innerHTML;
+                window.history.pushState({name:"banana1"},"","?"+e.target.id);
+                displayState({name:"banana1"});
+
+            }else if(e.target.id == "apple"){
+                document.getElementById("msg").innerHTML = e.target.innerHTML;
+                window.history.pushState({name:"apple1"},"","?"+e.target.id);
+                displayState({name:"apple1"});
+            }else{
+                window.scrollTo(0,400);
+            }
+        }
+
+        window.onpopstate = function(){
+            displayState(e.state);
+            document.getElementById("name").innerHTML = document.getElementById("name").innerHTML + "event";
+        }
+
+        function displayState(stateObj){
+            document.getElementById("name").innerHTML = stateObj.name;
+        }
+
+
+
+
+            document.writeln(window.outerWidth);
+            document.writeln(window.outerHeight);
+            document.writeln(window.innerWidth);
+            document.writeln(window.innerHeight);
+            document.writeln(window.screen.width);
+            document.writeln(window.screen.height);    
+        </script>
+    </body>
+</html>

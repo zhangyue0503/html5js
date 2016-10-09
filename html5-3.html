@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            p{
+                border:medium solid black;
+            }
+            #first{
+                border-radius:20px /15px;
+            }
+            #second{
+                border-radius:
+                    50% 20px 25% 5em /25% 15px 40px 55%;
+                
+            }
+            #third{
+                box-shadow:5px 4px 10px 2px gray; 
+            }
+            #four{
+                border:none;
+                outline:thick solid red;
+            }
+            p{
+                width:150px;
+                border:medium solid black;
+                background-color: lightgray;
+                margin:2px;
+                max-width: 250px;
+            }
+            #container{
+                display:-webkit-box;
+                -webkit-box-decoration: reverse ;
+                -webkit-box-align:end;
+                -webkit-box-pack:justify;
+            }
+            #s{
+                -webkit-box-flex:1;
+            }
+            #f{
+                -webkit-box-flex:3;
+                text-indent: 2em;
+            }
+
+            #fruittext{
+                width:400px;
+                margin:5px;
+                padding:5px;
+                border: medium double black;
+                background-color: lightgray;
+                white-space: pre-line;
+                letter-spacing: 2px;
+                line-height: 3em;
+                word-wrap: break-word;
+
+            }
+
+            #firstltr{
+                direction: ltr;
+                text-decoration: line-through;
+                text-transform: uppercase;
+            }
+            #secondrtl{
+                direction:rtl;
+                text-shadow: 0.1em .1em 1px black; 
+            }
+
+        </style>
+    </head>
+    <body>
+    <p id="first">
+        圆角1
+    </p>
+
+    <p id="second">
+        圆角2
+    </p>
+
+    <p id="third">
+        阴影
+    </p>
+
+    <p id="four">
+        轮廓
+    </p>
+
+    <div id="container">
+        <p id="f">
+        弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒
+        </p>
+        <p id="s">
+        弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒
+        </p>
+        <p id="t">弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒弹性盒</p>
+    </div>
+
+    
+    <p id="fruittext">
+        There are lots of different kinds.jskljldkjf lakjsdfjlaskdjflkasjldf;aslkdjf;laskjd;fajs;ldf
+        lkajsldkjflk
+
+        lkjsaldkjflkas
+
+
+        l;kajs;ldkfj;kasdjf
+
+    </p>
+    
+    <p id="firstltr">左边aaa+文字效果+大写</p>
+
+    <p id="secondrtl">右边+文字阴影</p>
+
+    
+    </body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <style type="text/css" media="screen">
+        pre{border:medium solid black;}
+    </style>
+    <body>
+        <h1>Cookie测试</h1>
+        <pre>
+            <p id="cookiedata">
+            </p>
+            <button type="button" id="write">Add Cookie</button>
+            <button type="button" id="update">Update Cookie</button>
+        </pre>
+        
+
+
+        <h1>使用属性获取元素对象测试</h1>
+        <pre>
+            <pre id="results">
+                
+            </pre>
+            <pre id="results2">
+                
+            </pre>
+            <pre id="results3">
+                
+            </pre>
+            <pre id="results4">
+                
+            </pre>
+            <p>
+                <button type="button" id="parent">Parent</button>
+                <button type="button" id="child">First Child</button>
+                <button type="button" id="prev">Prev Sibling</button>
+                <button type="button" id="next">Next Sibling</button>
+            </p>
+            <img src="a.jpg" class="fruits" alt="" id='lemon'>
+            <p id="tblock">
+                使用属性获取元素<span id="bb">对象测试1</span>使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1使用属性获取元素对象测试1
+            </p>
+            <img src="a.jpg" class="fruits" alt="" name="apple" id='apple'>
+            <p>
+                使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2使用属性获取元素对象测试2
+            </p>
+            <img src="a.jpg" alt="" id='banana'>
+            
+        </pre>
+
+        <script type="text/javascript">
+            document.writeln("<pre>");
+            document.writeln("<h1>document属性</h1>");
+            document.writeln("characterSet:"+document.characterSet);
+            document.writeln("charset:"+document.charset);
+            document.writeln("compatMode:"+document.compatMode);
+            document.writeln("defaultCharset:"+document.defaultCharset);
+            document.writeln("dir:"+document.dir);
+            document.writeln("domain:"+document.domain);
+            document.writeln("lastModified:"+document.lastModified);
+            document.writeln("referrer:"+document.referrer);
+            document.writeln("title:"+document.title);
+
+            document.writeln("<h1>document.location属性</h1>");
+            document.writeln("protocol:"+document.location.protocol);
+            document.writeln("host:"+document.location.host);
+            document.writeln("hostname:"+document.location.hostname);
+            document.writeln("port:"+document.location.port);
+            document.writeln("pathname:"+document.location.pathname);
+            document.writeln("search:"+document.location.search);
+            document.writeln("hash:"+document.location.hash);
+
+            document.writeln("<h1>读写cookie</h1>");
+
+
+            var cookieCount = 0;
+            document.getElementById("update").onclick = updateCookie;
+            document.getElementById("write").onclick = createCookie;
+
+            readCookies();
+
+            function readCookies(){
+                document.getElementById("cookiedata").innerHTML = document.cookie;
+            }
+            function createCookie(){
+                cookieCount++;
+                document.cookie = "Cookie_"+cookieCount+"=VALUE_"+cookieCount;
+                alert(document.cookie);
+                readCookies();
+            }
+            function updateCookie(){
+                document.cookie = "Cookie_"+cookieCount+"=VALUE_"+cookieCount;
+                readCookies();
+            }
+
+
+
+            document.writeln("<h1>implementation，检测DOM的功能等级(没啥用)</h1>");
+            var features = ["Core","HTML","CSS","Selectors-API"];
+            var levels = ["1.0","2.0","3.0"];
+
+            for(var i=0;i<features.length;i++){
+                document.writeln("Checking for feature:"+features[i]);
+                for(var j=0;j<levels.length;j++){
+                    document.write(features[i]+" Level "+levels[j]+":");
+                    document.writeln(document.implementation.hasFeature(features[i],levels[j]));
+                }
+            }
+
+            document.writeln("<h1>使用属性获取元素对象测试</h1>");
+            var resultsElement = document.getElementById("results");
+
+            var elems = document.images;
+
+            for(var i=0;i<elems.length;i++){
+                resultsElement.innerHTML += "Image Element: "+elems[i].id+"\n";
+            }
+
+            var srcValue = elems.namedItem("apple").src;
+            resultsElement.innerHTML += "Src for apple element is :"+srcValue+"\n";
+
+
+            document.writeln("<h1>使用属性获取元素对象测试</h1>");
+            // var resultsElement2 = document.getElementById("results2");
+
+            // var elems2 = document.apple;
+            // if(elems2.namedItem){
+            //     for(var i=0;i<elems2.length;i++){
+            //         resultsElement2.innerHTML += "Image Element: "+elems2[i].id+"\n";
+            //     }
+            // }else{
+                // resultsElement2.innerHTML += "Src for apple element is :"+elems2.src+"\n";
+            // }
+            document.writeln("<h1>搜索元素测试getElement、querySelector</h1>");
+            var resultsElement2 = document.getElementById("results2");
+            var pElems = document.getElementsByTagName("p");
+            resultsElement2.innerHTML += "There are "+pElems.length+" p elements\n";
+
+            var fruitsElems = document.getElementsByClassName("fruits");
+            resultsElement2.innerHTML += "There are "+fruitsElems.length+" elements in the fruits class\n";
+
+            var nameElems = document.getElementsByName("apple");
+            resultsElement2.innerHTML += "There are "+nameElems.length+" elements with the name 'apple'\n";
+
+            var cssElems = document.querySelectorAll("p,img#apple");
+            resultsElement2.innerHTML += "There selector matched "+cssElems.length+" elements\n";
+
+            var hElems1 = document.getElementById("tblock").getElementsByTagName("span");
+            resultsElement2.innerHTML += "There are "+hElems1.length+" span1 elements\n";
+
+            var hElems2 = document.getElementById("tblock").querySelectorAll("span");
+            resultsElement2.innerHTML += "There are "+hElems2.length+" span2 elements\n";
+
+            var hElems3 = document.querySelectorAll("#tblock > span");
+            resultsElement2.innerHTML += "There are "+hElems3.length+" span3 elements\n";
+
+            document.writeln("<h1>dom树导航</h1>");
+            var resultsElement3 = document.getElementById("results3");
+            var element = document.body;
+
+            var buttons = document.getElementsByTagName("button");
+            for(var i=0;i<buttons.length;i++){
+                buttons[i].onclick = handleButtonClick;
+            }
+
+            processNewElement(element);
+
+            function handleButtonClick(e){
+                if(element.style){
+                    element.style.backgroundColor = "white";
+                }
+
+                if(e.target.id == "parent" && element != document.body){
+                    element = element.parentNode;
+                }else if(e.target.id == "child" && element.hasChildNodes()){
+                    element = element.firstChild;
+                }else if(e.target.id == "prev" && element.previousSibling){
+                    element = element.previousSibling;
+                }else if(e.target.id == "next" && element.nextSibling){
+                    element = element.nextSibling;
+                }
+
+                processNewElement(element);
+                if(element.style){
+                    element.style.backgroundColor = "lightgrey";
+                }
+
+            }
+
+            function processNewElement(elem){
+                resultsElement3.innerHTML = "Element type: "+elem+"\n";
+                resultsElement3.innerHTML += "Element id: "+elem.id+"\n";
+                resultsElement3.innerHTML += "Has child nodes: "+elem.hasChildNodes()+"\n";
+
+                if(elem.previousSibling){
+                    resultsElement3.innerHTML += "Prev sibling is: "+elem.previousSibling+"\n";
+                }else{
+                    resultsElement3.innerHTML += "No prev sibling\n";
+                }
+                if(elem.nextSibling){
+                    resultsElement3.innerHTML += "Next sibling is: "+elem.nextSibling+"\n";
+                }else{
+                    resultsElement3.innerHTML += "No next sibling\n";      
+                }
+            }
+
+
+
+
+            document.writeln("</pre>");
+
+        </script>
+
+
+    </body>
+</html>

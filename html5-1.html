@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            thead th,tfoot th{text-align:left;background: grey;color:white;}
+            tbody th{text-align: right;background:lightgrey;color:grey;}
+            #col1{background:red;}
+            #col2{background:green;font-size:small;}
+        </style>
+    </head>
+    <body>
+        <!-- 代码 -->
+        <code>
+            var fruits = ["apples","oranges","mangoes","cherries"];
+        </code>
+
+        <p>aaaaa</p>
+
+        <!-- 引用标题 -->
+        <cite>bbbbbbbb</cite><br/><br/>
+        <!-- 引用 -->
+        <q>ssssssss</q><br/><br/>
+        <blockquote cite="http://example.com/facts">
+            <p>assdfdf</p>
+        </blockquote><br/><br/>
+        <!-- 注音效果 -->
+        <ruby>张<rp>(</rp><rt>yue</rt><rp>)</rp></ruby><br/><br/>
+        <!-- 反过来显示 -->
+        <bdo dir="rtl">张玥</bdo><br/><br/>
+        <!-- 突出显示 -->
+        张玥<mark>张玥</mark>张玥<br/><br/>
+        <!-- 底线中线 <u>,<s>-->
+        <ins>张玥</ins>&nbsp;&nbsp;
+        <del>张玥</del><br/><br/>
+        <!-- 预定义标签 -->
+        <pre>
+            张玥张玥张玥张玥张玥张玥张玥张玥张玥张玥张玥张玥
+        </pre>
+
+        <!-- 插图功能，组织元素用的 -->
+        <figure>
+            <figcaption>explanatory caption</figcaption>
+            asdfsdfsdf
+        </figure>
+        <!-- 标题组-->
+        <hgroup>
+            <h1>First</h1>
+            <h2>Two</h2>
+        </hgroup>
+
+        <!-- 节 -->
+        <section>
+            <h1>Additional fruits</h1>
+            I also like bananas,mangoes,chrries.
+            <section>
+                <h1>More infomation</h1>
+                You can see.
+            </section>
+
+        </section>
+        
+        <!-- 头尾 -->
+        <header>
+            <hgroup>
+                <h1>Things I like</h1>
+                <h2>by Adam Freeman</h2>
+            </hgroup>
+        </header>
+
+        <footer>
+            sksksksj
+        </footer>
+        <!-- 导航 -->
+        <nav>
+            <h1>Contents</h1>
+            <ul>
+                <li>a</li>
+                <ul>
+                    <li>aa</li>
+                </ul>
+                <li>b</li>
+                <ul>
+                    <li>bb</li>
+                </ul>
+            </ul>
+        </nav>
+
+        <!-- 独立文章内容 -->
+        <article>
+            Article
+
+            <aside>
+               附注栏 
+            </aside>
+
+            <details>
+                <summary>简介区域</summary>
+                详情区域
+            </details>
+        </article>
+
+        <address>
+            联系信息
+        </address>
+
+
+
+        <table>
+            <colgroup id='col1' span="3"></colgroup>
+            <colgroup id='col2' span="2"></colgroup>
+            <caption>表格标题</caption>
+            <thead>
+                <tr>
+                    <th>Rank</th><th>Name</th><th>Color</th><th>Size</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th>Rank</th><th>Name</th><th>Color</th><th>Size</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>Favorite:</th><td>Apples</td><td>Green</td><td>Medium</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- autocomplete,target --> 
+        <form autocomplete="off" method="post" action="" target="_self" name="fruitvote" id="fruitvote">
+            <fieldset><!--表单元素分组 -->
+                <legend>表单元素分组标签说明</legend>
+                <p><label for="fave">a:</label><input autofocus autocomplete="on" name="fave"/></p>
+                <p><label for="name">b:</label><input disabled name="name"/></p>
+                <button>Submit</button>
+            </fieldset>
+            <!--禁用整组 -->
+            <fieldset disabled><!--表单元素分组 -->
+                <legend>表单元素分组标签说明</legend>
+                <p><label for="fave1">a:</label><input autofocus autocomplete="on" name="fave1"/></p>
+                <p><label for="name1">b:</label><input  name="name1"/></p>
+                <button>Submit</button>
+            </fieldset>
+        </form>
+
+        <p><label for="name2">b:</label><input form="fruitvote" name="name2" placeholder="表单外的input指定from属性绑定表单"/></p>
+
+        <datalist id="fruitlist">
+            <option value="Apples" label="Lovely Apples"/>
+            <option value="Oranges">Refreshing Oranges</option>
+            <option value="Cherries"/>
+        </datalist>
+
+
+        <form>
+            <fieldset><!--表单元素分组 -->
+                <legend>按扭属性 required pattern正则</legend>
+                <p><label for="fave">a:</label><input maxlength="10" autofocus autocomplete="on" name="fave" required pattern="^.* .*$"/></p>
+                <p><label for="name">b:</label><input list="fruitlist" size="10" name="name"/></p>
+                <button type="submit" formaction="http://www.baidu.com" formmethod="post">Submit</button>
+                <button type="reset">Reset</button>
+                <button type="button">Nothing</button>
+            </fieldset>
+            
+        </form>
+
+        type=number:<input type="number" step="1" min="0" max="100" value="1" id="price" name="price"/><br/><br/>
+
+        type=range:<input type="range" step="1" min="0" max="100" value="1" id="price1" name="price1"/><br/><br/>
+
+        type=email:<input type="email" id="email" name="email"/><br/><br/>
+
+        type=tel:<input type="tel"  id="tel" name="tel"/><br/><br/>
+
+        type=url:<input type="url" id="url" name="url"/><br/><br/>
+
+        type=color:<input type="color" id="color" name="color"/><br/><br/>
+
+
+        type=search:<input type="search" id="search" name="search"/><br/><br/>
+   
+        select:
+        <select id="fave" name="fave">
+            <option value="apples" selected label="Apples">Apples</option>
+            <option value="oranges" label="Oranges">Oranges</option>
+            <option value="cherries" label="Cherries">Cherries</option>
+            <option value="pears" label="Pears">Pears</option>
+        </select>
+
+        select(multiple):
+        <select id="fave" name="fave" multiple>
+            <option value="apples" selected label="Apples">Apples</option>
+            <option value="oranges" label="Oranges">Oranges</option>
+            <option value="cherries" label="Cherries">Cherries</option>
+            <option value="pears" label="Pears">Pears</option>
+        </select>
+
+        select分组:
+        <select id="fave" name="fave">
+            <optgroup label="Top Choices">
+            <option value="apples" selected label="Apples">Apples</option>
+            <option value="oranges" label="Oranges">Oranges</option>
+            </optgroup>
+             <optgroup label="Others">
+            <option value="cherries" label="Cherries">Cherries</option>
+            <option value="pears" label="Pears">Pears</option>
+</optgroup>
+        </select>
+
+        type=output:
+        <form onsubmit="return false;" oninput="res.value=quant.valueAsNumber * price.valueAsNumber">
+            <fieldset>
+            <legend>Price Calculator</legend>
+            <input type="number" placeholder="Quantity" id="quant" name="quant" required/>+
+            <input type="number" placeholder="Price" id="price" name="price"/>=
+            <output for="quant name" name="res"/>
+            </fieldset>
+        </form>
+
+        embed嵌入视频：
+        <embed src="http://player.youku.com/player.php/Type/Folder/Fid/27790724/Ob/1/sid/XMTY2NjQ1NjExNg==/v.swf" type="application/x-shockwave-flash" width="560" height="349" allowfullscreen="true">
+        <br/><br/>
+        object嵌入视频：
+        <object width="560" height="349" data="http://player.youku.com/player.php/Type/Folder/Fid/27790724/Ob/1/sid/XMTY2NjQ1NjExNg==/v.swf" type="application/x-shockwave-flash">
+        <param name="allowFullScreen" value="true"/>
+        </object><br/><br/>
+
+        progress、meter标签：
+        <meter id="myprogress" value="10" max="100" low="40" high="80" optimum="60"></meter>
+        <!--<progress id="myprogress" value="10" max="100"></progress>-->
+        <p>
+            <button type="button" value="30">30%</button>
+            <button type="button" value="60">60%</button>
+            <button type="button" value="90">90%</button>
+        </p>
+
+        <h1 id="banana">This is the nested document.</h1>
+
+        <script>
+        var buttons = document.getElementsByTagName('BUTTON');
+        var progress = document.getElementById('myprogress');
+        for(var i = 0;i<buttons.length;i++){
+            buttons[i].onclick = function(e){
+                progress.value = e.target.value;
+            }
+        }
+
+        //配合html5-7.html
+        window.addEventListener("message", receiveMessage, false);
+        function receiveMessage(e){
+            if(e.origin =="file:///"){
+                displayMessage(e.data);
+            }else{
+                displayMessage("Message Discarded"+e.origin);
+            }
+        }
+        function displayMessage(msg){
+            document.getElementById("banana").innerHTML = msg;
+        }
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            #src > *{float:left;}
+            #target,#src > img{border:thin solid black;padding:2px;margin:4px;}
+            #target{widows: 61px;height:61px;text-align: center;display:table;}
+            #target > p{display:table-cell;vertical-align: middle;}
+            #target > img{margin:1px;}
+            img.dragged{backgroun:lightgrey;}
+        </style>
+    </head>
+    <body>
+    <h1>37.拖放</h1>
+        
+    <div id="src">
+        <img draggable="true" id="banana" src="a.jpg" alt="banana"/>
+        <img draggable="true" id="banana" src="a.jpg" alt="banana"/>
+        <img draggable="true" id="banana" src="a.jpg" alt="banana"/>
+        <div id='target'>
+            <p id="msg">Drop Here</p>
+        </div>
+        
+    </div>
+    <div style="clear:both;">
+        
+    </div>
+    <h1>38.定位</h1>
+    <div id="navigator">
+            
+        </div>
+    <script type="text/javascript">
+        var src = document.getElementById("src");
+        var target = document.getElementById("target");
+        var msg = document.getElementById("msg");
+
+        var draggedID;
+
+
+
+        target.ondragenter = handleDrag;
+        target.ondragover = handleDrag;
+
+        target.ondrop = function(e){
+            var newElem = document.getElementById(draggedID).cloneNode(false);
+            target.innerHTML = "";
+            target.appendChild(newElem);
+            e.preventDefault();
+        }
+
+        function handleDrag(e){
+            e.preventDefault();
+        }
+
+        src.ondragstart = function(e){
+            draggedID = e.target.id;
+            e.target.classList.add("dragged");
+        }
+        src.ondragend = function(e){
+            e.target.classList.remove("dragged");
+        }
+        src.ondrag = function(e){
+            msg.innerHTML = e.target.id;
+        }
+
+
+        var nav = document.getElementById("nav");
+        navigator.geolocation.getCurrentPosition(displayPosition);
+        function displayPosition(pos){
+            nav.innerHTML+= pos.coords['longitude']+" "+pos.coords['latitude'];
+        }
+
+
+    </script>
+
+
+    </body>
+</html>

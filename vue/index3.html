@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="bower/vue/dist/vue.min.js" type="text/javascript"></script>
+    <script src="bower/vue-router/dist/vue-router.min.js" type="text/javascript"></script>
+    <script src="bower/vue-resource/dist/vue-resource.min.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="app3">
+    <my-component :showname="showname" :data="data" :shownone="shownone"></my-component>
+</div>
+<script type="text/javascript">
+    var mycom2 = Vue.extend({
+        template:'{{data.name}}<br/>{{data.age}}<br/>{{showname}}<br/>{{bname}}<br/>{{bdata.bchild}}',
+        props:['showname','data','bname','bdata']
+    });
+    var bind_data = {
+        bname:'外部绑定的名字在这里(来自mycom组件并且是外部定义的var，试试console里修改bind_data.bname=XXXX)',
+        bdata:{
+            bchild:'外部的child(来自mycom组件并且是外部定义的var，试试console里修改bind_data.bdata.bchild=XXXX)'
+        }
+    }
+    var mycom = Vue.component('my-component',{
+        template:'{{showname}}：<br/><my-component2 :data="data" :bname="bname" :bdata="bdata" showname="直接显示名字(来自直接传递)"></my-component2><br/>shownone:{{shownone}}',
+                props:['showname','data'],
+        components:{
+            'my-component2':mycom2
+        },
+        data:function(){
+            return bind_data;
+        }
+    });
+    new Vue({
+        el:'#app3',
+        data:{
+            'showname':'测试通信(来自vue)',
+            'data':{
+                name:'名字(来自vue)',
+                age:'年龄(来自vue)'
+            },
+            'shownone':'这段显示不出来'
+        }
+    })
+</script>
+<div id="app1">
+    <h1>Hello App!</h1>
+    <p>
+        <a v-link="{path:'/foo'}">Go to Foo</a>
+        <a v-link="{path:'/bar'}">Go to Bar</a>
+    </p>
+    <router-view></router-view>
+</div>
+<div id="app2">
+    <p>
+        <a v-link="{path:'/foo1'}">Go to Foo</a>
+        <a v-link="{path:'/foo1/bar1'}">Go to Bar</a>
+        <a v-link="{path:'/foo1/baz1'}">Go to Baz1</a>
+        <a v-link="{name:'user1',params:{userId:123}}">具名路径user1</a>
+        <a v-link="{path:'/user3/2'}">user3/2</a>
+    </p>
+    <router-view></router-view>
+</div>
+
+<div id="resource-get">
+    <p>{{data}}</p>
+    <p>{{retMessage}}</p>
+    <p>{{retValue}}</p>
+</div>
+
+<script type="text/javascript">
+    new Vue({
+        el:"#resource-get",
+        data:{
+            data:'',retMessage:'',retValue:''
+        },
+        ready:function(){
+            this.getfor()
+        },
+        methods:{
+            getfor:function(){
+                alert(111);
+                this.$http.jsonp('https://api.moumou001.com/interface/?actionid=110002&secretString=a6bdff9420fbd14ae3e6fe93d9732512').then(function(response){
+                    console.log(response.data.data)
+                    alert(222)
+                    this.$set('data',response.data.data)
+                    this.data = response.data
+
+                });
+            }
+        }
+    })
+
+    //Vue resource
+//    Vue.http.jsonp('https://api.moumou001.com/interface/?actionid=110002&secretString=a6bdff9420fbd14ae3e6fe93d9732512').then(function(response){
+//        console.log(response.data.data)
+//    },function(response){
+//        console.log(response.status)
+//    });
+
+    var Foo1 = Vue.extend({
+        template:
+        '<div class="foo1">' +
+        '<h2>This is Foo!</h2>' +
+        '<router-view></router-view>' + // <- 嵌套的外链
+        '</div>'
+    })
+    var Bar1 = Vue.extend({
+        template:'<p>This is bar1!</p><p>{{$route.path}} - {{$route.params | json}}</p>',
+//        route:{
+//            canActivate:function(){
+//                return authenticationService.isLoggedIn()
+//            },
+//            activate:function(transition){
+//                return messageService.fetch(transition.to.params.messageId)
+//                        .then((message) =>{
+//                            this.message=message
+//                        })
+//            }
+//        }
+    })
+    var Baz1 = Vue.extend({
+        template:'<p>This is baz1!</p>'
+    })
+
+    var App1 = Vue.extend({})
+
+    var router1 = new VueRouter()
+    router1.map({        //router.map(routeMap)定义路由映射的主要方法。
+        '/foo1':{
+            //component: 当路径匹配时，会渲染到顶级 <router-view> 的 Vue 组件
+            //subRoutes: 嵌套的子路由映射。
+            component:Foo1,
+            //嵌套路由
+            subRoutes:{
+                '/':{
+                    component:{
+                        template:'<p>Default sub view for Foo </p>',
+                        route:{       //钩子函数
+                            activate:function(transition){ //在激活阶段，当组件被创建而且将要切换进入的时候被调用
+//                                如果钩子不返回 Promise，但是有一个参数 (transition)，则钩子会等到 transition.next(), transition.abort() 或是 transition.redirect() 之一被调用才 resolve。
+                                console.log('hook-example activated!')
+                                transition.next()
+                                //transition.to
+                                //一个代表将要切换到的路径的路由对象。
+                                //transition.from
+                                //一个代表当前路径的路由对象。
+                                //transition.next()
+                                //调用此函数处理切换过程的下一步。
+                                //transition.abort([reason])
+                                //调用此函数来终止或者拒绝此次切换。
+                                //transition.redirect(path)
+                                //取消当前切换并重定向到另一个路由。
+                            },
+                            deactivate:function(transition){ //在激活阶段，当一个组件将要被禁用和移除之时被调用
+                                console.log('hook-example deactivated!')
+                                transition.next()
+                            },
+                            canActivate:function(transition){ //在验证阶段，当一个组件将要被切入的时候被调用
+                                console.log('hook-example canActivate!')
+                                transition.next()
+                            },
+                            canDeactivate:function(transition){ //在验证阶段，当一个组件将要被切出的时候被调用
+                                console.log('hook-example canDeactivate!')
+                                transition.next()
+                            },
+                            canReuse:false
+
+                        }
+                    }
+                },
+                '/bar1':{
+                    component:Bar1,
+                    auth:true
+                },
+                '/baz1':{
+                    component:Baz1
+                },
+                //路由匹配
+                '/baz1/:username':{
+                    component:{
+                        template:'<p>用户名是{{$route.params.username}} - {{$route.params | json}}</p>'
+                    }
+                },
+                //全匹配片段
+                '/user/*any':{
+                    component:{
+                        template:'<p>{{$route.params|json}}</p>'
+                    }
+                },
+                //具名路径
+                //router.go({ name: 'user', params: { userId: 123 }})
+                //<a v-link="{ name: 'user', params: { userId: 123 }}">User</a>
+                '/user1/:userId':{
+                    name:'user1',
+                    component:{
+                        template:'<p>{{$route.params|json}}</p>'
+                    }
+                },
+                '/data1':{
+                    component:{
+                        template:'<p>{{message}}</p>',
+                        route:{  //data钩子调用transition.next()
+                            data:function(transition){
+                                setTimeout(function(){
+                                    transition.next({message:'data fetched'})
+                                },5000)
+                            }
+                        }
+                    }
+                },
+                '/data2':{
+                    component:{
+                        template:'<p>{{message}}</p>',
+//                        data:{
+//                            message:'aaa'
+//                        }
+                        route:{  //data钩子返回Promise
+                            data:function(transition){
+                                transition.next({message:'aaa'})
+                            }
+//                            data:function(transition){
+//                                return messageService.fetch(transition.to.params.messageId)
+//                                        .then(function(message){
+//                                            return {message:message}
+//                                        })
+//                            }
+                        }
+                    }
+                }
+            }
+        },
+
+    })
+    router1.start(App1,'#app2')        //启动一个启用了路由的应用。创建一个 App 的实例并且挂载到元素 el 。
+    router1.on('/user3/:userId',{      //添加一条顶级的路由配置
+        component:{
+            template:'<div>{{$route.params.userId}}</div>'
+        }
+    })
+    console.log(router1.app)
+    console.log(router1.mode)
+
+//    router1.stop() //停止监听 popstate 和 hashchange 事件
+
+//    router1.beforeEach(function (transition) {
+//        if(transition.to.auth){
+//            console.log('1111')
+//        }
+//
+//    })
+
+
+
+
+
+    var Foo = Vue.extend({
+        template:'<p>This is foo!</p>'
+    })
+    var Bar = Vue.extend({
+        template:'<p>This is bar!</p>'
+    })
+
+    var App = Vue.extend({})
+
+    var router = new VueRouter()
+
+    router.map({
+        '/foo':{
+            component:Foo
+        },
+        '/bar':{
+            component:Bar
+        }
+    })
+    router.start(App,'#app1')
+</script>
+
+</body>
+</html>

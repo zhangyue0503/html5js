@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            p{
+                background:gray;
+                color:white;
+                padding:10px;
+                margin:5px;
+                border:thin solid black;
+            }
+            a{
+                background:gray;
+                color:white;
+                padding:10px;
+                border:thin solid black;
+            }
+        </style>
+    </head>
+    <body>
+    <h1>使用事件，30章</h1>
+    
+    <p onmouseover="this.style.background='white';this.style.color='black'" onmouseout="this.style.removeProperty('color');this.style.removeProperty('background');">
+使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件
+    </p>
+
+
+    <p name="pe">
+1111111111使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件
+    </p>
+
+    <p name="pe" id="block2">
+2222222222使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件使用事件
+    </p>
+
+    <p id="block1">
+        11事件流11事件流11事件流11事件流11事件流11事件流<span id="banana">aabb11事件流</span>11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流11事件流
+    </p>
+
+    <p>
+        <a href="http://www.baidu.com">Baidu</a>
+        <a href="http://www.sina.com">Sina</a>
+    </p>
+
+    <table border="1">
+        <tr>
+            <th>Type:</th><td id="eType"></td>
+        </tr>
+        <tr>
+            <th>X:</th><td id="eX"></td>
+        </tr>
+        <tr>
+            <th>Y:</th><td id="eY"></td>
+        </tr>
+    </table>
+
+    <form action="" method="get" accept-charset="utf-8">
+        <p>
+        <label>Fruit<input type="text" name="fave" id="fave" value=""></label>
+        </p>
+        <p>
+        <label>Name<input type="text" name="name" id="name" value=""></label>
+        </p>
+        
+    </form>
+
+    <button type="button" id="pressme">Press Me</button>
+
+    <span id="message"></span>
+<script type="text/javascript">
+    var pElems = document.getElementsByName("pe");
+    for(var i=0;i<pElems.length;i++){
+        pElems[i].onmouseover = handleMouseEvent;
+        pElems[i].onmouseout = handleMouseEvent;
+        pElems[i].onmouseover = handleMouseEvent;
+        // pElems[i].addEventListener("mouseover", handleMouseOver);
+        // pElems[i].addEventListener("mouseout", handleMouseOut);
+    }
+
+    var typeCell = document.getElementById("eType");
+    var xCell = document.getElementById("eX");
+    var yCell = document.getElementById("eY");
+
+    function handleMouseEvent(e){
+        
+
+        if(e.type == Event.AT_TARGET){
+            typeCell.innerHTML(e.type);
+            xCell.innerHTML = e.clientX;
+            yCell.innerHTML = e.clientY;
+        }else if(e.type == 'mouseover'){
+            e.target.style.background = "white";
+            e.target.style.color = "black";
+        }else{
+            e.target.style.removeProperty('color');
+            e.target.style.removeProperty('background');
+        }
+
+    }
+
+    // document.getElementById("pressme").onclick = function(){
+    //     document.getElementById("block2").removeEventListener("mouseout", handleMouseOut);
+    // }
+
+    // function handleMouseOver(e){
+    //     e.target.style.background = "white";
+    //     e.target.style.color = "black";
+    // }
+    // function handleMouseOut(e){
+    //     e.target.style.removeProperty('color');
+    //     e.target.style.removeProperty('background');
+    // }
+    // 
+    // 
+    var banana = document.getElementById("banana");
+    var textblock = document.getElementById("block1");
+
+    banana.addEventListener("mouseover", handleMouseEvent);
+    banana.addEventListener("mouseout", handleMouseEvent);
+    banana.addEventListener("mousemove", handleMouseEvent);
+    textblock.addEventListener("mouseover", handleDescendantEvent,true);
+    textblock.addEventListener("mouseout", handleDescendantEvent,true);
+    textblock.addEventListener("mouseover", handleBubbleMouse,false);
+    textblock.addEventListener("mouseout", handleBubbleMouse,false);
+
+    function handleBubbleMouse(e){
+        if(e.type == 'mouseover' && e.eventPhase == Event.BUBBLING_PHASE){
+            e.target.style.textTransform = "uppercase";
+        }else if(e.type == "mouseout" && e.eventPhase == Event.BUBBLING_PHASE){
+            e.target.style.textTransform = "none";
+        }
+    }
+
+    function handleDescendantEvent(e){
+        if(e.type == 'mouseover' && e.eventPhase == Event.CAPTURING_PHASE){
+            e.target.style.border = "thick solid red";
+            e.currentTarget.style.border = "thick double black";
+        }else if(e.type == "mouseout" && e.eventPhase == Event.CAPTURING_PHASE){
+            e.target.style.removeProperty('border');
+            e.currentTarget.style.removeProperty('border');
+        }
+        // e.stopPropagation();
+    }
+
+    function handleClick(e){
+        if(!confirm("Do you want to navigate to "+e.target.href+" ?")){
+            e.preventDefault();
+        }
+    }
+    var emels = document.querySelectorAll("a");
+    for(var i=0;i<emels.length;i++){
+        emels[i].addEventListener("click",handleClick);
+    }
+
+    var inputElems = document.getElementsByTagName("input");
+    for(var i=0;i<inputElems.length;i++){
+        inputElems[i].onfocus = handleFocusEvent;
+        inputElems[i].onblur = handleFocusEvent;
+        inputElems[i].onkeyup = handleKeyboardEvent;
+    }
+    function handleFocusEvent(e){
+        if(e.type == "focus"){
+            e.target.style.backgroundColor = "lightgray";
+            e.target.style.border = "thick double red";
+        }else{
+            e.target.style.removeProperty('background-color');
+            e.target.style.removeProperty('border');
+        }
+    }
+    function handleKeyboardEvent(e){
+        document.getElementById("message").innerHTML = "Key pressed: "+e.keyCode+" Char: "+String.fromCharCode(e.keyCode);
+    }
+    
+    
+
+
+
+
+</script>
+    </body>
+</html>

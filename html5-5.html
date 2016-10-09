@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            #table1{
+                border-collapse: collapse;
+            }
+            #table1 th,td{
+                padding:2px;
+            }
+
+            #table2{
+                border-collapse: separate;
+                border-spacing: 10px;
+            }
+            #table2 th,td{
+                padding:2px;
+            }
+
+            #table3{
+                border-collapse: separate;
+                border-spacing: 10px;
+                empty-cells: hide;
+                caption-side: bottom;
+                table-layout: fixed;
+                width:100%;
+            }
+            #table3 th,td{
+                padding:2px;
+            }
+
+            ol{
+                list-style-type: lower-alpha;
+                cursor: progress;
+            }
+
+            li.inside{
+                list-style-position: inside;
+            }
+            li.outside{
+                list-style-position: outside;
+            }
+
+        </style>
+    </head>
+    <body>
+        <table border="1" id="table1">
+            <caption>Results of the 2011 Fruit Survey</caption>
+            <colgroup id="colgroup1">
+                <col span="2" id="col1And2" />
+                <col id="col3"/>
+            </colgroup>
+            <colgroup id="colgroup2" span="2" />
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th colspan="2">Size & Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Favorite:</th>
+                    <td>Apples</td>
+                    <td>Green</td>
+                    <td>Medium</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <th>2nd Favorite:</th>
+                    <td>Oranges</td>
+                    <td>Orange</td>
+                    <td>Large</td>
+                    <td>450</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">&copy;2011 Adam Freeman Fruit Data Enterprises</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <table border="1" id="table2">
+            <caption>Results of the 2011 Fruit Survey</caption>
+            <colgroup id="colgroup1">
+                <col span="2" id="col1And2" />
+                <col id="col3"/>
+            </colgroup>
+            <colgroup id="colgroup2" span="2" />
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th colspan="2">Size & Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>Favorite:</th>
+                    <td>Apples</td>
+                    <td>Green</td>
+                    <td>Medium</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <th>2nd Favorite:</th>
+                    <td>Oranges</td>
+                    <td>Orange</td>
+                    <td>Large</td>
+                    <td>450</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">&copy;2011 Adam Freeman Fruit Data Enterprises</th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <table border="1" id="table3">
+            <caption>Results of the 2011 Fruit Survey</caption>
+            <colgroup id="colgroup1">
+                <col span="2" id="col1And2" />
+                <col id="col3"/>
+            </colgroup>
+            <colgroup id="colgroup2" span="2" />
+            <thead>
+                <tr>
+                    <th>Rank</th>
+                    <th>Name</th>
+                    <th>Color</th>
+                    <th colspan="2">Size & Votes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>FavoriteFavoriteFavoriteFavoriteFavoriteFavorite:</th>
+                    <td>Apples</td>
+                    <td>Green</td>
+                    <td>Medium</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <th>2nd Favorite:</th>
+                    <td>Oranges</td>
+                    <td>Orange</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <th colspan="5">&copy;2011 Adam Freeman Fruit Data Enterprises</th>
+                </tr>
+            </tfoot>
+        </table>
+
+
+        <ol>
+            <li class="inside">bananas</li>
+            <li>oranges</li>
+            <li style="list-style-type:decimal">cherries</li>
+            <li>plums</li>
+            <li class="outside">peaches</li>
+            <li>grapes</li>
+        </ol>
+
+    </body>
+</html>

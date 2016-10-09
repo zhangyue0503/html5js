@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css" media="screen">
+            p{border:medium double black;}
+            p.newclass{
+                background-color: grey;
+                color:white;
+            }
+
+            table{
+                border:solid thin black;
+                border-collapse: collapse;
+                margin:10px;
+            }
+            td{padding:4px 5px;}
+
+        </style>
+    </head>
+    <body>
+        <h1>DOM元素28章</h1>
+        <p id="textblock" dir="ltr" lang="en-US">
+            DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章<span id="banana">DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM<span id="apple">元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素2<span id="banana">8章DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章
+        </p>
+        <pre id="results">
+            
+        </pre>
+
+        <p id="textblock2" dir="ltr" lang="en-US" class="fruit numbers">
+            DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章<span id="banana">DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM<span id="apple">元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素2<span id="banana">8章DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章
+        </p>
+        <pre id="results2">
+            
+        </pre>
+        <button type="button" id="pressme">Press Me</button>
+<button type="button" id="toggle">Toggle Class</button>
+        
+        <p id="textblock3" class="fruit numbers" data-fruit="apple" data-sentiment="like">
+            DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章<span id="banana">DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM<span id="apple">元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素2<span id="banana">8章DOM元素28章</span>DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章DOM元素28章
+        </p>
+        <pre id="results3">
+            
+        </pre>
+        <button type="button" id="pressme2">Press Me2</button>
+        <button type="button" id="insert">Insert Element</button>
+
+
+        <table border="1">
+            <caption>28.3</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody id="fruitsBody">
+                <tr>
+                    <td class="sum">Banana</td>
+                    <td class="results">Yellow</td>
+                </tr>
+                <tr id="apple-tb">
+                    <td>Apple</td>
+                    <td>Red/Green</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <table border="1">
+            <caption>28.3</caption>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody id="fruitsBody2">
+                <tr id="plumrow">
+                    <td class="sum">Plum</td>
+                    <td class="results">Purple</td>
+                </tr>
+                
+            </tbody>
+        </table>
+
+        <button type="button" id="add">Add Element</button>
+        <button type="button" id="remove">Remove Element</button>
+        <button type="button" id="clone">Add Element2</button>
+
+        <button type="button" id="move">Move Row</button>
+
+        <pre id="results4">
+            
+        </pre>
+
+        <table border="1">
+            <caption>28.3-17 insertAdjacentHTML</caption>
+            <thead>
+                <tr>
+                    <th>Fruit</th>
+                    <th>Color</th>
+                </tr>
+            </thead>
+            <tbody id="fruitsBody3">
+                <tr id="targetrow">
+                    <td>Placeholder</td>
+                </tr>
+            </tbody>
+        </table>
+        <button type="button" name="ibtns" id="ab">After Begin</button>
+        <button type="button" name="ibtns" id="ae">After End</button>
+        <button type="button" name="ibtns" id="bb">Before Begin</button>
+        <button type="button" name="ibtns" id="be">Before End</button>
+
+
+        <script type="text/javascript">
+            var results = document.getElementById("results");
+            var elem = document.getElementById("textblock");
+
+            results.innerHTML+="tag:"+elem.tagName+"\n";
+            results.innerHTML+="id:"+elem.id+"\n";
+            results.innerHTML+="dir:"+elem.dir+"\n";
+            results.innerHTML+="lang:"+elem.lang+"\n";
+            results.innerHTML+="hidden:"+elem.hidden+"\n";
+            results.innerHTML+="disabled:"+elem.disabled+"\n";
+
+
+var results2 = document.getElementById("results2");
+            document.getElementById("pressme").onclick = function(e){
+                document.getElementById("textblock2").className += " newclass";
+            }
+
+            document.getElementById("toggle").onclick = toggleClass;
+
+            function listClasses(){
+                var classlist = document.getElementById("textblock2").classList;
+                results2.innerHTML += "Current classes: ";
+                for(var i=0;i<classlist.length;i++){
+                    results2.innerHTML += classlist[i]+" ";
+                }
+            }
+listClasses();
+            function toggleClass(){
+                document.getElementById("textblock2").classList.toggle("newclass");
+                listClasses();
+            }
+
+
+
+var results3 = document.getElementById("results3");
+var elem3 = document.getElementById("textblock3");
+results3.innerHTML+="Element has lang attribute:"+elem3.hasAttribute("lang")+"\n";
+            results3.innerHTML+="Adding lang attribue\n";
+            elem3.setAttribute("lang", "en-US");
+            results3.innerHTML+="Attr value is : "+elem3.getAttribute("lang")+"\n";
+            results3.innerHTML+="Set new value for lang attribute\n";
+            elem3.setAttribute("lang", "en-UK");
+            results3.innerHTML+="value is now:"+elem3.getAttribute("lang")+"\n";
+
+
+            for(var attr in elem3.dataset){
+                results3.innerHTML+= attr+"\n";
+            }
+
+            var attrs = elem3.attributes;
+            for(var i=0;i<attrs.length;i++){
+                results3.innerHTML+= "Name:"+attrs[i].name+" Value:"+attrs[i].value+"\n";
+            }
+
+            attrs['data-fruit'].value = "banana";
+
+            results3.innerHTML+= "Value of data-fruit attr:"+attrs["data-fruit"].value+"\n";
+
+            document.getElementById("pressme2").onclick = function(){
+                var textElem = elem3.firstChild;
+                results3.innerHTML+="The element has "+textElem.length+" chars\n";
+                textElem.replaceWholeText("This is a new string");
+            }
+
+
+
+            var tableBody = document.getElementById("fruitsBody");
+            document.getElementById("add").onclick = function(){
+                var row = tableBody.appendChild(document.createElement("tr"));
+                row.setAttribute("id", "newrow");
+                row.appendChild(document.createElement("td")).appendChild(document.createTextNode("Plum"));
+                row.appendChild(document.createElement("td")).appendChild(document.createTextNode("Purple"));
+            }
+            document.getElementById("remove").onclick = function(){
+                var row = document.getElementById("newrow");
+                row.parentNode.removeChild(row);
+            }
+
+            document.getElementById("clone").onclick = function(){
+                var count = tableBody.getElementsByTagName("tr").length+1;
+                var newElem = tableBody.getElementsByTagName("tr")[0].cloneNode(true);
+                newElem.getElementsByClassName("sum")[0].firstChild.data = count+"+"+count;
+                newElem.getElementsByClassName("results")[0].firstChild.data = count*count;
+                tableBody.appendChild(newElem);
+            }
+
+            document.getElementById("move").onclick = function(){
+                var elem = document.getElementById("apple-tb");
+                document.getElementById("fruitsBody2").appendChild(elem);
+            }
+
+            var elemByID = document.getElementById("plumrow");
+            var elemByPos = document.getElementById("fruitsBody2").getElementsByTagName("tr")[0];
+
+            var results4 = document.getElementById("results4");
+
+            if(elemByID.isSameNode(elemByPos)){
+                results4.innerHTML +="Objects are the same";
+            }
+
+
+
+
+            var target = document.getElementById("targetrow");
+            var buttons = document.getElementsByName("ibtns");
+            for(var i=0;i<buttons.length;i++){
+                buttons[i].onclick = handleButtonPress;
+            }
+
+            function handleButtonPress(e){
+                if(e.target.id == "ab"){
+                    target.insertAdjacentHTML("afterbegin","<td>After Begin</td>");
+                }else if(e.target.id == "be"){
+                    target.insertAdjacentHTML("beforeend","<td>Before End</td>");
+                }else if(e.target.id == "bb"){
+                    target.insertAdjacentHTML("beforebegin","<tr><td colspan='2'>Before Begin</td></tr>");
+                }else{
+                    target.insertAdjacentHTML("afterend","<tr><td colspan='2'>After END</td></tr>");
+                }
+            }
+
+            document.getElementById("insert").onclick = function(){
+                elem3.firstChild.splitText(10);
+                var newText = elem3.childNodes[1].splitText(6).previousSibling;
+                elem3.insertBefore(document.createElement("b"), newText).appendChild(newText);
+            }
+
+        </script>
+
+    </body>
+</html>
