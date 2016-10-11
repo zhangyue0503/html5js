@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    var stooge = {
+        "first-name":"Jerome",
+        "last-name":"Howard"
+    };
+    var flight = {
+        airline:"Oceanic",
+        number:815,
+        departure:{
+            IATA:"SYD",
+            time:"2016-10-11 15:00",
+            city:"Sydney"
+        },
+        arrival:{
+            IATA:"LAX",
+            time:"2016-10-12 16:00",
+            city:"Los Angeles"
+        }
+    };
+
+    var x = stooge;
+    x.nickname = 'Curly';
+    var nick = stooge.nickname;
+    console.log(nick);
+
+    //原型链
+    if(typeof Object.beget !== 'function'){
+        Object.create = function(o){
+            var F = function(){};
+            F.prototype = o;
+            return new F();
+        }
+    }
+
+    var another_stooge = Object.create(stooge);
+    stooge.profession='actor';
+    console.log(another_stooge.profession);
+
+    var name;
+    for (name in another_stooge){
+        if(typeof another_stooge[name] !== 'function'){
+            document.writeln(name+":"+another_stooge[name]+"<br/>");
+        }
+    }
+    //仅删对象属性，不删除原型链
+    delete another_stooge.nickname;
+    console.log(another_stooge.nickname);
+
+    //函数对象
+    var add = function(a,b){
+        return a+b;
+    };
+
+    var myObject = {
+        value:0,
+        increment:function(inc){
+            this.value += typeof inc === 'number'?inc:1;
+        }
+    };
+    //方法调用模式
+    myObject.increment();
+    document.writeln(myObject.value);
+    document.writeln("<br/>");
+    myObject.increment(2);
+    document.writeln(myObject.value);
+    //函数调用模式
+    myObject.double = function(){
+        var that = this;
+        var helper = function(){
+            that.value = add(that.value,that.value);
+        };
+        helper();
+    }
+    document.writeln("<br/>");
+    myObject.double();
+    document.writeln(myObject.value);
+    //构造器调用模式
+    var Quo = function(string){
+        this.status = string;
+    };
+    Quo.prototype.get_status = function(){
+        return this.status;
+    };
+    document.writeln("<br/>");
+    var myQuo = new Quo("confused");
+    document.writeln(myQuo.get_status());
+
+    //Apply调用模式
+    var array = [3,4];
+    var sum = add.apply(null,array);
+
+    var statusObject = {
+        status:"A-OK"
+    };
+
+    var status = Quo.prototype.get_status.apply(statusObject);
+    document.writeln("<br/>");
+    document.writeln(status);
+document.writeln("<br/>");
+    //扩充类型的功能
+    Function.prototype.method = function(name,func){
+        this.prototype[name] = func;
+        return this;
+    };
+    Number.method("integer",function(){
+        return Math[this<0?'ceil':'floor'](this);
+    });
+    document.writeln((-10/3).integer());
+    document.writeln("<br/>");
+
+    String.method("trim",function(){
+        return this.replace(/^\s+|\s+$/g,'')
+    });
+    document.writeln('"'+"   neat   ".trim()+'"');
+    document.writeln("<br/>");
+
+
+    //递归
+    //汉诺塔
+    var hanoi = function(disc,src,aux,dst){
+        if(disc>0){
+            hanoi(disc-1,src,dst,aux);
+            document.writeln('Move disc '+disc+' from '+src+' to '+dst+"<br/>");
+            hanoi(disc-1,aux,src,dst);
+        }
+    }
+    hanoi(3,'Src','Aux','Dst');
+
+    //尾递归
+    var factorial = function factorial(i,a){
+        a = a||1;
+        if(i<2){
+            return a;
+        }
+        return factorial(i-1,a*i);
+    }
+    document.writeln(factorial(4));
+    document.writeln("<br/>");
+
+    //递归遍历dom
+    var walk_the_DOM = function walk(node,func){
+        func(node);
+        node = node.firstChild;
+        while(node){
+            walk(node,func);
+            node = node.nextSibling;
+        }
+    };
+
+    var getElementsByAttribute = function(att,value){
+        var results = [];
+        walk_the_DOM(document.body,function(node){
+            var actual = node.nodeType === 1 && node.getAttribute(att);
+            if(typeof actual === 'string' && (actual === value || typeof value !== 'string')){
+                results.push(node);
+            }
+        });
+        return results;
+    };
+
+
+
+
+    </script>
+    </body>
+</html>
