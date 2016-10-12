@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <button name="tests">1</button>
+    <button name="tests">2</button>
+    <button name="tests">3</button>
+
+    <script type="text/javascript">
+    var foo = function(){
+        var a = 3,b=5;
+        var bar = function(){
+            var b = 7,c = 11;
+            //此时，a为3，b为7，c为11
+            a+=b+c;
+            //此时，a为21，b为7，c为11
+        };
+        //此时，a为3，b为5，而c还没有定义
+        bar();
+        //此时，a为21，b为5
+    };
+
+    /* 闭包 */
+    var myObject = (function(){
+        var value = 0;
+        return{
+            increment:function(inc){
+                value += typeof inc === 'number'?inc:1;
+            },
+            getValue:function(){
+                return value;
+            }
+        };
+    }());
+
+    var quo = function(status){
+        return {
+            get_status:function(){
+                return status;
+            }
+        };
+    };
+
+    var myQuo = quo("amazed");
+
+    document.writeln(myQuo.get_status());
+
+    //背景色变色
+    var fade = function(node){
+        var level = 1;
+        var step = function(){
+            var hex = level.toString(16);
+            node.style.backgroundColor="#FFFF"+hex+hex;
+            if(level<15){
+                level +=1;
+                setTimeout(step,100);
+            }
+        };
+        setTimeout(step, 100);
+    };
+    fade(document.body);
+
+    var tests = document.getElementsByName("tests");
+    // 糟糕的实现
+    // var add_the_handlers = function(nodes){
+    //     var i;
+    //     for(i=0;i<nodes.length;i+=1){
+    //         nodes[i].onclick = function(e){
+    //             alert(i);
+    //         };
+    //     }
+    // };
+    //改良的实现
+    var add_the_handlers = function(nodes){
+        var helper = function(i){
+            return function(e){
+                alert(i);
+            };
+        };
+        var i;
+        for(i=0;i<nodes.length;i+=1){
+            nodes[i].onclick=helper(i);
+        }
+    };
+    add_the_handlers(tests);
+
+    Function.prototype.method = function(name,func){
+        this.prototype[name] = func;
+        return this;
+    };
+
+    /* 模块 */
+    String.method('deentityify',function(){
+        var entity = {
+            quot:'"',
+            lt:'<',
+            gt:'>'
+        };
+
+        return function(){
+            //这里才是deentityify方法，只有他能得到entity对象
+            return this.replace(/&([^&;]+);/g,
+                function(a,b){
+                    var r = entity[b];
+                    return typeof r==='string'?r:a;
+                }
+            );
+        };
+    }());
+
+    document.writeln('&lt;&quot;&gt;'.deentityify());
+
+    //一个产生序列号的对象
+    var serial_maker = function(){
+        var prefix = '';
+        var seq = 0;
+        return {
+            set_prefix:function(p){
+                prefix = String(p);
+            },
+            set_seq:function(s){
+                seq = s;
+            },
+            gensym:function(){
+                var result = prefix+seq;
+                seq+=1;
+                return result;
+            }
+        };
+    };
+
+    var seqer = serial_maker();
+    seqer.set_prefix('Q');
+    seqer.set_seq(1000);
+    var unique = seqer.gensym();
+
+    document.writeln("<br/>");
+    document.writeln(unique);
+
+    /* 柯里化 (局部调用) */
+    Function.method('curry',function(){
+        var slice = Array.prototype.slice,
+            args = slice.apply(arguments),
+            that = this;
+        return function(){
+            return that.apply(null,args.concat(slice.apply(arguments)));
+        };
+    });
+
+    var add = function(){};
+    var add1 = add.curry(1);
+    document.writeln("<br/>");
+    document.writeln(add1(6));
+
+    /* 记忆 */
+    //斐波那契数列
+    // var fibonacci = function(){
+    //     var memo = [0,1];
+    //     var fib = function(n){
+    //         var result = memo[n];
+    //         if (typeof result !== 'number'){
+    //             result = fib(n-1)+fib(n-2);
+    //             memo[n] = result;
+    //         }
+    //         return result;
+    //     };
+    //     return fib;
+    // }();
+    // 使用一个带记忆功能的函数
+    var memoizer = function(memo,formula){
+        var recur = function(n){
+            var result = memo[n];
+            if(typeof result !== 'number'){
+                result = formula(recur,n);
+                memo[n] = result;
+            }
+            return result;
+        };
+        return recur;
+    };
+    var fibonacci = memoizer([0,1],function(recur,n){
+        return recur (n-1)+recur(n-2)
+    });
+    document.writeln("<br/>");
+    for(var i=0;i<=10;i++){
+        document.writeln("//"+i+": "+fibonacci(i));
+    }
+
+    //阶乘
+    var jiecheng = memoizer([1,1],function(recur,n){
+            return recur(n-1)*n;
+    });
+    document.writeln("<br/>");
+    for(var i=0;i<=10;i++){
+        document.writeln("//"+i+": "+jiecheng(i));
+    }
+
+    /**
+     * 继承
+     */
+    /* 伪类 */
+    var Mammal = function(name){
+        this.name = name;
+    };
+
+    Mammal.prototype.get_name = function(){
+        return this.name;
+    };
+
+    Mammal.prototype.says = function(){
+        return this.saying || '';
+    };
+
+    var myMammal = new Mammal('Herb the Mammal');
+    var name = myMammal.get_name();
+    document.writeln("<br/>");
+    document.writeln(name);
+
+    // var Cat = function(name){
+    //     this.name = name;
+    //     this.saying = 'meow';
+    // };
+    // Cat.prototype = new Mammal();
+
+    // Cat.prototype.purr = function(n){
+    //     var i,s='';
+    //     for(i=0;i<n;i++){
+    //         if(s){
+    //             s++'-';
+    //         }
+    //         s+='r';
+    //     }
+    //     return s;
+    // };
+    // Cat.prototype.get_name = function(){
+    //     return this.says()+' '+this.name+' '+this.says();
+    // };
+
+    
+
+    Function.method('inherits',function(Parent){
+        this.prototype = new Parent();
+        return this;
+    });
+    var Cat = function(name){
+        this.name = name;
+        this.saying = 'meow';
+    }
+    .inherits(Mammal)
+    .method('purr',function(n){
+        var i,s='';
+        for(i=0;i<n;i++){
+            if(s){
+                s+='-';
+            }
+            s+='r';
+        }
+        return s;
+    })
+    .method('get_name',function(){
+        return this.says()+' '+this.name+' '+this.says();
+    });
+    var myCat = new Cat("Henrietta");
+    var says = myCat.says();
+    var purr = myCat.purr(5);
+    var name = myCat.get_name();
+    document.writeln("<br/>");
+    document.writeln(says+"|"+purr+"|"+name);
+
+
+
+    </script>
+    
+    </body>
+</html>
