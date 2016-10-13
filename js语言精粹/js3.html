@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        
+        /* 原型 */
+        var myMammal = {
+            name:'Herb the Mammal',
+            get_name:function(){
+                return this.name;
+            },
+            says:function(){
+                return this.saying || '';
+            }
+        };
+
+        var myCat = Object.create(myMammal);
+        myCat.name = 'Henrietta';
+        myCat.saying = 'meow';
+        myCat.purr = function(n){
+            var i,s='';
+            for(i=0;i<n;i++){
+                if(s){
+                    s+='-';
+                }
+                s+='r';
+            }
+            return s;
+        };
+        myCat.get_name = function(){
+            return this.says+' '+this.name+' '+this.says;
+        };
+
+        document.writeln(myCat.get_name());
+
+        var block = function(){
+            var oldScope = scope;
+            scope = Object.create(scope);
+
+            advance('{');
+            parse(scope);
+            advance('}');
+            scope = oldScope;
+
+        };
+
+        /* 函数化 */
+        //函数化构造器的伪码
+        // var constructor = function(spec,my){
+        //     var that,其他的私有实例变量;
+        //     my = my || {};
+        //     把共享的变量和函数添加到my中
+        //     that = 一个新对象
+        //     添加给that的特权方法
+        //     return that;
+        // };
+
+        var mammal = function(spec){
+            var that = {};
+            that.get_name = function(){
+                return spec.name;
+            };
+            that.says = function(){
+                return spec.saying || '';
+            };
+            return that;
+        };
+        var myMammal1 = mammal({name:'Herb'});
+
+        var cat = function(spec){
+            spec.saying = spec.saying || 'meow';
+            var that = mammal(spec);
+            that.purr = function(n){
+                var i,s='';
+                for(i=0;i<n;i++){
+                    if(s){
+                        s+='-';
+                    }
+                    s+='r';
+                }
+                return s;
+            };
+            that.get_name = function(){
+                return that.says()+' '+spec.name+' '+that.says();
+            };
+            return that;
+        };
+        var myCat1 = cat({name:'Henrietta'});
+        document.writeln("<br/>");
+        document.writeln(myCat1.get_name());
+        document.writeln(myCat1.purr(10));
+
+Function.prototype.method = function(name,func){
+        this.prototype[name] = func;
+        return this;
+    };
+
+        Object.method('superior',function(name){
+            var that = this,
+                method = that[name];
+            return function() {
+                return method.apply(that,arguments);
+            };
+        });        
+
+        var coolcat = function(spec){
+            var that = cat(spec),
+                super_get_name = that.superior('get_name');
+                that.get_name = function(n){
+                    return 'like '+super_get_name()+' baby';
+                };
+                return that;
+        };
+        var myCoolCat = coolcat({name:'Bix'});
+        var name = myCoolCat.get_name();
+        document.writeln("<br/>");
+        document.writeln(name);
+
+        /* 部件 */
+        var eventuality = function(that){
+            var registry = {};
+
+            that.fire = function(event){
+                var array,
+                    func,
+                    i,
+                    type = typeof event === 'string'?event:event.type;
+                    if(registry.hasOwnProperty(type)){
+                        array = registry[type];
+                        for(i=0;i<array.length;i++){
+                            handler = array[i];
+                            func = handler.method;
+                            if(typeof func === 'string'){
+                                func = this[func];
+                            }
+                            func.apply(this,
+                                handler.parameters || [event]);
+                        }
+                    }
+            };
+            that.on = function(type,method,parameters){
+                var handler = {
+                    method:method,
+                    parameters:parameters
+                };
+                if(registry.hasOwnProperty(type)){
+                    registry[type].push(handler);
+                }else{
+                    registry[type] = [handler];
+                }
+                return this;
+            };
+            return that;
+        };
+        //eventuality(that);
+        //
+        
+        /**
+         * 数组
+         */
+        /* 数组字面量 */
+        var empty = [];
+        var numbers = ['zero','one','two','three','four','five','six','seven','eight','nine'];
+
+        console.log(empty[1]);
+        console.log(numbers[1]);
+        console.log(empty.length);
+        console.log(numbers.length);
+
+        var numbers_object = {0:'zero',1:'one'}//对象字面量，与numbers类似
+
+        /* 数组方法 */
+        Array.method('reduce',function(f,value){
+            var i;
+            for(i=0;i<this.length;i++){
+                value = f(this[i],value);
+            }
+            return value;
+        });
+
+        var data = [4,8,15,16,23,42];
+        var add = function(a,b){
+            return a+b;
+        };
+        var mult = function(a,b){
+            return a*b;
+        };
+
+        var sum = data.reduce(add,0);
+        var product = data.reduce(mult,1);
+        console.log(sum);
+        console.log(product);
+
+    data.total = function(){
+        return this.reduce(add,0);
+    }
+    total = data.total();
+    console.log(total);
+
+    /**
+     * 正则表达式
+     */
+    var parse_url = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z])(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+    var url = "http://www.ora.com:80/goodparts?q#fragment";
+
+    var result = parse_url.exec(url);
+
+    var names = ['url','scheme','slash','host','port','path','query','hash'];
+
+    var blanks = '    ';
+    var i;
+    // for(i=0;i<names.length;i++){
+    //     document.writeln(names[i]+':'+blanks.substring(names[i].length),result[i]);
+    // }
+
+    </script>
+    </body>
+</html>
