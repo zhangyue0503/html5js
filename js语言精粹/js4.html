@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        Function.prototype.method = function(name,func){
+            this.prototype[name] = func;
+            return this;
+        };
+        Function.method('bind',function(that){
+            var method = this,
+                slice = Array.prototype.slice,
+                args = slice.apply(arguments,[1]);
+            return function(){
+                return method.apply(that,
+                    args.concat(slice.apply(arguments,[0])));
+            };
+        });
+        var x = function(){
+            return this.value;
+        }.bind({value:666});
+        alert(x());
+
+        document.writeln(Math.PI.toExponential(0)+"<br/>");
+        document.writeln(Math.PI.toExponential(1)+"<br/>");
+        document.writeln(Math.PI.toExponential(2)+"<br/>");
+
+        
+    </script>
+    </body>
+</html>

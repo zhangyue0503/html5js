@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        //函数声明
+        var a = 2;
+        function foo(){
+            var a = 3;
+            console.log(a);
+        }
+        foo();
+        console.log(a);
+
+
+        //函数表达式
+        (function foo(){
+                var a = 3;
+                console.log(a);
+        })();
+        console.log(a);
+
+        //let关键字
+        {
+            let j;
+            for(j=0;j<10;j++){
+                let i = j;
+                console.log(i);
+            }
+        }
+        // console.log(j);
+    </script>
+    </body>
+</html>
