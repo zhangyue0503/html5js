@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        //闭包
+        // function foo(){
+        //     var a = 2;
+        //     function bar(){
+        //         console.log(a);
+        //     }
+        //     return bar;
+        // }
+        // var baz = foo();
+        // baz();
+        //
+        // var fn;
+        // function foo(){
+        //     var a = 2;
+        //     function baz(){
+        //         console.log(a);
+        //     }
+        //     fn = baz;
+        // }
+        // function bar(){
+        //     fn(); //这是就是闭包
+        // }
+        // foo(); //a变量应该是用过了，垃圾回收过
+        // //但是利用闭包，依然存在
+        // //bar依然保持着foo的内部作用域及值
+        // bar(); //2
+        //
+        // //输出5个6
+        // for(var i=1;i<=5;i++){
+        //     setTimeout(function timer(){
+        //         console.log(i);
+        //     }, i*1000)
+        // }
+        // //输出5个6
+        // for(var i=1;i<=5;i++){
+        //     (function(){    //一个空的作用域
+        //         setTimeout(function timer(){
+        //             console.log(i);
+        //         }, i*1000);
+        //     })()
+        // }
+        // //输出1-5
+        // for(var i=1;i<=5;i++){
+        //     (function(){
+        //         var j = i;//需要包含有实质内容的作用域
+        //         setTimeout(function timer(){
+        //             console.log(j);
+        //         }, j*1000);
+        //     })()
+        // }
+        // //改进后的
+        // for(var i=1;i<=5;i++){
+        //     (function(j){
+        //         setTimeout(function timer(){
+        //             console.log(j);
+        //         }, j*1000);
+        //     })(i)
+        // }
+        // //let关键字
+        // for(let i=1;i<=5;i++){
+        //     setTimeout(function timer(){
+        //         console.log(i);
+        //     }, i*1000);
+        // }
+        //
+        // /* 模块 */
+        // function CoolModule(){
+        //   var something = "cool";
+        //   var another = [1,2,3];
+        //
+        //   function doSomething(){
+        //     console.log(something);
+        //   }
+        //
+        //   function doAnother(){
+        //     console.log(another.join(" ! "));
+        //   }
+        //   return {
+        //     doSomething:doSomething,
+        //     doAnother:doAnother
+        //   };
+        // }
+        //
+        // var foo = CoolModule();
+        // foo.doSomething();
+        // foo.doAnother();
+
+        // var foo = (function(id){
+        //   function change(){
+        //     publicAPI.identify = identify2;
+        //   }
+        //   function identify1(){
+        //     console.log(id);
+        //   }
+        //   function identify2(){
+        //     console.log(id.toUpperCase());
+        //   }
+        //   //公共api
+        //   var publicAPI = {
+        //     change:change,
+        //     identify:identify1
+        //   };
+        //   return publicAPI;
+        // })("foo module");
+        //
+        // foo.identify();
+        // foo.change();
+        // foo.identify();
+
+
+        //模块加载器
+        var MyModules = (function Manager(){
+          var modules = {};
+
+          function define(name,deps,impl){
+            for(var i=0;i<deps.length;i++){
+              deps[i] = modules[deps[i]];
+            }
+            modules[name] = impl.apply(impl,deps);
+          }
+
+          function get(name){
+            return modules[name];
+          }
+
+          return {
+            define:define,
+            get:get
+          };
+
+        })();
+
+        MyModules.define("bar",[],function(){
+          function hello(who){
+            return "Let me introduce: "+who;
+          }
+          return {
+            hello:hello
+          };
+        });
+        MyModules.define("foo",["bar"],function(bar){
+            var hungry = "hippo";
+
+            function awesome(){
+                console.log(bar.hello(hungry).toUpperCase());
+            }
+            return {
+                awesome:awesome
+            };
+        });
+
+        var bar = MyModules.get("bar");
+        var foo = MyModules.get("foo");
+
+        console.log(
+            bar.hello("hippo")
+        );
+        foo.awesome();
+
+
+    </script>
+    </body>
+</html>

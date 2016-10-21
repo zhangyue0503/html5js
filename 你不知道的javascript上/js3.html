@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        /* this词法 */
+        //cool()丢失了与this之间的绑定
+        var obj = {
+            id:"awesome",
+            cool:function coolFn(){
+                console.log(this.id);
+            }
+        };
+        var id = "not awesome";
+        obj.cool(); //awesome
+        setTimeout(obj.cool,100); //not awesome
+        //箭头函数
+        var obj = {
+            count:0,
+            cool:function coolFn(){
+                if(this.count < 1){
+                    setTimeout(()=>{
+                        this.count++;
+                        console.log("awesome?");
+                    },100);
+                }
+            }
+        }
+        obj.cool();
+        //使用bind()方式解决this问题
+        var obj = {
+            count:0,
+            cool:function coolFn(){
+                if(this.count<1){
+                    setTimeout(function timer(){
+                        this.count++;
+                        console.log("more awesome");
+                    }.bind(this), 100)
+                }
+            }
+        };
+        obj.cool();
+
+        /* 关于this */
+        function identify(){
+            return this.name.toUpperCase();
+        }
+        function speak(){
+            var greeting = "Hello, I'm "+identify.call(this);
+            console.log(greeting);
+        }
+
+        var me = {
+            name:"Kyle"
+        };
+        var you = {
+            name:"Reader"
+        };
+
+        identify.call(me);
+        identify.call(you);
+
+        speak.call(me);
+        speak.call(you);
+
+    </script>
+    </body>
+</html>
