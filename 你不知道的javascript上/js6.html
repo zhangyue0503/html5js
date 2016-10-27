@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    /* 对象 */
+
+    //浅复制
+    function anotherFunction(){}
+    var anotherObject = {
+        c:true
+    };
+    var anotherArray = [];
+    var myObject = {
+        a:2,
+        b:anotherObject,
+        c:anotherArray,
+        d:anotherFunction
+    };
+    anotherArray.push(anotherObject,myObject);
+
+    var newObj = Object.assign({},myObject);
+    console.log(newObj.b === anotherObject);
+    console.log(newObj.c === anotherArray);
+    console.log(newObj.d === anotherFunction);
+
+    //属性描述符
+    var myObject = {
+        a:2
+    };
+
+    var opro = Object.getOwnPropertyNames(myObject,"a");
+    console.log(opro);
+
+    var myObject1 = {};
+    Object.defineProperty(myObject1,"a",{
+        value:2,
+        writable:false,
+        configurable:true,
+        enumerable:true
+    });
+    console.log(myObject1.a);
+    myObject1.a = 3;
+    console.log(myObject1.a);
+    </script>
+    </body>
+</html>

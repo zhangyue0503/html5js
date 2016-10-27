@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    /* 被忽略的this */
+    function foo(){
+        console.log(this.a);
+    }
+
+    var a = 2;
+    var o = {a:3,foo:foo};
+    var p = {a:4};
+
+    o.foo(); //3
+    (p.foo = o.foo)();//2
+    //p.foo = o.foo的返回值是foo()，不是o.foo，所以会应用默认绑定
+    //如果是严格模式，this是undefined
+
+    
+
+    </script>
+    </body>
+</html>
