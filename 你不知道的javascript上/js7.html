@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    //不变性
+    //禁止扩展
+    var myObject = {
+        a:2
+    };
+    Object.preventExtensions(myObject);
+    myObject.b = 3;
+    console.log(myObject.b);
+
+    //getter,setter
+    var myObject1 = {
+        get a(){
+            return this._a_;
+        },
+        set a(val){
+            this._a_ = val;
+        }
+    };
+
+    Object.defineProperty(myObject1,"b",{
+        //给b设置一个getter
+        get:function(){return this.a *2;},
+        enumerable:true
+    });
+    console.log(myObject1.a);
+    myObject1.a = 3;
+    console.log(myObject1.a);
+    console.log(myObject1.b);
+
+    //枚举--存在性
+    var myObject2 = {};
+
+    Object.defineProperty(myObject2,"a",{enumerable:true,value:2});
+    Object.defineProperty(myObject2,"b",{enumerable:false,value:3});
+
+    console.log(myObject2.b);
+    console.log(("b" in myObject2));
+    console.log(myObject2.hasOwnProperty("b"));
+
+    for(var k in myObject2){
+        console.log(k,myObject2[k]);
+    }
+
+    //遍历
+    //数组迭代器
+    var myArray = [1,2,3];
+    var it = myArray[Symbol.iterator]();
+
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+
+    //手动添加@@iterator迭代器
+    var myObject3 = {
+        a:2,
+        b:3
+    };
+
+    Object.defineProperty(myObject3,Symbol.iterator,{
+        enumerable:false,
+        writable:false,
+        configurable:true,
+        value:function(){
+                var o = this;
+                var idx = 0;
+                var ks = Object.keys(o);
+                return {
+                    next:function(){
+                        return {
+                            value:o[ks[idx++]],
+                            done:(idx>ks.length)
+                        }
+                    }
+                }
+        }
+    });
+    var it2 = myObject3[Symbol.iterator]();
+    console.log(it2.next());
+    console.log(it2.next());
+    console.log(it2.next());
+
+    for(var v of myObject3){
+        console.log(v);
+    }
+
+    </script>
+    </body>
+</html>
