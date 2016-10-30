@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+    /* 原型 */
+    //隐匿屏蔽
+    var anotherObject = {a:2};
+
+    var myObject = Object.create(anotherObject);
+
+    console.log(anotherObject.a);
+    console.log(myObject.a);
+
+    console.log(anotherObject.hasOwnProperty("a")); //true
+    console.log(myObject.hasOwnProperty("a")); //false
+
+    myObject.a++; //隐式屏蔽
+
+    console.log(anotherObject.a); //2
+    console.log(myObject.a);//3
+
+    console.log(myObject.hasOwnProperty("a"));    //true
+
+    //构造函数
+    function Foo(){
+        
+    }
+    console.log(Foo.prototype.constructor === Foo);
+    var a = new Foo();
+    console.log(a.constructor === Foo);
+
+    //原型继承
+    function Foo(name){
+        this.name = name;
+    }
+
+    Foo.prototype.myName = function(){
+        return this.name;
+    };
+
+    function Bar(name,label){
+        Foo.call(this,name);
+        this.label = label;
+    }
+
+    Bar.prototype = Object.create(Foo.prototype);
+
+    Bar.prototype.myLabel = function(){
+        return this.label;
+    };
+
+    var a = new Bar("a","obj a");
+    console.log(a.myName());
+    console.log(a.myLabel());
+
+    //polyfill模拟Object.create代码
+    if(!Object.create){
+        Object.create = function(o){
+            function F(){}
+            F.prototype = o;
+            return new F();
+        };
+    }
+
+    
+
+
+    </script>
+    </body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+    </head>
+    <body>
+    <script type="text/javascript">
+        /* 混合对象 类 */
+        //显式混入
+        // function mixin(sourceObj,targetObj){
+        //     for(var key in sourceObj){
+        //         if(!(key in targetObj)){
+        //             targetObj[key] = sourceObj[key];
+        //         }
+        //     }
+        //     return targetObj;
+        // }
+
+        // var Vehicle = {
+        //     engines:1,
+        //     igition:function(){
+        //         console.log("Turning on my engine.");
+        //     },
+        //     drive:function(){
+        //         this.igition();
+        //         console.log("Steering and moving forward!");
+        //     }
+        // };
+
+        // var Car = mixin(Vehicle,{
+        //     wheels:4,
+        //     drive:function(){
+        //         Vehicle.drive.call(this);
+        //         console.log("Rolling on all "+this.wheels+" wheels!");
+        //     }
+        // });
+
+        //寄生继承
+        function Vehicle(){
+            this.engines = 1;
+        }
+        Vehicle.prototype.ignition = function(){
+            console.log("Turning on my engine.")
+        };
+        Vehicle.prototype.drive = function(){
+            this.ignition();
+            console.log("Steering and moving forward!");
+        };
+        //寄生类car
+        function Car(){
+            var car = new Vehicle(); //car是一个Vehicle
+            car.wheels = 4;
+            var vehDrive = car.drive; //保存drive的特殊引用
+            car.drive = function(){   //重写Vehicle::drive()
+                vehDrive.call(this);
+                console.log("Rolling on all "+this.wheels+" wheels!");
+            }
+            return car;
+        }
+        var myCar = new Car();
+        myCar.drive();
+        
+    </script>
+    </body>
+</html>
