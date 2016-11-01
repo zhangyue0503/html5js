@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+    /*委托*/
+    Task = {
+        setID:function(ID){this.id=ID;},
+        outputID:function(){console.log(this.id);}
+    };
+    XYZ = Object.create(Task);
+    XYZ.prepareTask = function(ID,Label){
+        this.setID(ID);
+        this.label = Label;
+    };
+    XYZ.outputTaskDetails = function(){
+        this.outputID();
+        console.log(this.label);
+    };
+    XYZ.prepareTask("111","222");
+    XYZ.outputTaskDetails();
+
+    function Foo(){}
+    var a1 = new Foo();
+
+    console.log(a1.constructor);
+    console.log(a1.constructor.name);
+
+    //比较思维模型
+    //面向对象方式
+    function Foo(who){
+        this.me = who;
+    }
+    Foo.prototype.identify = function(){
+        return "I am "+this.me;
+    };
+
+    function Bar(who){
+        Foo.call(this,who);
+    }
+    Bar.prototype = Object.create(Foo.prototype);
+    Bar.prototype.speak = function(){
+        alert("Hello, "+this.identify()+".");
+    };
+
+    var b1 = new Bar("b1");
+    var b2 = new Bar("b2");
+
+    b1.speak();
+    b2.speak();
+
+    //对象关联方式
+    Foo1 = {
+        init:function(who){
+            this.me = who;
+        },
+        identify:function(){
+            return "I am "+this.me;
+        }
+    };
+    Bar1 = Object.create(Foo1);
+
+    Bar1.speak = function(){
+        alert("Hello, "+this.identify()+".")
+    };
+    var b11 = Object.create(Bar1);
+    b11.init("b11");
+    var b22 = Object.create(Bar1);
+    b22.init("b22");
+
+    b11.speak();
+    b22.speak();
+
+    //面向对象 - 按扭类
+    function Widget(width,height){   //父类
+        this.width = width || 50;
+        this.height = height || 50;
+        this.$elem = null;
+    }
+    Widget.prototype.render = function($where){
+        if(this.$elem){
+            this.$elem.css({
+                width:this.width+"px",
+                height:this.height+"px"
+            }).appendTo($where);
+        }
+    };
+
+    function Button(width,height,label){ //子类
+        Widget.call(this,width,height);
+        this.label = label || "Default";
+        this.$elem = $("<buttom>").text(this.label);
+    }
+    Button.prototype = Object.create(Widget.prototype);
+    Button.prototype.render = function($where){
+        Widget.prototype.render.call(this,$where);
+        this.$elem.click(this.onClick.bind(this));
+    };
+    Button.prototype.onClick = function(evt){
+        console.log("Button '"+this.label+"' clicked!");
+    };
+    $(document).ready(function(){
+        var $body = $(document.body);
+        var btn1 = new Button(125,30,"Hello");
+        var btn2 = new Button(150,40,"Hello");
+
+        btn1.render($body);
+        btn2.render($body);
+    });
+
+    //es6中的class语法实现上面按扭类
+//    class Widget1{
+//        constructor(width,height){
+//            this.width = width||50;
+//            this.height = height||50;
+//            this.$elem = null;
+//        }
+//        render($where){
+//            if(this.$elem){
+//                this.$elem.css({
+//                    width:this.width+"px",
+//                    height:this.height+"px"
+//                }).appendTo($where);
+//            }
+//        }
+//    }
+//    class Button1 extends Widget1{
+//        constructor(width,height,label){
+//            super(width,height);
+//            this.label = label||"Default";
+//            this.$elem = $("<Button>").text(this.label);
+//        }
+//        render($where){
+//            super($where);
+//            this.$elem.click(this.onClick.bind(this));
+//        }
+//        onClick(evt){
+//            console.log("Button '"+this.label+"' clicked!");
+//        }
+//    }
+//    $(document).ready(function(){
+//        var $body = $(document.body);
+//        var btn3 = new Button(225,30,"Hello2");
+//        var btn4 = new Button(250,40,"Hello2");
+//
+//        btn3.render($body);
+//        btn4.render($body);
+//    });
+
+    //对象关联方式 - 委托控件对象
+    var Widget2 = {
+        init:function(width,height){
+            this.width = width||50;
+            this.height = height||50;
+            this.$elem = null;
+        },
+        insert:function($where){
+            if(this.$elem){
+                this.$elem.css({
+                    width:this.width+"px",
+                    height:this.height+"px"
+                }).appendTo($where);
+            }
+        }
+    };
+    var Button2 = Object.create(Widget2);
+
+    Button2.setup = function(width,height,label){
+        //委托调用
+        this.init(width,height);
+        this.label = label||"Default";
+        this.$elem = $("<button>").text(this.label);
+    };
+    Button2.build = function($where){
+        //委托调用
+        this.insert($where);
+        this.$elem.click(this.onClick.bind(this));
+    };
+    Button2.onClick = function(evt){
+        console.log("Button '"+this.label+"' clicked!");
+    };
+    $(document).ready(function(){
+        var $body = $(document.body);
+        var btn3 = Object.create(Button2);
+        btn3.setup(225,30,"Hello2");
+        var btn4 = Object.create(Button2);
+        btn4.setup(250,40,"Hello2");
+
+        btn3.build($body);
+        btn4.build($body);
+    });
+
+
+</script>
+</body>
+</html>
