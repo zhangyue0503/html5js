@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //理解js的浮点数
+    console.log(8|1);
+    console.log((8).toString(2));
+    console.log((1).toString(2));
+    console.log(parseInt("1001",2));
+
+    console.log(0.1+0.2);
+
+    //隐式的强制转换valueof和tostring
+    var obj = {
+        toString:function(){
+            return "[object MyObject]";
+        },
+        valueOf:function(){
+            return 17;
+        }
+    };
+    console.log("object: "+obj);
+
+    //原始类型与封装对象
+    var s = new String("hello");
+    console.log(typeof "hello"); //string
+    console.log(typeof s); //object
+
+    var s1 = new String("hello");
+    var s2 = new String("hello");
+    console.log(s1 === s2);
+
+
+
+</script>
+</body>
+</html>
