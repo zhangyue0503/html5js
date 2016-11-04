@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //不使用var的局部变量
+    function test(){
+        var a = 1;
+        b = 2;
+    }
+    test();
+    console.log(b);   //2
+//    console.log(a);   //Uncaught ReferenceError: a is not defined
+
+    //with语句
+    function f(x,y){
+        with(Math){
+            return min(round(x),sqrt(y));
+        }
+    }
+    console.log(f(2,3));
+    //with失效
+    Math.x = 0;
+    Math.y = 0;
+    console.log(f(2,9));
+
+    //闭包
+    function makeSandwich(){
+        var magicIngredient = "peanut butter";
+        function make(filling){
+            return magicIngredient+" and "+filling;
+        }
+        return make("jelly");
+    }
+    console.log(makeSandwich());
+//    function sandwichMaker(){
+//        var magicIngredient = "peanut butter";
+//        function make(filling){
+//            return magicIngredient+" and "+filling;
+//        }
+//        return make("jelly");
+//    }
+    //函数表达式创建闭包
+    function sandwichMaker(magicIngredient){
+        return function(filling){
+            return magicIngredient+" and "+filling;
+        }
+    }
+    var f = sandwichMaker("peanut butter");
+    console.log(f("jelly"));
+
+    console.log(f("bananas"));
+    console.log(f("marshmallows"));
+    //闭包可以更新外部变量的值
+    function box(){
+        var val = undefined;
+        return {
+            set:function(newVal){val = newVal;},
+            get:function(){return val;},
+            type:function(){return typeof val;}
+        };
+    }
+    var b = box();
+    console.log(b.type());
+    b.set(98.6);
+    console.log(b.get());
+    console.log(b.type());
+
+    //词法作用域
+    function isWinner(player,others){
+        var highest = 0;
+        for(var i=0,n=others.length;i<n;i++){
+            var player = others[i]; //会覆盖player
+            if(player.score > highest){
+                highest = player.score;
+            }
+        }
+        return player.score = highest;
+    }
+
+
+
+
+
+
+</script>
+</body>
+</html>
