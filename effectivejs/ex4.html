@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    //prototype、getPrototypeOf、__proto__
+    function User(name, passwordHash) {
+        this.name = name;
+        this.passwordHash = passwordHash;
+    }
+
+    User.prototype.toString = function(){
+        return "[User "+this.name+"]";
+    };
+    User.prototype.checkPassword = function(password) {
+        return hash(password) === this.passwordHash;
+    };
+    var u = new User("sfalken","");
+
+    console.log(Object.getPrototypeOf(u) === User.prototype);
+
+    console.log(u.__proto__ === User.prototype);
+
+
+    //利用__proto__实现getPrototypeOf方法
+    if(typeof Object.getPrototypeOf === "undefined"){
+        Object.getPrototypeOf = function(obj){
+            var t = typeof obj;
+            if(!obj || (t !== "object" && t!=="function")){
+                throw new TypeError("not an object");
+            }
+            return obj.__proto__;
+        };
+    }
+
+    //单参数Object.create
+    if(typeof Object.create === "undefined"){
+        Object.create = function(prototype){
+            function C(){}
+            C.prototype = prototype;
+            return new C();
+        }
+    }
+    function User2(name,passwordHash){
+        var self = this instanceof User?this:Object.create(User.prototype);
+        self.name = name;
+        self.passwordHash = passwordHash;
+        return self;
+    }
+    var u2 =  User2("aaaaa","bbbbb");   //换成User打开下面的注释试试
+//    console.log(passwordHash);
+
+    //通过闭包存储私有数据
+    function User3(name,password){
+        this.toString = function(){
+            return "[User "+name+"]";
+        };
+        this.checkPassword = function(password){
+            return hash(password) === password;
+        };
+    }
+    var u3 = new User3("aaa3","bbbbb3");
+    console.log(u3.username); //undefined
+
+    //只将实例状态存储在实例对象中
+    function Tree(x){
+        this.value = x;
+        this.children = [];
+    }
+    Tree.prototype = {
+//        children:[],
+        addChild:function(x){
+            this.children.push(x);
+        }
+    };
+
+    var left = new Tree(2);
+    left.addChild(1);
+    left.addChild(3);
+
+    var right = new Tree(6);
+    right.addChild(5);
+    right.addChild(6);
+
+    console.log(right.children);
+
+    //this变量的隐式绑定问题
+    function CSVReader(separators){
+        this.separators = separators || [","];
+        this.regexp = new RegExp(this.separators.map(function(sep){
+            return "\\"+sep[0];
+        }).join("|"));
+    }
+    CSVReader.prototype.read = function(str){
+        var lines = str.trim().split(/\n/);
+        return lines.map(function(line){
+            return line.split(this.regexp)
+        }
+        .bind(this)  //试试不使用bind
+        );
+    };
+    var reader = new CSVReader();
+    console.log(reader.read("a,b,c\nd,e,f\n"));
+
+    //
+
+
+
+</script>
+</body>
+</html>

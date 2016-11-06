@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //绑定与赋值的区别
+    function wrapElements(a){
+        var result = [];
+        for(var i=0,n=a.length;i<n;i++){
+            result[i] = function() {return result[i];}
+        }
+        return result;
+    }
+    var wrapped = wrapElements([10,20,30,40,50]);
+    var f = wrapped[0];
+    console.log(f());  //undefined
+
+    //创建一个立即调用的嵌套函数
+    function wrapElements1(a){
+        var result = [];
+        for(var i=0,n=a.length;i<n;i++){
+            (function(){
+                var j = i;
+                result[i] = function(){return a[j];};
+            })();
+        }
+        return result;
+    }
+
+    var wrapped1 = wrapElements1([10,20,30,40,50]);
+    var f1 = wrapped1[0];
+    console.log(f1());
+
+    //局部块函数
+    function f2(){return "global";}
+
+    function test(x){
+        var g=f2,result = [];
+        if(x){
+            g = function (){return "local";}
+            result.push(g());
+        }
+        result.push(g());
+        return result;
+    }
+    console.log(test(true));
+    console.log(test(false));
+    //eval创建的局部变量
+    var y = "global";
+    function test2(src){
+        eval(src);
+        return y;
+    }
+    console.log(test2("var y = 'local';"));
+    console.log(test2("var z = 'local';"));
+
+    //间接eval
+    var x1 = "global1";
+    function test3(){
+        var x1 = "local3";
+        var f = eval;
+        return f("x1");
+    }
+    console.log(test3()); //global1
+    //直接eval
+    function test4(){
+        var x1 = "local4";
+        return eval("x1");
+    }
+    console.log(test4());   //local4
+
+    /*使用函数*/
+    function hello(){
+        return "hello, "+this.username;
+    }
+    var obj1 = {
+        hello:hello,
+        username:"Gordon Gekko"
+    };
+    var obj2 = {
+        hello:hello,
+        username:"Biff Tannen"
+    };
+    console.log(obj1.hello());
+    console.log(obj2.hello());
+
+    //高阶函数
+    //数组sort
+    function compareNumbers(x,y){
+        if(x<y){
+            return -1;
+        }
+        if(x>y){
+            return 1;
+        }
+        return 0;
+    }
+    console.log([3,1,4,1,5,9].sort(compareNumbers));
+
+    //es5引入的map方法
+    var names = ["Fred","Wilma","Pebbles"];
+    var upper = names.map(function(name){
+        return name.toUpperCase();
+    });
+    console.log(upper);
+
+    function buildString(n,callback){
+        var result = "";
+        for(var i=0;i<n;i++){
+            result += callback(i);
+        }
+        return result;
+    }
+
+    //当出现重复或相似代码时，考虑高阶函数抽象
+    var aIndex = "a".charCodeAt(0);
+    var alphabet = buildString(26,function(i){
+        return String.fromCharCode(aIndex+i);
+    });
+    console.log(alphabet);
+    var digits = buildString(10,function(i){
+        return i;
+    });
+    console.log(digits);
+    var random = buildString(8,function(){
+        return String.fromCharCode(Math.floor(Math.random()*26)+aIndex);
+    });
+    console.log(random);
+
+    //使用call
+    var table = {
+        entries:[],
+        addEntry:function(key,value){
+            this.entries.push({key:key,value:value});
+        },
+        forEach:function(f,thisArg){
+            var entries = this.entries;
+            for(var i=0,n=entries.length;i<n;i++){
+                var entry = entries[i];
+                f.call(thisArg,entry.key,entry.value,i);
+            }
+        }
+    };
+
+    //使用apply
+    var buffer = {
+        state:[],
+        append:function(){
+            for(var i =0,n=arguments.length;i<n;i++){
+                this.state.push(arguments[i]);
+            }
+        }
+    };
+
+    buffer.append("Hello,");
+    buffer.append("firstName"," ","lastNae","!");
+    console.log(buffer.state);
+
+    //使用arguments
+    function average(){
+        for(var i=0,sum=0,n=arguments.length;i<n;i++){
+            sum += arguments[i];
+        }
+        return sum /n;
+    }
+    console.log(average(2,5,9,8));
+
+    //不要修改arguments
+    function callMethod(obj,method){
+//        var shift = [].shift;
+//        shift.call(arguments);
+//        shift.call(arguments);
+        var args = [].splice.call(arguments,2);
+        return obj[method].apply(obj,args);
+    }
+    var obj = {
+        add: function (x, y) {
+            return x + y;
+        }
+    };
+    console.log(callMethod(obj,"add",17,25));
+
+    //使用变量保存arguments的引用
+//    function values(){
+//        var i=0,n=arguments.length;
+//        return {
+//            hasNext:function(){
+//                return i<n;
+//            },
+//            next:function(){
+//                if(i >= n){
+//                    throw new Error("end of iteration");
+//                }
+//                return arguments[i++];
+//            }
+//        }
+//    }
+    function values(){
+        var i=0,n=arguments.length,a=arguments;
+        return {
+            hasNext:function(){
+                return i<n;
+            },
+            next:function(){
+                if(i >= n){
+                    throw new Error("end of iteration");
+                }
+                return a[i++];
+            }
+        }
+    }
+    var it = values(1,4,1,4,2,1,3,5,6);
+    console.log(it.next());
+    console.log(it.next());
+    console.log(it.next());
+
+    //使用bind方法提取具有确定接收者的方法
+    var buffer1 = {
+        entries:[],
+        add:function(s){
+            this.entries.push(s);
+        },
+        concat:function(){
+            return this.entries.join("");
+        }
+    };
+    var source = ["867","-","5309"];
+    source.forEach(buffer1.add.bind(buffer1));
+//    source.forEach(buffer1.add);   //报错
+    console.log(buffer1.concat());
+
+    //使用bind方法实现函数柯里化
+    function simpleURL(protocol,domain,path){
+        return protocol+"://"+domain+"/"+path;
+    }
+    var paths = ['post-1.html','post-2.html'];
+    var siteDomain = "www.zyblog.net"
+    var urls = paths.map(function(path){
+        return simpleURL.bind(null,"http",siteDomain,path);
+    });
+    console.log(urls);
+    console.log(urls[0]());
+
+
+
+
+
+
+
+</script>
+</body>
+</html>
