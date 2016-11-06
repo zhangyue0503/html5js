@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //使用null原型以防止原型污染
+    var x = Object.create(null);
+    console.log(Object.getPrototypeOf(x)===null);
+
+    //不要在Object.prototype中增加可枚举的属性
+//    Object.prototype.allKeys = function(){
+//        var result = [];
+//        for(var key in this){
+//            result.push(key);
+//        }
+//        return result;
+//    };
+//    console.log(({a:1,b:2,c:3}).allKeys());
+//
+    Object.defineProperty(Object.prototype,"allKeys1",{
+        value:function(){
+            var result = [];
+            for(var key in this){
+                result.push(key);
+            }
+            return result;
+        },
+        writable:true,
+        enumerable:false,
+        configurable:true
+    });
+    console.log(({a:1,b:2,c:3}).allKeys1());
+
+    //避免在枚举期间修改对象
+    function Member(name){
+        this.name = name;
+        this.friends = [];
+    }
+    var a = new Member("Alice"),
+            b = new Member("Bob"),
+            c = new Member("Carol"),
+            d = new Member("Dieter"),
+            e = new Member("Eli"),
+            f = new Member("Fatima");
+    a.friends.push(b);
+    b.friends.push(c);
+    c.friends.push(e);
+    d.friends.push(b);
+    e.friends.push(d,f);
+
+//    Member.prototype.inNetwork = function(other){
+//        var visited = {};
+//        var workset = {};
+//        workset[this.name] = this;
+//        for(var name in workset){
+//            var member = workset[name];
+//            delete workset[name];
+//            if(name in visited){
+//                continue;
+//            }
+//            visited[name] = member;
+//            if(member === other){
+//                return true;
+//            }
+//            member.friends.forEach(function(friend){
+//                workset[friend.name] = friend;
+//            });
+//        }
+//        return false;
+//    };
+//    console.log(a.inNetwork(f)); //false
+
+
+
+//    function WorkSet(){
+//        this.entries = new Dict();
+//        this.count = 0;
+//    }
+//    WorkSet.prototype.isEmpty = function(){
+//        return this.count === 0;
+//    };
+//    WorkSet.prototype.add = function(key,val){
+//        if(this.entries.has(key)){
+//            return;
+//        }
+//        this.entries.set(key,val);
+//        this.count++;
+//    };
+//    WorkSet.prototype.get = function (key) {
+//        return this.entries.get(key);
+//    };
+//    WorkSet.prototype.remove = function(key){
+//        if(!this.entries.has(key)){
+//            return ;
+//        }
+//        this.entries.remove(key);
+//        this.count--;
+//    };
+//    Dict.prototype.pick = function(){
+//        for(var key in this.elements){
+//            if(this.has(key)){
+//                return key;
+//            }
+//        }
+//        throw new Error("empty dictionary");
+//    };
+//    WorkSet.prototype.pick = function(){
+//        return this.entries.pick();
+//    };
+//    Member.prototype.inNetwork = function(other){
+//        var visited = {};
+//        var workset = new WorkSet();
+//        workset.add(this.name,this);
+//        while(!workset.isEmpty()){
+//            var name = workset.pick();
+//            var member = workset.get(name);
+//            workset.remove(name);
+//            if(name in visited){
+//                continue;
+//            }
+//            visited[name] = member;
+//            if(member === other){
+//                return true;
+//            }
+//            member.friends.forEach(function(friend){
+//                workset.add(friend.name,friend);
+//            });
+//        }
+//        return false;
+//    };
+//    a.inNetwork(f);
+
+    //数组迭代要优先使用for而不是for...in
+    var scores = [98,74,85,77,93,100,89];
+    var total = 0;
+    for(var score in scores){
+        total += score;
+    }
+    console.log(total);   //00123456
+    var mean = total/scores.length;
+    console.log(mean);    //17636.571428571428
+
+    //迭代优于循环
+    var trimmed = [];
+    var input = ["a","b","c"];
+    for(var i =0,n=input.length;i<n;i++){
+        trimmed.push(input[i].trim());
+    }
+    console.log(trimmed);
+    input.forEach(function(s){   //等同于上面的for循环
+        trimmed.push(s.trim());
+    });
+    console.log(trimmed);
+    //es5引入了map
+    var trimmed = input.map(function(s){
+        return s.trim();
+    });
+    console.log(trimmed);
+
+
+
+
+
+
+</script>
+</body>
+</html>
