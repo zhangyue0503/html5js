@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="c"></canvas>
+<script type="text/javascript">
+    //接收关键字参数的选项对象
+    function extend(target,source){
+        if(source){
+            for(var key in source){
+                var val = source[key];
+                if(typeof val !== "undefined"){
+                    target[key] = val;
+                }
+            }
+        }
+        return target;
+    };
+    function Alert(parent,message,opts){
+        opts = extend({
+            width:320,
+            height:240
+        });
+        opts = extend({
+            x:(parent.width /2) - (opts.width/2),
+            y:(parent.height/2)-(opts.height/2),
+            title:'Alert',
+            titleColor:"gray",
+            bgColor:"white",
+            textColor:"black",
+            icon:"info",
+            modal:false
+        },opts);
+//        this.width = opts.width;
+//        this.height = opts.height;
+//        this.x = opts.x;
+//        this.y = opts.y;
+//        this.title = opts.title;
+//        this.titleColor = opts.titleColor;
+//        this.bgColor = opts.bgColor;
+//        this.textColor = opts.textColor;
+//        this.icon = opts.icon;
+//        this.modal = opts.modal;
+        extend(this,opts);
+    };
+
+    $alert = new Alert(this,"aaa");
+    console.log($alert.bgColor);
+
+
+    //避免不必要的状态
+    var c = document.getElementById('c');
+    var ctx = c.getContext("2d");
+//    ctx.fillStyle = "blue";
+    ctx.fillText("hello,world",75,25);
+
+    //es5以下判断数组
+    var toString = Object.prototype.toString;
+    function isArray(x){
+        return toString.call(x) === "[object Array]";
+    }
+    console.log(isArray([1,2,3]));
+    console.log(isArray("asdfsadf"));
+
+
+
+
+</script>
+</body>
+</html>
