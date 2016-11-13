@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script src="http://yui.yahooapis.com/3.18.1/build/yui/yui-min.js"></script>
+
+<script type="text/javascript">
+
+    //YUI单元测试
+    function sum(a,b){
+        return a+b;
+    }
+
+    YUI({logInclude:{TestRunner:true}}).use('test','test-console',function(Y){
+        var testCase = new Y.Test.Case({
+            name:'Sum Test',
+            testSimple:function(){
+                Y.Assert.areSame(sum(2,"2"),4,'2+2 does not equal 4?');
+            }
+        });
+        Y.Test.Runner.add(testCase);
+        (new Y.Test.Console({
+            newestOnTop:false
+        })).render('#log');
+        Y.Test.Runner.run();
+    });
+
+
+</script>
+</body>
+</html>
