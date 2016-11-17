@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //闭包
+    function multiplier(factor){
+        return function(number){
+            return number*factor;
+        };
+    }
+    var twice = multiplier(2);
+    console.log(twice(5));
+    console.log(twice(6));
+
+    //递归
+    function power(base,exponent){
+        if(exponent==0){
+            return 1;
+        }else
+            return base * power(base,exponent-1);
+    }
+    console.log(power(2,3));
+
+    function findSolution(target){
+        function find(start,history){
+            if(start == target){
+                return history;
+            }else if(start > target){
+                return null;
+            }else{
+                return find(start+5,"("+history+"+5)")||
+                                find(start*3,"("+history+" * 3");
+            }
+        }
+        return find(1,"1");
+    }
+    console.log(findSolution(24));
+
+    //练习
+    //最小值
+    var min = function(a,b){
+        return a>b?a:b;
+    }
+    console.log(min(12,10));
+    //递归
+    function isEven(a){
+        if(a==0||a==1){
+            return a;
+        }else{
+            return isEven(a>0?a-2:a+2);
+        }
+    }
+    console.log(isEven(50));
+    console.log(isEven(75));
+    console.log(isEven(-2));
+    //字符计数
+    function countBs(s){
+        var count = 0
+        for(var i =0;i<s.length;i++){
+            if(s.charAt(i)=="B"){
+                count ++;
+            }
+        }
+        return count;
+    }
+    console.log(countBs("lksjdlfkjsajdfBBjslkjdflkjfbBjlksjldkfB"));
+    function countChar(s,b){
+        var count = 0
+        for(var i =0;i<s.length;i++){
+            if(s.charAt(i)==b){
+                count ++;
+            }
+        }
+        return count;
+    }
+    console.log(countChar("lksjdlfkjsajdfBBjslkjdflkjfbBjlksjldkfB","l"));
+
+</script>
+</body>
+</html>
