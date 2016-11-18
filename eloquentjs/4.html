@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //特定范围数字求和
+    function range(start,end,step){
+        var arr = new Array();
+        if(start<end) {
+            for (var i = start; i <= end; i += step) {
+                arr.push(i);
+            }
+        }else{
+            for (var i = start; i >= end; i += step) {
+                console.log(i+',');
+            }
+        }
+        return arr;
+    }
+
+    function sum(arr){
+        var res = 0;
+        for(var a in arr){
+            res+=arr[a];
+        }
+        return res;
+    }
+    console.log(sum(range(5,2,-1)));
+
+    //数组反转
+    function reverseArray(arr){
+        var res = new Array();
+        for(var a in arr){
+            res.unshift(arr[a]);
+        }
+        return res;
+    }
+    function reverseArrayInPlace(arr){
+
+    }
+    console.log(reverseArray([1,2,3]));
+
+    //深度比较
+    function deepEqual(a,b){
+        if(typeof a != typeof b){
+            return false;
+        }
+
+        if(a==null&&b!=null){
+            return false;
+        }else if(a!=null&&b==null){
+            return false;
+        }else if(a==null&&b==null){
+            return true;
+        }
+        if(typeof a =='object' && typeof b == 'object'){
+            var failed = false;
+            for(var ai in a){
+                if(!(typeof a[ai]==typeof b[ai] && a[ai]===b[ai])){
+                    failed = true;
+                }
+            }
+            if(failed==true){
+                return false;
+            }else{
+                return true;
+            }
+        }else{
+            if(a===b){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+    }
+    var typea = {a:10};
+    var typeb = typea;
+    var typec = {a:10};
+    var typed = {a:11};
+    console.log(deepEqual(typea,typed));
+</script>
+</body>
+</html>
