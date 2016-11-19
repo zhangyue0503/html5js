@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //高阶函数
+    function noisy(f){
+        return function(arg){
+            console.log("calling with",arg);
+            var val = f(arg);
+            console.log("called with",arg,"- got",val);
+            return val;
+        };
+    }
+    noisy(Boolean)(0);
+    //JSON
+    var string = JSON.stringify({name:"X",born:1980});
+    console.log(string);
+    console.log(JSON.parse(string).born);
+
+    //reduce方法
+    function reduce(array,combine,start){
+        var current = start;
+        for(var i=0;i<array.length;i++){
+            current = combine(current,array[i]);
+        }
+        return current;
+    }
+
+    console.log(reduce([1,2,3,4],function(a,b){
+        return a+b;
+    },0));
+
+    //数组降维
+    console.log(reduce([[1,2],[3,4]],function(a,b){
+        return a==0?b:a.concat(b);
+    },0));
+
+    //使用every和some方法
+    console.log([1,2,3,4].every(function(item,index,array){
+//        console.log( 'item=' + item + ',index='+index+',array='+array );
+        return item >2;
+    }));
+    console.log([1,2,3,4].some(function(item,index,array){
+//        console.log( 'item=' + item + ',index='+index+',array='+array );
+        return item >2;
+    }));
+    function some(array,combine){
+        for(var i =0;i<array.length;i++){
+            if(combine(array[i],i,array)){
+                return true;
+            }
+        }
+        return false;
+    }
+    console.log(some([1,2,3,4],function(item,index,array){
+        return item >2;
+    }));
+    function every(array,combine){
+        for(var i =0;i<array.length;i++){
+            if(!combine(array[i],i,array)){
+                return false;
+            }
+        }
+        return true;
+    }
+    console.log(every([1,2,3,4],function(item,index,array){
+        return item >5;
+    }));
+
+</script>
+</body>
+</html>
