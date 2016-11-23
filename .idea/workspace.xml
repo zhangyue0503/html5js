@@ -25,18 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="sum.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/testablejs/sum.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!doc;n#sum#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eloquentjs/1.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -97,11 +85,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="7.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="7.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eloquentjs/7.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="312" column="35" selection-start-line="312" selection-start-column="35" selection-end-line="312" selection-end-column="35" />
+            <state relative-caret-position="304">
+              <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="8.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eloquentjs/8.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
               <folding />
             </state>
           </provider>
@@ -165,6 +163,7 @@
         <option value="$PROJECT_DIR$/eloquentjs/1.html" />
         <option value="$PROJECT_DIR$/eloquentjs/6.html" />
         <option value="$PROJECT_DIR$/eloquentjs/7.html" />
+        <option value="$PROJECT_DIR$/eloquentjs/8.html" />
       </list>
     </option>
   </component>
@@ -255,10 +254,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.7.html">
-    <configuration default="false" name="3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/3.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.8.html">
     <configuration default="false" name="4.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/4.html">
       <method />
     </configuration>
@@ -269,6 +265,9 @@
       <method />
     </configuration>
     <configuration default="false" name="7.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/7.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="8.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/8.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -325,19 +324,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.4.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.4.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.5.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.4.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.5.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.4.html" />
       </list>
     </recent_temporary>
   </component>
@@ -357,12 +356,12 @@
       <workItem from="1478177726431" duration="27325000" />
       <workItem from="1478516337631" duration="11360000" />
       <workItem from="1479111150771" duration="15105000" />
-      <workItem from="1479731840254" duration="10610000" />
+      <workItem from="1479731840254" duration="13792000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77316000" />
+    <option name="totallyTimeSpent" value="80498000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="6" />
@@ -374,9 +373,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31593406" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31593406" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -657,8 +656,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/7.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="312" column="35" selection-start-line="312" selection-start-column="35" selection-end-line="312" selection-end-column="35" />
+        <state relative-caret-position="304">
+          <caret line="16" column="27" selection-start-line="16" selection-start-column="27" selection-end-line="16" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eloquentjs/8.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
           <folding />
         </state>
       </provider>
