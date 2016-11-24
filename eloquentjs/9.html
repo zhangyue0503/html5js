@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var re1 = new RegExp("abc");
+    var re2 = /abc/;
+    console.log(/abc/.test("abcde"));
+    console.log(/abc/.test("abxde"));
+
+    var quotedText = /'([^']*)'/;
+    console.log(quotedText.exec("she said 'hello'"));
+    //["'hello'", "hello", index: 9, input: "she said 'hello'"]
+
+    function findDate(string){
+        var dateTime = /(\d{1,2})-(\d{1,2})-(\d{4})/;
+        var match = dateTime.exec(string);
+        return new Date(Number(match[3]),
+                Number(match[2]),
+                Number(match[1])
+        );
+    }
+    console.log(findDate("30-1-2003"));
+
+    //习题
+    //RegexpGolf
+    console.log(/ca[rt]/.test('cas jin'));
+    console.log(/pr{0,1}op/.test('prop'));
+
+
+
+</script>
+</body>
+</html>
