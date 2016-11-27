@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //使用函数作为命名空间
+    var dayname = function(){
+        var names = ['Sunday','Monday','Tuesday'];
+        return function(number){
+            return names[number];
+        };
+    }();
+    console.log(dayname(2));
+    (function(){
+        function square(x){return x*x;};
+        var hundred = 100;
+        console.log(square(hundred));
+    })();
+
+    //使用对象作为接口
+    (function(exports){
+        var names = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+        exports.name = function(number){return names[number]};
+        exports.number = function(name){return names.indexOf(name)};
+    })(this.weekDay = {});
+    console.log(weekDay.name(weekDay.number('Saturday')));
+
+    //require函数
+//    function require(name){
+//        if(name in require.cache)
+//            return require.cache[name];
+//
+//        var code = new Function("exports,module",readFile(name));
+//        var exports = {},module = {exports:exports};
+//        code(exports,module);
+//        require.cache[name] = module.exports;
+//        return module.exports;
+//    }
+//    require.cache = Object.create(null);
+//    var weekDay = require('weekDay');
+
+
+
+</script>
+</body>
+</html>
