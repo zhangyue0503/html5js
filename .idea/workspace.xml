@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8351e555-5391-4293-a728-d22ea5137dfc" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="8351e555-5391-4293-a728-d22ea5137dfc" name="Default" comment="" />
     <ignored path="html5js.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -65,11 +63,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="10.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="10.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eloquentjs/10.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+            <state relative-caret-position="347">
+              <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="11.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/eloquentjs/11.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
               <folding />
             </state>
           </provider>
@@ -156,6 +164,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/eloquentjs/9.html" />
         <option value="$PROJECT_DIR$/eloquentjs/10.html" />
+        <option value="$PROJECT_DIR$/eloquentjs/11.html" />
       </list>
     </option>
   </component>
@@ -260,10 +269,7 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
-  <component name="RunManager" selected="JavaScript Debug.10.html">
-    <configuration default="false" name="6.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/6.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.11.html">
     <configuration default="false" name="7.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/7.html">
       <method />
     </configuration>
@@ -274,6 +280,9 @@
       <method />
     </configuration>
     <configuration default="false" name="10.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/10.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="11.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/11.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -330,19 +339,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.9.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.9.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.9.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.9.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.8.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
       </list>
     </recent_temporary>
   </component>
@@ -362,12 +371,12 @@
       <workItem from="1478177726431" duration="27325000" />
       <workItem from="1478516337631" duration="11360000" />
       <workItem from="1479111150771" duration="15105000" />
-      <workItem from="1479731840254" duration="19925000" />
+      <workItem from="1479731840254" duration="24955000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86631000" />
+    <option name="totallyTimeSpent" value="91661000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="6" />
@@ -711,8 +720,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/10.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="41" column="19" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        <state relative-caret-position="347">
+          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/eloquentjs/11.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="290">
+          <caret line="158" column="26" selection-start-line="158" selection-start-column="26" selection-end-line="158" selection-end-column="26" />
           <folding />
         </state>
       </provider>
