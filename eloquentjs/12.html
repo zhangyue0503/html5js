@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My home Page</title>
+</head>
+<body>
+<h1>My home page</h1>
+<p>Hello,I am Marijn and this is my home page.</p>
+<p>
+    I also wrote a book! Read it
+    <a href="http://eloquentjavascript.net">here</a>.
+</p>
+
+<p>
+    The <img src="img/cat.png" alt="Cat"> in the <img src="img/hat.png" alt="Hat">.
+</p>
+<p>
+    <button onclick="replaceImages()">Replace</button>
+</p>
+<p>Here it is,the identity function:</p>
+<pre data-language="javascript">
+    function id(x){return x;}
+</pre>
+<script type="text/javascript">
+    //通过树结构访问结点
+    function talksAbout(node,string){
+        if(node.nodeType==document.ELEMENT_NODE){
+            for(var i=0;i<node.childNodes.length;i++){
+                if(talksAbout(node.childNodes[i],string))
+                    return true;
+            }
+        }else if(node.nodeType==document.TEXT_NODE){
+            return node.nodeValue.indexOf(string)>-1;
+        }
+    }
+    console.log(talksAbout(document.body,"book"));
+
+    //创建节点
+    function replaceImages(){
+        var images = document.body.getElementsByTagName("img");
+        for(var i=images.length-1;i>=0;i--){
+            var image = images[i];
+            if(image.alt){
+                var text = document.createTextNode(image.alt);
+                image.parentNode.replaceChild(text,image);
+            }
+        }
+    }
+
+    //属性--语法高亮器
+    function highlightCode(node,keywords){
+        var text = node.textContent;
+        node.textContent = "";
+        var match,pos = 0;
+        while(match=keywords.exec(text)){
+            var before = text.slice(pos,match.index);
+            node.appendChild(document.createTextNode(before));
+            var strong = document.createElement("strong");
+            strong.appendChild(document.createTextNode(match[0]));
+            node.appendChild(strong);
+            pos = keywords.lastIndex;
+        }
+        var after = text.slice(pos);
+        node.appendChild(document.createTextNode(after));
+    }
+    var languages = {
+        javascript:/\b(function|return|var)\b/g
+    };
+    function highlightAllCode(){
+        var pres = document.body.getElementsByTagName("pre");
+        for(var i=0;i<pres.length;i++){
+            var pre = pres[i];
+            var lang = pre.getAttribute("data-language");
+            if(languages.hasOwnProperty(lang))
+                highlightCode(pre,languages[lang]);
+        }
+    }
+    highlightAllCode();
+
+
+</script>
+
+</body>
+</html>
