@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .dot{height:8px;width:8px;border-radius:4px;background:blue;position:absolute;}
+
+        .progress{border:1px solid blue;width:100px;position:fixed;top:10px;right:10px;}
+        .progress>div{height:12px;background: blue;width:0%;}
+        body{height:2000px;}
+
+    </style>
+</head>
+<body>
+<button id="btn1">Act-once button</button>
+<p>Click this document to activate the handler.</p>
+
+<button id="btn2">Click me any way you want</button>
+
+<p id="p2">A paragraph with a<button id="btn3">button</button></p>
+
+<a href="http://www.baidu.com" id="a1">baidu</a>
+
+<div id="div1" style="background:orange;width:60px;height:20px;"></div>
+
+<p id="p3">Hover over this <strong>paragraph</strong></p>
+
+<div class="progress"><div></div></div>
+<script type="text/javascript">
+    //事件
+//    addEventListener("click",function(){
+//        console.log("You clicked!");
+//    });
+    var button = document.getElementById("btn1");
+    function once(){
+        console.log("Done.");
+        button.removeEventListener("click",once);
+    }
+    button.addEventListener("click",once);
+//对象
+    var btn2 = document.getElementById("btn2");
+    btn2.addEventListener("click",function(event){
+        if(event.which==1)
+            console.log("Left button");
+        else if(event.which==2)
+            console.log("Middle button");
+        else if(event.which==3)
+            console.log("Right button");
+    });
+
+    //传播
+    var para = document.getElementById("p2");
+    var btn3 = document.getElementById("btn3");
+    para.addEventListener("mousedown",function(){
+        console.log("Handler for paragraph.");
+    });
+    btn3.addEventListener("mousedown",function(event){
+        console.log("Handler for button");
+        if(event.which==2)
+            event.stopPropagation();
+    });
+    //默认动作
+    var a1 = document.getElementById("a1");
+    a1.addEventListener("click",function(event){
+        console.log("Nope.");
+        event.preventDefault();
+    });
+    //按键事件
+    addEventListener("keydown",function(event){
+        if(event.keyCode == 86)
+            document.body.style.background = "violet";
+    });
+    addEventListener("keyup",function(event){
+        if(event.keyCode == 86)
+            document.body.style.background = "";
+    });
+    addEventListener("keypress",function(event){
+        console.log(String.fromCharCode(event.charCode));
+    });
+
+    //鼠标点击
+    addEventListener("click",function(event){
+        var dot = document.createElement("div");
+        dot.className = "dot";
+        dot.style.left = (event.pageX-4)+"px";
+        dot.style.top = (event.pageY-4)+"px";
+        document.body.appendChild(dot);
+    });
+    //鼠标移动
+    var div1 = document.getElementById("div1");
+    var lastX;
+    div1.addEventListener("mousedown",function(event){
+        if(event.which == 1){
+            lastX = event.pageX;
+            addEventListener("mousemove",moved);
+            event.preventDefault();
+        }
+    });
+    function moved(event){
+        if(event.which!=1){
+            removeEventListener("mousemove",moved);
+        }else{
+            var dist = event.pageX-lastX;
+            var newWidth = Math.max(10,div1.offsetWidth+dist);
+            div1.style.width = newWidth+"px";
+            lastX = event.pageX;
+        }
+    }
+
+    //和p3:hover{color:red}效果一样
+    var p3 = document.getElementById("p3");
+    function isInside(node,target){
+        for(;node!=null;node = node.parentNode)
+            if(node==target) return true;
+    }
+    p3.addEventListener("mouseover",function(event){
+        if(!isInside(event.relatedTarget,p3))
+            p3.style.color="red";
+    });
+    p3.addEventListener("mouseout",function(event){
+        if(!isInside(event.relatedTarget,p3))
+            p3.style.color="";
+    });
+
+    //滚动事件
+    var bar = document.querySelector(".progress div");
+    addEventListener("scroll",function(){
+        var max = document.body.scrollHeight-innerHeight;
+        var percent = (pageYOffset/max)*100;
+        bar.style.width = percent+"%";
+    });
+
+
+</script>
+</body>
+</html>
