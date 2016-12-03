@@ -51,8 +51,18 @@
       <file leaf-file-name="14.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/eloquentjs/14.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="199" column="28" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
+            <state relative-caret-position="228">
+              <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="15.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/eloquentjs/15.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="150" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -102,6 +112,7 @@
         <option value="$PROJECT_DIR$/eloquentjs/11.html" />
         <option value="$PROJECT_DIR$/eloquentjs/12.html" />
         <option value="$PROJECT_DIR$/eloquentjs/13.html" />
+        <option value="$PROJECT_DIR$/eloquentjs/15.html" />
         <option value="$PROJECT_DIR$/eloquentjs/14.html" />
       </list>
     </option>
@@ -207,10 +218,12 @@
     <property name="js-jscs-nodeInterpreter" value="/usr/local/bin/node" />
     <property name="nodejs_interpreter_path" value="/usr/local/bin/node" />
   </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/eloquentjs" />
+    </key>
+  </component>
   <component name="RunManager" selected="JavaScript Debug.14.html">
-    <configuration default="false" name="10.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/10.html">
-      <method />
-    </configuration>
     <configuration default="false" name="11.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/11.html">
       <method />
     </configuration>
@@ -221,6 +234,9 @@
       <method />
     </configuration>
     <configuration default="false" name="14.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/eloquentjs/14.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="15.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/eloquentjs/15.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -277,19 +293,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.12.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.13.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.14.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.12.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.13.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.14.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.15.html" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.14.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.13.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.12.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.10.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.15.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.13.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.12.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.11.html" />
       </list>
     </recent_temporary>
   </component>
@@ -311,12 +327,12 @@
       <workItem from="1479111150771" duration="15105000" />
       <workItem from="1479731840254" duration="25046000" />
       <workItem from="1480295232297" duration="618000" />
-      <workItem from="1480428184623" duration="12600000" />
+      <workItem from="1480428184623" duration="19304000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="104970000" />
+    <option name="totallyTimeSpent" value="111674000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -681,10 +697,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/eloquentjs/15.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="146" column="4" selection-start-line="146" selection-start-column="4" selection-end-line="150" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/14.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="199" column="28" selection-start-line="199" selection-start-column="28" selection-end-line="199" selection-end-column="28" />
+        <state relative-caret-position="228">
+          <caret line="466" column="0" selection-start-line="466" selection-start-column="0" selection-end-line="466" selection-end-column="0" />
           <folding />
         </state>
       </provider>
