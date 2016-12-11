@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script defer="defer">
+    alert("defer");
+</script>
+<script>
+    alert("script");
+</script>
+<script>
+    window.onload = function(){
+        alert('load');
+    };
+
+    //动态加载
+    function loadScript(url,callback){
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if(script.readyState){//IE
+            script.onreadystatechange = function(){
+                if(script.readyState=="loaded"||script.readyState=="complete"){
+                    script.onreadystatechange = null;
+                    callback();
+                }
+            };
+        }else{//其他浏览器
+            script.onload = function(){
+                callback();
+            };
+        }
+        script.src = url;
+        document.getElementsByTagName("head")[0].appendChild(script);
+    }
+
+    loadScript("http://apps.bdimg.com/libs/jquery/2.1.1/jquery.min.js",function(){
+        alert("File is loaded!");
+    });
+    //XMLHttpRequest脚本注入加载js
+    var xhr = new XMLHttpRequest();
+    xhr.open("get","1.js",true);
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState==4){
+            if(xhr.status >= 200 && xhr.status < 300 || xhr.status==304){
+                var script = document.createElement("script");
+                script.type = "text/javascript";
+                script.text = xhr.responseText;
+                document.body.appendChild(script);
+            }
+        }
+    };
+    xhr.send(null);
+
+
+</script>
+<script type="text/javascript" src="http://yui.yahooapis.com/combo?3.0.0/build/yui/yui-min.js"></script>
+<script type="text/javascript">
+    //YUI3的加载实现
+    YUI().use("dom",function(Y){
+        Y.DOM.addClass(document.body,"loaded");
+    });
+
+</script>
+</body>
+</html>
