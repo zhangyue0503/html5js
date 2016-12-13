@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="save-btn">save-btn</button><br/>
+<script type="text/javascript">
+function assignEvents(){
+    var id = "xdi9592";
+    document.querySelector("#save-btn").onclick = function(){
+        console.log(id);
+    };
+}
+assignEvents();
+
+    var book = {
+        title :"High Performance JavaScript",
+        publisher:"Yahoo! Press"
+    };
+    console.log(book.hasOwnProperty("title"));
+    console.log(book.hasOwnProperty("toString"));
+    console.log("title" in book);
+    console.log("toString" in book);
+
+    function Book(title,publisher){
+        this.title = title;
+        this.publisher = publisher;
+    };
+    Book.prototype.sayTitle = function(){
+        console.log(this.title);
+    }
+    var book1 = new Book("aaa","111");
+    var book2 = new Book("bbb","111");
+
+    console.log(book1 instanceof Book);
+    console.log(book1 instanceof Object);
+
+    book1.sayTitle();
+    console.log(book1.toString());
+
+
+
+</script>
+</body>
+</html>
