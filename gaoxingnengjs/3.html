@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul id="mylist">
+    <li><a href="http://phpied.com">Stoyan</a></li>
+    <li><a href="http://julienlecomte.com">Julien</a></li>
+</ul>
+<script type="text/javascript">
+    function toArray(coll){
+        for(var i =0,a=[],len=coll.length;i<len;i++){
+            a[i] = coll[i];
+        }
+        return a;
+    }
+    var coll = document.getElementsByTagName("div");
+    var ar = toArray(coll);
+
+    //慢
+    function loopCollection(){
+        for(var count = 0;count<coll.length;count++){
+            /*代码处理*/
+        }
+    }
+    //快
+    function loopCopiedArray(){
+        for(var count = 0;count < arr.length;count++){
+            /*代码处理*/
+        }
+    }
+    //快
+    function loopCacheLengthCollection(){
+        //采用局部变量
+        var coll = document.getElementsByTagName('div'),
+                len = coll.length;
+        for(var count = 0;count<len;count++){
+            /*代码处理*/
+        }
+    }
+
+    //减少代码重排
+    var data = [
+        {
+            "name":"Nicholas",
+            "url":"http://nczonline.net"
+        },
+        {
+            "name":"Ross",
+            "url":"http://techfoolery.com"
+        }
+    ];
+    function appendDataToElement(appendToElement,data){
+        var a,li;
+        for(var i=0,max=data.length;i<max;i++){
+            a = document.createElement('a');
+            a.href = data[i].url;
+            a.appendChild(document.createTextNode(data[i].name));
+            li = document.createElement('li');
+            li.appendChild(a);
+            appendToElement.appendChild(li);
+        }
+    };
+    //1隐藏元素
+    var ul = document.querySelector('#mylist');
+    ul.style.display = "none";
+    appendDataToElement(ul,data);
+    ul.style.display = 'block';
+
+    //使用document fragment（最佳）
+    var fragment = document.createDocumentFragment();
+    appendDataToElement(fragment,data);
+    document.getElementById('mylist').appendChild(fragment);
+
+    //创建一个备份
+    var old = document.getElementById('mylist');
+    var clone = old.cloneNode(true);
+    appendDataToElement(clone,data);
+    old.parentNode.replaceChild(clone,old);
+
+    //事件委托
+    document.getElementById('mylist').onclick = function(e){
+        e = e || window.event;
+        var target = e.target||e.srcElement;
+        if(target.nodeName !== 'A')
+            return;
+        alert(target.href);
+
+        if(typeof e.preventDefault === 'function') {
+            e.preventDefault();
+            e.stopPropagation();
+        }else{
+            e.returnValue = false;
+            e.cancelBubble = true;
+        }
+    }
+
+
+
+
+</script>
+</body>
+</html>
