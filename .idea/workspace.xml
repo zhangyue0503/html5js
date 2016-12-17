@@ -35,21 +35,23 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gaoxingnengjs/4.html">
+      <file leaf-file-name="4.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gaoxingnengjs/4.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="396">
+              <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+              <folding>
+                <element signature="e#0#45#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gaoxingnengjs/4.js">
+      <file leaf-file-name="5.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/gaoxingnengjs/5.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+            <state relative-caret-position="152">
+              <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
               </folding>
@@ -123,6 +125,7 @@
         <option value="$PROJECT_DIR$/gaoxingnengjs/3.html" />
         <option value="$PROJECT_DIR$/gaoxingnengjs/4.html" />
         <option value="$PROJECT_DIR$/gaoxingnengjs/4.js" />
+        <option value="$PROJECT_DIR$/gaoxingnengjs/5.js" />
       </list>
     </option>
   </component>
@@ -235,10 +238,7 @@
       <recent name="$PROJECT_DIR$/eloquentjs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.4.js">
-    <configuration default="false" name="21.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/eloquentjs/21.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.5.js">
     <configuration default="false" name="1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/gaoxingnengjs/1.html">
       <method />
     </configuration>
@@ -249,6 +249,9 @@
       <method />
     </configuration>
     <configuration default="false" name="4.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="4.js" working-dir="$PROJECT_DIR$/gaoxingnengjs">
+      <method />
+    </configuration>
+    <configuration default="false" name="5.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="5.js" working-dir="$PROJECT_DIR$/gaoxingnengjs">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -305,19 +308,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.21.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.4.js" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.4.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.5.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.4.js" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.21.html" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.5.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.4.js" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.2.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -341,12 +344,12 @@
       <workItem from="1480295232297" duration="618000" />
       <workItem from="1480428184623" duration="20982000" />
       <workItem from="1480923478804" duration="25890000" />
-      <workItem from="1481550348317" duration="9926000" />
+      <workItem from="1481550348317" duration="11379000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="149168000" />
+    <option name="totallyTimeSpent" value="150621000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -368,7 +371,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -395,13 +398,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/testablejs/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="19" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/testablejs/1.js" />
     <entry file="file://$PROJECT_DIR$/testablejs/sum.js">
       <provider selected="true" editor-type-id="text-editor">
@@ -733,8 +729,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/gaoxingnengjs/4.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="50" column="0" selection-start-line="50" selection-start-column="0" selection-end-line="50" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="40" column="5" selection-start-line="40" selection-start-column="5" selection-end-line="40" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gaoxingnengjs/5.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
           </folding>
