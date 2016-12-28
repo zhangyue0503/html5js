@@ -93,13 +93,37 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="8.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="8.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speakingjavascript/8.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
               <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
               <folding>
                 <element signature="e#0#45#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="14.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/speakingjavascript/14.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#catchit#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="15.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/speakingjavascript/15.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#add#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -133,8 +157,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/effectivejs/ex3.html" />
-        <option value="$PROJECT_DIR$/effectivejs/ex4.html" />
         <option value="$PROJECT_DIR$/effectivejs/ex5.html" />
         <option value="$PROJECT_DIR$/effectivejs/ex6.html" />
         <option value="$PROJECT_DIR$/effectivejs/ex7.html" />
@@ -184,6 +206,8 @@
         <option value="$PROJECT_DIR$/gaoxingnengjs/6.html" />
         <option value="$PROJECT_DIR$/gaoxingnengjs/8.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/8.js" />
+        <option value="$PROJECT_DIR$/speakingjavascript/14.js" />
+        <option value="$PROJECT_DIR$/speakingjavascript/15.js" />
       </list>
     </option>
   </component>
@@ -285,13 +309,7 @@
       <recent name="$PROJECT_DIR$/eloquentjs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.8.js (1)">
-    <configuration default="false" name="5.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="5.js" working-dir="$PROJECT_DIR$/gaoxingnengjs">
-      <method />
-    </configuration>
-    <configuration default="false" name="6.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="6.js" working-dir="$PROJECT_DIR$/gaoxingnengjs">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.15.js">
     <configuration default="false" name="6.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/gaoxingnengjs/6.html">
       <method />
     </configuration>
@@ -299,6 +317,12 @@
       <method />
     </configuration>
     <configuration default="false" name="8.js (1)" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="8.js" working-dir="$PROJECT_DIR$/speakingjavascript">
+      <method />
+    </configuration>
+    <configuration default="false" name="14.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="14.js" working-dir="$PROJECT_DIR$/speakingjavascript">
+      <method />
+    </configuration>
+    <configuration default="false" name="15.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="15.js" working-dir="$PROJECT_DIR$/speakingjavascript">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -355,19 +379,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.5.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.6.js" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.8.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.8.js (1)" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.8.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.8.js (1)" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.14.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.15.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.8.js (1)" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.8.js" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.6.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.5.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.15.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.14.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.8.js (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.8.js" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.6.html" />
       </list>
     </recent_temporary>
   </component>
@@ -392,12 +416,13 @@
       <workItem from="1480428184623" duration="20982000" />
       <workItem from="1480923478804" duration="25890000" />
       <workItem from="1481550348317" duration="12830000" />
-      <workItem from="1482155635051" duration="1851000" />
+      <workItem from="1482155635051" duration="2050000" />
+      <workItem from="1482722364107" duration="3242000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153923000" />
+    <option name="totallyTimeSpent" value="157364000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,9 +441,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -446,20 +471,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
-          <caret line="8" column="41" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript5.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="77">
-          <caret line="113" column="47" selection-start-line="113" selection-start-column="47" selection-end-line="113" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vue/node_modules/title-notify/build/iNotify.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -801,6 +812,26 @@
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
           <folding>
             <element signature="e#0#45#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/speakingjavascript/14.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#catchit#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/speakingjavascript/15.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#add#0" expanded="false" />
           </folding>
         </state>
       </provider>
