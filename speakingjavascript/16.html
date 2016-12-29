@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //闭包
+    function createInc(startValue){
+        return function(step){
+            startValue += step;
+            return startValue;
+        };
+    }
+
+    //不经意间的环境共用
+    function f(){
+        var result = [];
+        for(var i=0;i<3;i++){
+            (function(){
+                var pos = i;
+                var func = function(){
+                    return pos;
+                };
+                result.push(func);
+            }());
+//            var func = function(){
+//                return i;
+//            };
+//            result.push(func);
+        }
+        return result;
+    }
+    console.log(f()[1]())
+
+
+
+</script>
+</body>
+</html>
