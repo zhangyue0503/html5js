@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8351e555-5391-4293-a728-d22ea5137dfc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/speakingjavascript/18.js" afterPath="$PROJECT_DIR$/speakingjavascript/18.js" />
     </list>
     <ignored path="html5js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -26,13 +25,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="18.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="18.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speakingjavascript/18.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+            <state relative-caret-position="353">
+              <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc;n#countElements#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="19.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/speakingjavascript/19.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="304">
+              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc;n#parseIsoDate#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -94,7 +105,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testablejs/1.js" />
         <option value="$PROJECT_DIR$/testablejs/sum.js" />
         <option value="$PROJECT_DIR$/testablejs/2.html" />
         <option value="$PROJECT_DIR$/eloquentjs/2.html" />
@@ -145,6 +155,7 @@
         <option value="$PROJECT_DIR$/speakingjavascript/17-1.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/17-2.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/18.js" />
+        <option value="$PROJECT_DIR$/speakingjavascript/19.js" />
       </list>
     </option>
   </component>
@@ -246,10 +257,7 @@
       <recent name="$PROJECT_DIR$/eloquentjs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.18.js">
-    <configuration default="false" name="14.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="14.js" working-dir="$PROJECT_DIR$/speakingjavascript">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.19.js">
     <configuration default="false" name="15.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="15.js" working-dir="$PROJECT_DIR$/speakingjavascript">
       <method />
     </configuration>
@@ -260,6 +268,9 @@
       <method />
     </configuration>
     <configuration default="false" name="18.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="18.js" working-dir="$PROJECT_DIR$/speakingjavascript">
+      <method />
+    </configuration>
+    <configuration default="false" name="19.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="19.js" working-dir="$PROJECT_DIR$/speakingjavascript">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -316,19 +327,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.14.js" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.15.js" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.18.js" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.15.js" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.17-2.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.18.js" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.19.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.18.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.15.js" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.14.js" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.19.js" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.18.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.17-2.js" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.15.js" />
       </list>
     </recent_temporary>
   </component>
@@ -355,12 +366,12 @@
       <workItem from="1481550348317" duration="12830000" />
       <workItem from="1482155635051" duration="2050000" />
       <workItem from="1482722364107" duration="10576000" />
-      <workItem from="1483369085109" duration="1546000" />
+      <workItem from="1483369085109" duration="2819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="166244000" />
+    <option name="totallyTimeSpent" value="167517000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -379,9 +390,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -409,13 +420,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/9.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="29" column="17" selection-start-line="29" selection-start-column="17" selection-end-line="29" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/10.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="347">
@@ -774,10 +778,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/speakingjavascript/18.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="38" selection-end-line="28" selection-end-column="38" />
+        <state relative-caret-position="353">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
             <element signature="n#!!doc;n#countElements#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/speakingjavascript/19.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#parseIsoDate#0" expanded="false" />
           </folding>
         </state>
       </provider>
