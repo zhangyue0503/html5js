@@ -28,7 +28,7 @@
       <file leaf-file-name="18.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speakingjavascript/18.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
+            <state relative-caret-position="494">
               <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
               <folding>
                 <element signature="n#!!doc;n#countElements#0" expanded="false" />
@@ -37,7 +37,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="19.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="19.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/speakingjavascript/19.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="304">
@@ -49,10 +49,20 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="7.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/你不知道的JS中/7.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="172">
+              <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="20.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eloquentjs/20.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="247">
+            <state relative-caret-position="399">
               <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
               <folding />
             </state>
@@ -82,7 +92,7 @@
       <file leaf-file-name="19-2.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/eloquentjs/19-2.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
+            <state relative-caret-position="323">
               <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
               <folding />
             </state>
@@ -94,8 +104,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -105,8 +115,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/testablejs/sum.js" />
-        <option value="$PROJECT_DIR$/testablejs/2.html" />
         <option value="$PROJECT_DIR$/eloquentjs/2.html" />
         <option value="$PROJECT_DIR$/eloquentjs/3.html" />
         <option value="$PROJECT_DIR$/eloquentjs/4.html" />
@@ -156,6 +164,8 @@
         <option value="$PROJECT_DIR$/speakingjavascript/17-2.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/18.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/19.js" />
+        <option value="$PROJECT_DIR$/你不知道的JS中/8.html" />
+        <option value="$PROJECT_DIR$/你不知道的JS中/7.html" />
       </list>
     </option>
   </component>
@@ -201,6 +211,7 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -229,13 +240,26 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="speakingjavascript" />
+              <option name="myItemId" value="你不知道的JS中" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="你不知道的javascript上" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,10 +281,7 @@
       <recent name="$PROJECT_DIR$/eloquentjs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.19.js">
-    <configuration default="false" name="15.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="15.js" working-dir="$PROJECT_DIR$/speakingjavascript">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.7.html">
     <configuration default="false" name="16.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/speakingjavascript/16.html">
       <method />
     </configuration>
@@ -271,6 +292,9 @@
       <method />
     </configuration>
     <configuration default="false" name="19.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="19.js" working-dir="$PROJECT_DIR$/speakingjavascript">
+      <method />
+    </configuration>
+    <configuration default="false" name="7.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/你不知道的JS中/7.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -327,19 +351,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Node.js.15.js" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.18.js" />
-      <item index="4" class="java.lang.String" itemvalue="Node.js.19.js" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.17-2.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.18.js" />
+      <item index="3" class="java.lang.String" itemvalue="Node.js.19.js" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Node.js.19.js" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.18.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
-        <item index="4" class="java.lang.String" itemvalue="Node.js.15.js" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+        <item index="1" class="java.lang.String" itemvalue="Node.js.19.js" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.18.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.17-2.js" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
       </list>
     </recent_temporary>
   </component>
@@ -366,12 +390,15 @@
       <workItem from="1481550348317" duration="12830000" />
       <workItem from="1482155635051" duration="2050000" />
       <workItem from="1482722364107" duration="10576000" />
-      <workItem from="1483369085109" duration="2819000" />
+      <workItem from="1483369085109" duration="4427000" />
+      <workItem from="1484034469632" duration="1435000" />
+      <workItem from="1484535369000" duration="1197000" />
+      <workItem from="1485008325330" duration="1285000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="167517000" />
+    <option name="totallyTimeSpent" value="173042000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -390,11 +417,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -420,13 +447,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/10.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="42" column="29" selection-start-line="42" selection-start-column="29" selection-end-line="42" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/11.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="233">
@@ -651,10 +671,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
           <caret line="128" column="34" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-            <element signature="e#3328#3354#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -662,9 +678,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="17" column="5" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -672,7 +685,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="249">
           <caret line="30" column="32" selection-start-line="27" selection-start-column="21" selection-end-line="30" selection-end-column="32" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -680,9 +692,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#add#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -690,9 +699,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
           <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#catchit#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -700,9 +706,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
           <caret line="14" column="38" selection-start-line="14" selection-start-column="38" selection-end-line="14" selection-end-column="38" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -710,9 +713,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
           <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#45#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,7 +720,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="266">
           <caret line="14" column="9" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -728,9 +727,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="353">
           <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#processArray#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -738,15 +734,32 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/speakingjavascript/18.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="494">
+          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
           <folding>
-            <element signature="e#0#45#0" expanded="false" />
+            <element signature="n#!!doc;n#countElements#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/speakingjavascript/19.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc;n#parseIsoDate#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/20.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
+        <state relative-caret-position="399">
           <caret line="21" column="23" selection-start-line="21" selection-start-column="23" selection-end-line="21" selection-end-column="23" />
           <folding />
         </state>
@@ -770,29 +783,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/19-2.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
+        <state relative-caret-position="323">
           <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/speakingjavascript/18.js">
+    <entry file="file://$PROJECT_DIR$/你不知道的JS中/7.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="28" column="41" selection-start-line="28" selection-start-column="41" selection-end-line="28" selection-end-column="41" />
-          <folding>
-            <element signature="n#!!doc;n#countElements#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/speakingjavascript/19.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc;n#parseIsoDate#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="172">
+          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+          <folding />
         </state>
       </provider>
     </entry>
