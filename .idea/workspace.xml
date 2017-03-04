@@ -49,12 +49,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="7.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="7.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/你不知道的JS中/7.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
+            <state relative-caret-position="209">
+              <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="9.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/你不知道的JS中/9.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="612">
+              <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+              <folding>
+                <element signature="e#0#43#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -104,8 +116,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -115,7 +127,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eloquentjs/2.html" />
         <option value="$PROJECT_DIR$/eloquentjs/3.html" />
         <option value="$PROJECT_DIR$/eloquentjs/4.html" />
         <option value="$PROJECT_DIR$/eloquentjs/5.html" />
@@ -166,6 +177,7 @@
         <option value="$PROJECT_DIR$/speakingjavascript/19.js" />
         <option value="$PROJECT_DIR$/你不知道的JS中/8.html" />
         <option value="$PROJECT_DIR$/你不知道的JS中/7.html" />
+        <option value="$PROJECT_DIR$/你不知道的JS中/9.js" />
       </list>
     </option>
   </component>
@@ -210,8 +222,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -260,6 +270,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -281,10 +293,7 @@
       <recent name="$PROJECT_DIR$/eloquentjs" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.7.html">
-    <configuration default="false" name="16.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63343/html5js/speakingjavascript/16.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Node.js.9.js">
     <configuration default="false" name="17-2.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="17-2.js" working-dir="$PROJECT_DIR$/speakingjavascript">
       <method />
     </configuration>
@@ -295,6 +304,9 @@
       <method />
     </configuration>
     <configuration default="false" name="7.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/你不知道的JS中/7.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="9.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="project" path-to-js-file="9.js" working-dir="$PROJECT_DIR$/你不知道的JS中">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -351,19 +363,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
-      <item index="1" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-      <item index="2" class="java.lang.String" itemvalue="Node.js.18.js" />
-      <item index="3" class="java.lang.String" itemvalue="Node.js.19.js" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+      <item index="0" class="java.lang.String" itemvalue="Node.js.17-2.js" />
+      <item index="1" class="java.lang.String" itemvalue="Node.js.18.js" />
+      <item index="2" class="java.lang.String" itemvalue="Node.js.19.js" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+      <item index="4" class="java.lang.String" itemvalue="Node.js.9.js" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
-        <item index="1" class="java.lang.String" itemvalue="Node.js.19.js" />
-        <item index="2" class="java.lang.String" itemvalue="Node.js.18.js" />
-        <item index="3" class="java.lang.String" itemvalue="Node.js.17-2.js" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.16.html" />
+        <item index="0" class="java.lang.String" itemvalue="Node.js.9.js" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.7.html" />
+        <item index="2" class="java.lang.String" itemvalue="Node.js.19.js" />
+        <item index="3" class="java.lang.String" itemvalue="Node.js.18.js" />
+        <item index="4" class="java.lang.String" itemvalue="Node.js.17-2.js" />
       </list>
     </recent_temporary>
   </component>
@@ -393,12 +405,13 @@
       <workItem from="1483369085109" duration="4427000" />
       <workItem from="1484034469632" duration="1435000" />
       <workItem from="1484535369000" duration="1197000" />
-      <workItem from="1485008325330" duration="1285000" />
+      <workItem from="1485008325330" duration="1497000" />
+      <workItem from="1486392502410" duration="3251000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="173042000" />
+    <option name="totallyTimeSpent" value="176505000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -417,11 +430,11 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -447,13 +460,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/11.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="155" column="0" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DHTML.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
@@ -757,6 +763,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/你不知道的JS中/7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="11" selection-start-line="11" selection-start-column="11" selection-end-line="11" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/20.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="399">
@@ -789,11 +803,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/你不知道的JS中/7.html">
+    <entry file="file://$PROJECT_DIR$/你不知道的JS中/9.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="19" column="60" selection-start-line="19" selection-start-column="60" selection-end-line="19" selection-end-column="60" />
-          <folding />
+        <state relative-caret-position="612">
+          <caret line="50" column="24" selection-start-line="50" selection-start-column="24" selection-end-line="50" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#43#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
