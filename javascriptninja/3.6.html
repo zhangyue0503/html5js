@@ -9,6 +9,7 @@
 <ul id="results"></ul>
 <script type="text/javascript" src="2.js"></script>
 <script type="text/javascript">
+    //构建forEach函数演示函数上下文功能
     function forEach(list,callback){
         for(var n = 0;n<list.length;n++){
             callback.call(list[n],n);
