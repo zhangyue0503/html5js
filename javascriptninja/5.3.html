@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<div id="box">试试看看</div>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //闭包可以访问到什么内容
+    var outerValue = "ninja";
+    var later;
+    function outerFunction(){
+        var innerValue = 'samurai';
+        function innerFunction(paramValue){
+            assert(outerValue,"Inner can see the ninja.");
+            assert(innerValue,"Inner can see the samurai.");
+            assert(paramValue,"Inner can see the wakizashi.");
+            assert(tooLate,"Inner can see the ronin.");
+        }
+        later = innerFunction;
+    }
+
+    assert(!tooLate,"Outer can't see the ronin.");
+    var tooLate = 'ronin';
+    outerFunction();
+    later('wakizashi');
+
+    //使用闭包模拟私有变量
+    function Ninja(){
+        var feints = 0;
+        this.getFeints = function(){
+            return feints;
+        };
+        this.feint = function(){
+            feints++;
+        };
+    }
+    var ninja = new Ninja();
+    ninja.feint();
+    assert(ninja.getFeints() == 1,"We're able to access the internal feint count.");
+    assert(ninja.feints === undefined,"And the private data is inaccessible to us.");
+
+    //在启动时器间隔回调（timer interval callback）中使用闭包
+    function animateIt(elementId){
+        var elem = document.getElementById(elementId);
+        var tick = 0;
+
+        var timer = setInterval(function(){
+            if(tick < 100){
+                elem.style.left = elem.style.top = tick+"px";
+                tick++;
+            }else{
+                clearInterval(timer);
+                assert(tick==100,"Tick accessed via a closure.");
+                assert(elem,"Element also accessed via a closure.");
+                assert(timer,"Timer reference also obtained via a closure.");
+            }
+        },10);
+    }
+    animateIt('box');
+
+
+</script>
+
+</body>
+</html>

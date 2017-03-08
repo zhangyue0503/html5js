@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<div>DIV 0</div>
+<div>DIV 1</div>
+<button id="test">Click Me!</button>
+<ul id="results"></ul>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //给函数绑定一个特定的上下文
+    function bind(context,name){
+        return function(){
+            return context[name].apply(context,arguments);
+        };
+    }
+
+    var button = {
+        clicked:false,
+        click:function(){
+            this.clicked = true;
+            assert(button.clicked,"The button has been clicked");
+            console.log(this);
+        }
+    };
+    var elem = document.getElementById("test");
+    elem.addEventListener("click",bind(button,'click'),false);
+
+    //在Prototype库中，函数bind代码的示例
+    Function.prototype.bind = function(){
+        var fn = this,args = Array.prototype.slice.call(arguments),
+                object = args.shift();
+        return function(){
+            return fn.apply(object,args.concat(Array.prototype.slice.call(arguments)));
+        };
+    };
+
+    var myObject = {};
+    function myFunction(){
+        return this == myObject;
+    }
+    assert(!myFunction(),"Context is not set yet.");
+    var aFunction = myFunction.bind(myObject);
+    assert(aFunction,"Context is set properly");
+
+    //一个更复杂的“分部”函数
+    Function.prototype.partial = function(){
+        var fn = this,args = Array.prototype.slice.call(arguments);
+        return function(){
+            var arg = 0;
+            for(var i=0;i<args.length&&arg < arguments.length;i++){
+                if(args[i] === undefined){
+                    args[i] = arguments[arg++];
+                }
+            }
+            return fn.apply(this,args);
+        };
+    };
+
+    //在原生函数上进行分部参数应用
+    String.prototype.csv = String.prototype.split.partial(/,\s*/);
+    var results = ("Mugan, Jin, Fuu").csv();
+
+    assert(results[0]=="Mugan"&&results[1]=="Jin"&&results[2]=="Fuu","The text values were split properly");
+
+    //柯里化函数示例（在第一个特定参数中进行填充）
+    Function.prototype.curry = function(){
+        var fn = this,
+                args = Array.prototype.slice.call(arguments);
+        return function(){
+            return fn.apply(this,args.concat(
+                    Array.prototype.slice.call(arguments)));
+        };
+    };
+
+    //函数记忆的方法
+    Function.prototype.memoized = function(key){
+        this._values = this._values || {};
+        return this._values[key] !== undefined ? this._values[key] :
+                this._values[key] = this.apply(this,arguments);
+    };
+    //使用闭包实现的缓存记忆功能
+    Function.prototype.memoize = function(){
+        var fn = this;
+        return function(){
+            return fn.memoized.apply(fn,arguments);
+        };
+    };
+
+    var isPrime = (function(num){
+        var prime = num != 1;
+        for(var i= 2;i<num;i++){
+            if(num %i == 0){
+                prime = false;
+                break;
+            }
+        }
+        return prime;
+    }).memoize();
+//    assert(isPrime.memoized(5),"The function works;5 is prime.");
+//    assert(isPrime._values[5],"The answers has been cached.");
+    assert(isPrime(17),"17 is prime");
+
+    //使用新功能包装旧函数
+    function wrap(object,method,wrapper){
+        var fn = object[method];
+        return object[method] = function(){
+            return wrapper.apply(this,[fn.bind(this)].concat(
+                    Array.prototype.slice.call(arguments)
+            ));
+        }
+    }
+//    if(Property.Brower.Opera){
+//        wrap(Element.Methods,"readAttribute",function(original,elem,attr){
+//            return attr == "title" ?
+//                    elem.title :
+//                    original(elem,attr);
+//        });
+//    }
+
+    //利用即时函数妥善处理迭代问题
+    var div = document.getElementsByTagName("div");
+    for(var i =0;i<div.length;i++){
+        (function(n){
+            div[n].addEventListener('click',function(){
+                alert("div #"+n+" was click");
+            },false);
+        })(i);
+    }
+
+
+
+</script>
+
+</body>
+</html>

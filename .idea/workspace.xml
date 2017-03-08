@@ -25,16 +25,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascriptninja/2.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="7" column="36" selection-start-line="6" selection-start-column="8" selection-end-line="7" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="2.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/2.css">
           <provider selected="true" editor-type-id="text-editor">
@@ -68,8 +58,38 @@
       <file leaf-file-name="3.5.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/3.5.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="58">
+            <state relative-caret-position="-55">
               <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5.1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascriptninja/5.1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="154">
+              <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5.7.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/javascriptninja/5.7.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="342">
+              <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="5.3.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascriptninja/5.3.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="401">
+              <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -85,21 +105,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="4.1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="4.1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/4.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
-              <caret line="136" column="69" selection-start-line="136" selection-start-column="69" selection-end-line="136" selection-end-column="69" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="3.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascriptninja/3.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+            <state relative-caret-position="1147">
+              <caret line="132" column="7" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -108,21 +118,9 @@
       <file leaf-file-name="3.1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/3.1.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="304">
+            <state relative-caret-position="-112">
               <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascriptninja/2.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="95">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="n#!!doc;n#assert#0" expanded="false" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -144,9 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eloquentjs/11.html" />
-        <option value="$PROJECT_DIR$/eloquentjs/12.html" />
-        <option value="$PROJECT_DIR$/eloquentjs/13.html" />
         <option value="$PROJECT_DIR$/eloquentjs/15.html" />
         <option value="$PROJECT_DIR$/eloquentjs/14.html" />
         <option value="$PROJECT_DIR$/eloquentjs/data.txt" />
@@ -195,6 +190,9 @@
         <option value="$PROJECT_DIR$/javascriptninja/3.5.html" />
         <option value="$PROJECT_DIR$/javascriptninja/3.6.html" />
         <option value="$PROJECT_DIR$/javascriptninja/4.1.html" />
+        <option value="$PROJECT_DIR$/javascriptninja/5.1.html" />
+        <option value="$PROJECT_DIR$/javascriptninja/5.3.html" />
+        <option value="$PROJECT_DIR$/javascriptninja/5.7.html" />
       </list>
     </option>
   </component>
@@ -298,20 +296,20 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.4.1.html">
-    <configuration default="false" name="3.2.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/3.2.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="3.3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/3.3.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="3.5.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/3.5.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.5.7.html">
     <configuration default="false" name="3.6.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/3.6.html">
       <method />
     </configuration>
     <configuration default="false" name="4.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/4.1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="5.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/5.1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="5.3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/5.3.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="5.7.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/5.7.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -368,19 +366,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.3.2.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3.3.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3.5.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.3.6.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.4.1.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.3.6.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.4.1.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5.1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.5.3.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.5.7.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.4.1.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.3.6.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.3.5.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.3.3.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3.2.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.5.7.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.5.3.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.5.1.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.4.1.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.3.6.html" />
       </list>
     </recent_temporary>
   </component>
@@ -411,12 +409,12 @@
       <workItem from="1484034469632" duration="1435000" />
       <workItem from="1484535369000" duration="1197000" />
       <workItem from="1485008325330" duration="1497000" />
-      <workItem from="1486392502410" duration="15583000" />
+      <workItem from="1486392502410" duration="20383000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="188837000" />
+    <option name="totallyTimeSpent" value="193637000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,27 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/18.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3648">
-          <caret line="192" column="0" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eloquentjs/17.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1275">
-          <caret line="78" column="23" selection-start-line="78" selection-start-column="23" selection-end-line="78" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/eloquentjs/16.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-74">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/eloquentjs/graffiti.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -760,22 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/3.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="304">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascriptninja/2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="95">
@@ -810,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/3.5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="58">
-          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/javascriptninja/3.6.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="209">
@@ -834,10 +787,58 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="10" column="61" selection-start-line="10" selection-start-column="61" selection-end-line="10" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/javascriptninja/4.1.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
-          <caret line="136" column="69" selection-start-line="136" selection-start-column="69" selection-end-line="136" selection-end-column="69" />
+        <state relative-caret-position="1147">
+          <caret line="132" column="7" selection-start-line="132" selection-start-column="7" selection-end-line="132" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/3.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-112">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/3.5.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-55">
+          <caret line="11" column="29" selection-start-line="11" selection-start-column="29" selection-end-line="11" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/5.3.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/5.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="154">
+          <caret line="20" column="17" selection-start-line="20" selection-start-column="17" selection-end-line="20" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/5.7.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
           <folding />
         </state>
       </provider>
