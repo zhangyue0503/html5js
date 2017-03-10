@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //使用match()进行全局搜索和局部搜索时的不同
+    var html = "<div class='test'><b>Hello</b> <i>world!</i></div>";
+    var results = html.match(/<(\/?)(\w+)([^>]*?)>/);
+    console.log(results);
+
+    var all = html.match(/<(\/?)(\w+)([^>]*?)>/g);
+    console.log(all);
+
+    //压缩查询字符串的技术
+    function compress(source){
+        var keys = {};
+
+        source.replace(
+                /([^=&]+)=([^&]*)/g,
+                function(full,key,value){
+                    keys[key] =
+                            (keys[key]?keys[key]+",":"")+value;
+                    return "";
+                }
+        );
+
+        var result = [];
+        for(var key in keys){
+            result.push(key+"="+keys[key]);
+        }
+        return result.join("&");
+    }
+    console.log(compress("foo=1&foo=2&blah=a&blah=b&foo=3"));
+
+
+</script>
+
+</body>
+</html>
