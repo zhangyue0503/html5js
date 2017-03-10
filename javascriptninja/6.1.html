@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //使用原型方法创建一个新实例
+    function Ninja(){}
+    Ninja.prototype.swingSword = function(){
+        return true;
+    };
+    var ninja1 = Ninja();
+    assert(ninja1 === undefined,"No instance of Ninja created.");
+    var ninja2 = new Ninja();
+    assert(ninja2 && ninja2.swingSword && ninja2.swingSword(),"Instance exists and method is callable.")
+
+    //观察初始化活动的优先级
+    function Ninja2(){
+        this.swung = false;
+        this.swingSword = function(){
+            return !this.swung;
+        }
+    }
+    Ninja2.prototype.swingSword = function(){
+        return this.swung;
+    };
+    var ninja22 = new Ninja2();
+    assert(ninja22.swingSword(),"Called the instance method,not the prototype method.");
+
+
+
+</script>
+
+</body>
+</html>
