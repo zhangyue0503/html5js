@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<table><tbody></tbody></table>
+
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //在全局作用域内求值代码
+    function globalEval(data){
+        data = data.replace(/^\s*|\s*$/g,"");
+        if(data){
+            var head = document.getElementsByTagName("head")[0] || document.documentElement,
+                    script = document.createElement("script");
+            script.type = "text/javascript";
+            script.text = data;
+
+            head.appendChild(script);
+            head.removeChild(script);
+        }
+    }
+    window.onload = function(){
+        (function(){
+            globalEval("var test = 5");
+        })();
+
+        assert(test === 5,"The code was evaluated globally.");
+    };
+
+
+
+</script>
+
+</body>
+</html>
