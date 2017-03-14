@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<div title="Click Me">Click Me</div>
+<div title="but only once">but only once</div>
+<div title="Ninja Power!">Ninja Power!</div>
+<div title="Secrets">Secrets</div>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //20170314
+    //绑定事件处理程序时，设置正确的上下文
+    if(document.addEventListener){
+        this.addEvent = function(elem, type, fn){
+            elem.addEventListener(type,fn,false);
+            return fn;
+        };
+        this.removeEvent = function(elem, type, fn){
+            elem.removeEventListener(type, fn, false);
+        };
+    }else if(document.attachEvent){
+        this.addEvent = function(elem, type, fn){
+            var bound = function(){
+                return fn.apply(elem, arguments);
+            };
+            elem.attachEvent("on"+type,bound);
+            return bound;
+        };
+        this.removeEvent = function(elem, type, fn){
+            elem.detachEvent("on"+type,fn);
+        };
+    }
+
+    //测试事件绑定API
+    addEvent(window,"load",function(){
+        var elems = document.getElementsByTagName("div");
+        for(var i=0;i<elems.length;i++)(function(elem){
+            var handler = addEvent(elem,"click",function(){
+               this.style.backgroundColor = this.style.backgroundColor==''?'green':'';
+                removeEvent(elem,"click",handler);
+            });
+        })(elems[i]);
+    });
+
+    //规范化Event对象实例
+    function fixEvent(event){
+        function returnTrue(){ return true;}
+        function returnFalse(){ return false;}
+
+        if(!event || !event.stopPropagation){
+            var old = event || window.event;
+
+            event = {};
+            for(var prop in old){
+                event[prop] = old[prop];
+            }
+
+            if(!event.target){
+                event.target = event.srcElement || document;
+            }
+
+            event.relatedTarget = event.fromElement === event.target ?
+                    event.toElement : event.fromElement;
+
+            event.preventDefault = function(){
+                event.returnValue = false;
+                event.isDefaultPrevented = returnFalse;
+            };
+
+            event.stopPropagation = function(){
+                event.cancelBubble = true;
+                event.isImmediatePropagationStopped = returnTrue;
+            };
+
+            event.isPropagationStopped = returnFalse;
+
+            event.stopImmediatePropagation = returnFalse;
+
+            if(event.clientX != null){
+                var doc = document.documentElement,body = document.body;
+
+                event.pageX = event.clientX +
+                        (doc && doc.scrollLeft || body && body.scrollLeft || 0) -
+                        (doc && doc.clientLeft || body && body.clientLeft || 0);
+                event.pageY = event.clientY +
+                        (doc && doc.scrollTop || body && body.scrollTop || 0) -
+                        (doc && doc.clientTop || body && body.clientTop || 0);
+            }
+
+            event.which = event.charCode || event.keyCode;
+
+            if(event.button != null){
+                event.button = (event.button & 1 ? 0:
+                                (event.button & 4 ?1 :(event.button & 2 ? 2 :0)));
+            }
+        }
+        return event;
+    }
+
+    //实现一个中央对象用于保存DOM元素信息
+    (function(){
+        var cache = {},
+                guidCounter = 1,
+                expando = "data" + (new Date).getTime();
+
+        this.getData = function(elem){
+            var guid = elem[expando];
+            if(!guid){
+                guid = elem[expando] = guidCounter++;
+                cache[guid] = {};
+            }
+            return cache[guid];
+        };
+        this.removeData = function(elem){
+            var guid = elem[expando];
+            if(!guid) return;
+            delete cache[guid];
+            try{
+                delete elem[expando];
+            }catch (e){
+                if(elem.removeAttribute){
+                    elem.removeAttribute(expando);
+                }
+            }
+        };
+
+    })();
+
+    var elems = document.getElementsByTagName("div");
+    for(var n = 0;n < elems.length;n++){
+        getData(elems[n]).ninja = elems[n].title;
+    }
+    for(var n = 0;n < elems.length;n++){
+        assert(getData(elems[n]).ninja === elems[n].title,"Stored data is "+getData(elems[n]).ninja);
+    }
+    for(var n = 0;n < elems.length;n++){
+        removeData(elems[n]);
+        assert(getData(elems[n]).ninja === undefined,"Stored data has been destroyed.");
+    }
+
+    // 一个绑定事件处理程序并进行跟踪的函数
+    (function(){
+        var nextGuid = 1;
+
+        this.addEvent = function(elem, type, fn){
+
+            var data = getData(elem);
+
+            if(!data.handlers) data.handlers = {};
+
+            if(!data.handlers[type])
+                data.handlers[type] = [];
+
+            if(!fn.guid) fn.guid = nextGuid++;
+
+            data.handlers[type].push(fn);
+
+            if(!data.dispatcher){
+                data.disabled = false;
+                data.dispatcher = function(event){
+
+                    if(data.disabled) return;
+                    event = fixEvent(event);
+
+                    var handlers = data.handlers[event.type];
+                    if(handlers){
+                        for(var n = 0;n < handlers.length;n++){
+                            handlers[n].call(elem,event);
+                        }
+                    }
+                };
+            }
+            if(data.handlers[type].length == 1){
+                if(document.addEventListener){
+                    elem.addEventListener(type, data.dispatcher,false);
+                }else if(document.attachEvent){
+                    elem.attachEvent("on"+type,data.dispatcher);
+                }
+            }
+        };
+    })();
+
+    //清理处理程序
+    function tidyUp(elem, type){
+        function isEmpty(object){
+            for(var prop in object){
+                return false;
+            }
+            return true;
+        }
+
+        var data = getData(elem);
+
+        if(data.handlers[type].length === 0){
+            delete data.handlers[type];
+            if(document.removeEventListener){
+                elem.removeEventListener(type,data.dispatcher,false);
+            }else if(document.detachEvent){
+                elem.detachEvent("on" + type,data.dispatcher);
+            }
+        }
+        if(isEmpty(data.handlers)){
+            delete data.handlers;
+            delete data.dispatcher;
+        }
+        if(isEmpty(data)){
+            removeData(data);
+        }
+    }
+
+    //事件处理程序的解绑函数
+    this.removeEvent = function(elem, type, fn){
+        var data = getData(elem);
+
+        if(!data.handlers) return;
+
+        var removeType = function(t){
+            data.handlers[t] = [];
+            tidyUp(elem,t);
+        };
+
+        if(!type){
+            for(var t in data.handlers) removeType(t);
+            return;
+        }
+        var handlers = data.handlers[type]
+        if(!handlers) return;
+
+        if(!fn){
+            removeType(type);
+            return;
+        }
+        if(fn.guid){
+            for(var n=0;n<handlers.length;n++){
+                if(handlers[n].guid === fn.guid){
+                    handlers.splice(n--,1);
+                }
+            }
+        }
+        tidyUp(elem,type);
+    };
+
+    //冒烟测试
+    addEvent(window, "load", function(){
+        var subjects = document.getElementsByTagName("div");
+
+        for(var i=0;i< subjects.length;i++) (function(elem){
+
+            addEvent(elem,"mouseover",function handler(e){
+                this.style.backgroundColor = "red";
+            });
+            addEvent(elem,"click",function handler(e){
+                this.style.backgroundColor = "green";
+                removeEvent(elem,"click",handler);
+            });
+        })(subjects[i]);
+    });
+
+
+    //20170315
+
+
+
+
+</script>
+
+</body>
+</html>
