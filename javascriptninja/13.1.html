@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <link rel="stylesheet" href="2.css" type="text/css">
+    <style type="text/css">
+        #whirlyThing{display: none;}
+    </style>
 </head>
 <body>
 <ul id="results"></ul>
@@ -17,7 +20,7 @@
     //绑定事件处理程序时，设置正确的上下文
     if(document.addEventListener){
         this.addEvent = function(elem, type, fn){
-            elem.addEventListener(type,fn,false);
+            elem.addEventListener  (type,fn,false);
             return fn;
         };
         this.removeEvent = function(elem, type, fn){
@@ -263,11 +266,62 @@
 
 
     //20170315
+    //在元素上触发一个冒泡事件
+    function triggerEvent(elem, event){
+        var elemData = getData(elem),
+                parent = elem.parentNode || elem.ownerDocument;
+
+        if(typeof event === "string"){
+            event = {type:event,target:elem};
+        }
+
+        event = fixEvent(event);
+
+        if(elemData.dispatcher){
+            elemData.dispatcher.call(elem, event);
+        }
+
+        if(parent && !event.isPropagationStopped()){
+            triggerEvent(parent, event);
+        }else if(!parent && !event.isDefaultPrevented){
+            var targetData = getData(event.target);
+            if(event.target[event.type]){
+                targetData.disabled = true;
+                event.target[event.type]();
+                targetData.disabled = false;
+            }
+        }
+    }
 
 
+
+    //使用自定义事件
+    addEvent(window,'load',function(){
+        var button = document.getElementById('clickMe');
+        addEvent(button,'click',function(){
+            performAjaxOperation(this);
+        });
+        var body = document.getElementsByTagName("body")[0];
+
+        addEvent(body,'ajax-start',function(e){
+            document.getElementById("whirlyThing").style.display = 'inline-block';
+        });
+        addEvent(body,'ajax-start',function(e){
+            document.getElementById("whirlyThing").style.display = 'none';
+        });
+    });
+    function performAjaxOperation(target){
+        triggerEvent(target,'ajax-start');
+        window.setTimeout(function(){
+            triggerEvent(target,'ajax-complete');
+        },5000);
+    }
 
 
 </script>
+
+<button type="button" id="clickMe">Start</button>
+<img id="whirlyThing" src="https://img.alicdn.com/tfs/TB1eEDVPVXXXXcwapXXXXXXXXXX-520-280.jpg_.webp"/>
 
 </body>
 </html>
