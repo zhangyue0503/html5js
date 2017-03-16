@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<div></div>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //确保自关闭元素能正确解析
+    var tags = /^(abbr|br|col|img|imput|link|meta|param|hr|area|embed)$/i;
+    function convert(html){
+        return html.replace(/(<(\w+)[^>]*?)\/>/g,function(all, front, tag){
+            return tags.test(tag) ? all : front + "></" + tag + ">";
+        });
+    }
+
+    assert(convert("<a/>") === "<a></a>", "Check anchor conversion");
+    assert(convert("<hr/>") === "<hr/>","Check hr conversion.");
+
+    //将一些标签生成一个DOM节点列表
+    function getNodes(htmlString, doc){
+        var map = {
+            "<td" : [3,"<table><tbody><tr>","</tr></tbody></table>"],
+            "<th" : [3,"<table><tbody><tr>","</tr></tbody></table>"],
+            "<tr" : [2,"<table><thead>","</thead></table>"],
+            "<option" : [1,"<select multiple='multiple'>","</select>"],
+            "<optgroup" : [1,"<select multiple='multiple'>","</select>"],
+            "<legend" : [1,"<fieldset>","</fieldset>"],
+            "<thead" : [1,"<table>","</table>"],
+            "<tbody" : [1,"<table>","</table>"],
+            "<tfoot" : [1,"<table>","</table>"],
+            "<colgroup" : [1,"<table>","</table>"],
+            "<caption" : [1,"<table>","</table>"],
+            "<col" : [2,"<table><tbody></tbody><colgroup>","</colgroup></table>"],
+            "<link" : [3,"<div></div><div>","</div>"]
+        };
+
+        var tagName = htmlString.match(/<\w+/),
+                mapEntry = tagName ? map[tagName] :null;
+        if(!mapEntry) mapEntry = [0," ", " "];
+
+        var div = (doc || document).createElement("div");
+
+        div.innerHTML = mapEntry[1] + htmlString + mapEntry[2];
+        while(mapEntry[0]--) div = div.lastChild;
+        return div.childNodes;
+    }
+
+    assert(getNodes("<td>test</td><td>test2</td>").length === 2,"Get two nodes back from the method.");
+    assert(getNodes("<td>test</td>")[0].nodeName === "TD","Verify that we're getting the right node.");
+
+
+</script>
+
+</body>
+</html>
