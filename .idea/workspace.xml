@@ -25,31 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="6.1.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascriptninja/6.1.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="6.7.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/6.7.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="146">
               <caret line="14" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="6.20.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/javascriptninja/6.20.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="933">
-              <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -115,11 +95,31 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="14.1.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="14.1.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/javascriptninja/14.1.html">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="49" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="15.1.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/javascriptninja/15.1.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa1.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/spa1.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="273">
-              <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="47" selection-end-column="30" />
+              <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -142,9 +142,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/eloquentjs/20.html" />
-        <option value="$PROJECT_DIR$/eloquentjs/public/index.html" />
-        <option value="$PROJECT_DIR$/eloquentjs/router.js" />
         <option value="$PROJECT_DIR$/eloquentjs/20.js" />
         <option value="$PROJECT_DIR$/eloquentjs/public/skillsharing_client.js" />
         <option value="$PROJECT_DIR$/eloquentjs/21.html" />
@@ -193,6 +190,9 @@
         <option value="$PROJECT_DIR$/javascriptninja/12.1.html" />
         <option value="$PROJECT_DIR$/javascriptninja/13.1.html" />
         <option value="$PROJECT_DIR$/javascriptninja/14.1.html" />
+        <option value="$PROJECT_DIR$/javascriptninja/15.1.html" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/spa.html" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/spa1.html" />
       </list>
     </option>
   </component>
@@ -265,7 +265,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="javascriptninja" />
+              <option name="myItemId" value="singlepagewebapplications" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -296,13 +296,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.14.1.html">
-    <configuration default="false" name="9.3.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/9.3.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="10.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/10.1.html">
-      <method />
-    </configuration>
+  <component name="RunManager" selected="JavaScript Debug.spa1.html">
     <configuration default="false" name="12.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/12.1.html">
       <method />
     </configuration>
@@ -310,6 +304,12 @@
       <method />
     </configuration>
     <configuration default="false" name="14.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/14.1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="15.1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/javascriptninja/15.1.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="spa1.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/spa1.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -366,19 +366,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.9.3.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.10.1.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.12.1.html" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.13.1.html" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.14.1.html" />
+      <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.12.1.html" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.13.1.html" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.14.1.html" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.15.1.html" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.spa1.html" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.14.1.html" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.13.1.html" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.12.1.html" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.10.1.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.9.3.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.spa1.html" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.15.1.html" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.14.1.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.13.1.html" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.12.1.html" />
       </list>
     </recent_temporary>
   </component>
@@ -409,12 +409,12 @@
       <workItem from="1484034469632" duration="1435000" />
       <workItem from="1484535369000" duration="1197000" />
       <workItem from="1485008325330" duration="1497000" />
-      <workItem from="1486392502410" duration="37822000" />
+      <workItem from="1486392502410" duration="40193000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211076000" />
+    <option name="totallyTimeSpent" value="213447000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -427,9 +427,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -463,20 +463,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/eloquentjs/public/skillsharing_client.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="133" column="29" selection-start-line="133" selection-start-column="29" selection-end-line="133" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js语言精粹/js2.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-570">
-          <caret line="33" column="13" selection-start-line="33" selection-start-column="13" selection-end-line="33" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js语言精粹/js1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2755">
@@ -847,8 +833,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/javascriptninja/14.1.html">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="49" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/javascriptninja/15.1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="16" column="17" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/spa1.html">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
-          <caret line="45" column="31" selection-start-line="45" selection-start-column="31" selection-end-line="47" selection-end-column="30" />
+          <caret line="88" column="0" selection-start-line="88" selection-start-column="0" selection-end-line="88" selection-end-column="0" />
           <folding />
         </state>
       </provider>

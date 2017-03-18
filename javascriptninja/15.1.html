@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="2.css" type="text/css">
+</head>
+<body>
+<ul id="results"></ul>
+<div id="test">
+    <b>Hello</b>, I'm a ninja!
+</div>
+<div id="test2"></div>
+<script type="text/javascript" src="2.js"></script>
+<script type="text/javascript">
+    //使用Selectors API的示例
+    window.onload = function(){
+        var divs = document.querySelectorAll("body > div");
+        assert(divs.length === 2 ,"Two divs found using a CSS selector.");
+
+        var b = document.getElementById("test").querySelector("b:only-child");
+        assert(b,"The bold element was found relative to another element.");
+    };
+
+
+
+</script>
+
+</body>
+</html>
