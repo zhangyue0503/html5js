@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="8351e555-5391-4293-a728-d22ea5137dfc" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.chat.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.chat.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.shell.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.shell.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js" afterPath="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js" afterPath="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js" />
     </list>
     <ignored path="html5js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,11 +38,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spa.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="spa.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-55">
-              <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
+            <state relative-caret-position="247">
+              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -50,7 +51,7 @@
       <file leaf-file-name="spa.shell.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.shell.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
+            <state relative-caret-position="349">
               <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
               <folding />
             </state>
@@ -60,13 +61,9 @@
       <file leaf-file-name="spa.chat.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="532">
-              <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-              <folding>
-                <marker date="1490020900000" expanded="true" signature="331:354" ph="..." />
-                <marker date="1490020900000" expanded="true" signature="331:356" ph="..." />
-                <marker date="1490020900000" expanded="true" signature="331:390" ph="..." />
-              </folding>
+            <state relative-caret-position="402">
+              <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -103,11 +100,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="spa.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spa.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/spa.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+            <state relative-caret-position="305">
+              <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -116,8 +113,8 @@
       <file leaf-file-name="spa.shell.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="334">
-              <caret line="184" column="34" selection-start-line="184" selection-start-column="34" selection-end-line="184" selection-end-column="34" />
+            <state relative-caret-position="391">
+              <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -142,7 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/gaoxingnengjs/8.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/8.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/14.js" />
         <option value="$PROJECT_DIR$/speakingjavascript/15.js" />
@@ -186,13 +182,14 @@
         <option value="$PROJECT_DIR$/singlepagewebapplications/spa/js/spa.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/spa/css/spa.shell.css" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/spa/js/spa.shell.js" />
-        <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.model.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.util.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/spa.html" />
-        <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.chat.css" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.shell.css" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css" />
       </list>
     </option>
   </component>
@@ -288,6 +285,32 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="spa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singlepagewebapplications" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="4" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spa" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -477,12 +500,12 @@
       <workItem from="1484034469632" duration="1435000" />
       <workItem from="1484535369000" duration="1197000" />
       <workItem from="1485008325330" duration="1497000" />
-      <workItem from="1486392502410" duration="51068000" />
+      <workItem from="1486392502410" duration="55560000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="224322000" />
+    <option name="totallyTimeSpent" value="228814000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -877,26 +900,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="532">
-          <caret line="41" column="23" selection-start-line="41" selection-start-column="23" selection-end-line="41" selection-end-column="23" />
-          <folding>
-            <marker date="1490020900000" expanded="true" signature="331:354" ph="..." />
-            <marker date="1490020900000" expanded="true" signature="331:356" ph="..." />
-            <marker date="1490020900000" expanded="true" signature="331:390" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.model.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.util.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="529">
@@ -915,24 +918,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="184" column="34" selection-start-line="184" selection-start-column="34" selection-end-line="184" selection-end-column="34" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-55">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.chat.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="401">
@@ -941,18 +926,52 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/spa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="305">
+          <caret line="23" column="7" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.shell.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
+        <state relative-caret-position="349">
           <caret line="41" column="1" selection-start-line="41" selection-start-column="1" selection-end-line="41" selection-end-column="1" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/spa.html">
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="25" column="22" selection-start-line="25" selection-start-column="22" selection-end-line="25" selection-end-column="22" />
+        <state relative-caret-position="190">
+          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="402">
+          <caret line="177" column="20" selection-start-line="177" selection-start-column="20" selection-end-line="177" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/spa.shell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="168" column="40" selection-start-line="168" selection-start-column="40" selection-end-line="168" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/css/spa.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
