@@ -10,7 +10,7 @@
  */
 /*global $,sap */
 spa.util_b = (function () {
-	`use strict`;
+	'use strict';
 	var configMap = {
 			regex_encode_html  : /[&"'><]/g,
 			regex_encode_noamp : /["'><]/g,
