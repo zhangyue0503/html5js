@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SPA Chapters 5-6</title>
+
+    <link rel="stylesheet" href="css/spa.css" type="text/css"/>
+    <link rel="stylesheet" href="css/spa.chat.css" type="text/css"/>
+    <link rel="stylesheet" href="css/spa.shell.css" type="text/css"/>
+    <link rel="stylesheet" href="css/spa.avtr.css" type="text/css"/>
+
+    <script src="js/jq/taffy-min.js"></script>
+    <script src="js/jq/jquery-3.2.0.min.js"></script>
+    <script src="js/jq/jquery.uriAnchor.js"></script>
+    <script src="js/jq/jquery.event.gevent.js"></script>
+    <script src="js/jq/jquery.event.ue.js"></script>
+
+
+    <script src="js/spa.js"></script>
+    <script src="js/spa.util.js"></script>
+    <script src="js/spa.data.js"></script>
+    <script src="js/spa.fake.js"></script>
+    <script src="js/spa.model.js"></script>
+    <script src="js/spa.util_b.js"></script>
+    <script src="js/spa.shell.js"></script>
+    <script src="js/spa.chat.js"></script>
+    <script src="js/spa.avtr.js"></script>
+
+    <script type="text/javascript">
+        $(function () {
+            spa.initModule($('#spa'));
+        });
+
+        //测试伪造人员对象
+//        var peopleDb = spa.model.people.get_db();
+//        var peopleList = peopleDb().get();
+//
+//        console.log(peopleList);
+//
+//        peopleDb().each(function(person,idx){console.log(person.name);});
+//
+//        var person = peopleDb({cid:'id_03'}).first();
+//        console.log(person.name);
+//        console.log(JSON.stringify(person.css_map));
+//        console.log(person.get_is_anon());
+//
+//        person = peopleDb({id:'a0'}).first();
+//
+//        console.log(person.get_is_anon());
+//        console.log(person.name);
+//
+//        var personCidMap = spa.model.people.get_cid_map();
+//        console.log(personCidMap['a0'].name);
+
+//        $('body').append('<div id="spa-chat-list-box"');
+//        var $listbox = $('#spa-chat-list-box');
+//        $listbox.css({
+//            position : 'absolute', 'z-index' : 3,
+//            top      : 50, left : 50, width : 50, height : 50,
+//            border   : '2px solid black', background : '#fff'
+//        });
+//        var onListChange = function (event, update_map) {
+//            $(this).html(update_map.list_text);
+//            alert('onListChange ran');
+//        };
+//
+//        $.gevent.subscribe(
+//                $listbox,
+//                'spa-listchange',
+//                onListChange
+//        );
+//        $.gevent.publish(
+//                'spa-listchange',
+//                [{list_text : 'the list is here'}]
+//        );
+//        $listbox.remove();
+//        $.gevent.publish('spa-listchange',[{}]);
+    </script>
+
+</head>
+<body>
+<div id="spa"></div>
+</body>
+</html>
