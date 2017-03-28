@@ -24,15 +24,23 @@ spa.model = (function () {
 		},
 		isFakeData = true,
 		personProto, makeCid, clearPeopleDb, completeLogin,
-		makePerson, removePerson, people, chat, initModule;
+		makePerson, people, chat, initModule;
 
 	chat = (function () {
 		var _publish_listchange, _publish_updatechat,
 			_update_list, _leave_chat, join_chat,
-			get_chatee, send_msg, set_chatee,
+			get_chatee, send_msg, set_chatee,update_avatar,
 			chatee   = null;
+
+		update_avatar = function(avater_update_map){
+			var sio = isFakeData?spa.fake.mockSio:spa.data.getSio();
+			if(sio){
+				sio.emit('updateavatar',avater_update_map);
+			}
+		};
+
 		_update_list = function (arg_list) {
-			var i, person_map, make_person_map,
+			var i, person_map, make_person_map,person,
 				people_list      = arg_list[0],
 				is_chatee_online = false;
 			clearPeopleDb();
@@ -53,8 +61,10 @@ spa.model = (function () {
 						id      : person_map._id,
 						name    : person_map.name
 					};
+					person = makePerson(make_person_map);
 					if (chatee && chatee.id === make_person_map.id) {
 						is_chatee_online = true;
+						chatee = person;
 					}
 					makePerson(make_person_map);
 				}
@@ -139,7 +149,8 @@ spa.model = (function () {
 			get_chatee:get_chatee,
 			join   : join_chat,
 			send_msg:send_msg,
-			set_chatee:set_chatee
+			set_chatee:set_chatee,
+			update_avatar:update_avatar
 		};
 	}());
 
@@ -202,20 +213,6 @@ spa.model = (function () {
 		return person;
 	};
 
-	removePerson = function (person) {
-		if (!person) {
-			return false;
-		}
-		if (person.id === configMap.anon_id) {
-			return false;
-		}
-		stateMap.people_db({cid : person.cid}).remove();
-		if (person.cid) {
-			delete stateMap.people_cid_map[person.cid];
-		}
-		return true;
-	};
-
 	people = (function () {
 		var get_by_cid, get_db, get_user, login, logout;
 		get_by_cid = function (cid) {
@@ -243,12 +240,11 @@ spa.model = (function () {
 			});
 		};
 		logout     = function () {
-			var is_removed, user = stateMap.user;
+			var user = stateMap.user;
 			chat._leave();
-			is_removed    = removePerson(user);
 			stateMap.user = stateMap.anon_user;
+			clearPeopleDb();
 			$.gevent.publish('spa-logout', [user]);
-			return is_removed;
 		};
 		return {
 			get_by_cid : get_by_cid,

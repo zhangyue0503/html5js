@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8351e555-5391-4293-a728-d22ea5137dfc" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr_bak.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat_bak.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat.js" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake.js" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake_bak.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.avtr.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.avtr.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.chat.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.chat.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.css" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.model.js" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.model.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.shell.js" afterPath="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.shell.js" />
     </list>
     <ignored path="html5js.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -25,23 +35,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="spa.model.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.model.js">
+      <file leaf-file-name="spa.data.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.data.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="224">
-              <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="spa.fake.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="314">
-              <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -53,8 +51,97 @@
         <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/spa.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="228">
-              <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+              <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.util_b.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.util_b.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1121">
+              <caret line="59" column="31" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="31" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.avtr.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="183" column="45" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="45" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.fake.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.chat.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="13">
+              <caret line="253" column="6" selection-start-line="253" selection-start-column="6" selection-end-line="253" selection-end-column="6" />
+              <folding>
+                <marker date="1490713596000" expanded="true" signature="1210:1222" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa-1.2.2.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch01/spa-1.2.2.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="209">
+              <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch05_06/6.7/spa.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="19">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.chat_bak.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat_bak.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="146">
+              <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+                <marker date="1490711729000" expanded="true" signature="905:917" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="spa.fake_bak.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake_bak.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="250">
+              <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,14 +163,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/javascriptninja/2.html" />
-        <option value="$PROJECT_DIR$/javascriptninja/3.1.html" />
-        <option value="$PROJECT_DIR$/javascriptninja/2.js" />
-        <option value="$PROJECT_DIR$/javascriptninja/2.css" />
-        <option value="$PROJECT_DIR$/javascriptninja/3.2.html" />
-        <option value="$PROJECT_DIR$/javascriptninja/3.3.html" />
-        <option value="$PROJECT_DIR$/javascriptninja/3.5.html" />
-        <option value="$PROJECT_DIR$/javascriptninja/3.6.html" />
         <option value="$PROJECT_DIR$/javascriptninja/4.1.html" />
         <option value="$PROJECT_DIR$/javascriptninja/5.3.html" />
         <option value="$PROJECT_DIR$/javascriptninja/5.7.html" />
@@ -125,8 +204,16 @@
         <option value="$PROJECT_DIR$/singlepagewebapplications/5/spa/spa.html" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/5/spa/js/spa.shell.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/5/spa/css/spa.shell.css" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.css" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.chat.css" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.avtr.css" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.shell.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.model.js" />
         <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake.js" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/spa.html" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr.js" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat.js" />
+        <option value="$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch05_06/6.7/spa.html" />
       </list>
     </option>
   </component>
@@ -139,6 +226,7 @@
   <component name="NodeModulesDirectoryManager">
     <handled-path value="$PROJECT_DIR$/eloquentjs/node_modules" />
     <handled-path value="$PROJECT_DIR$/node_modules" />
+    <handled-path value="$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch08/8.6.5-avatars/node_modules" />
     <handled-path value="$PROJECT_DIR$/vue/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
@@ -217,11 +305,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spa" />
+              <option name="myItemId" value="单页Web应用：JavaScript前端到后端 源码" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -239,15 +323,63 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="6" />
+              <option name="myItemId" value="单页Web应用：JavaScript前端到后端 源码" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spa" />
+              <option name="myItemId" value="ch05_06" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="singlepagewebapplications" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="单页Web应用：JavaScript前端到后端 源码" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch05_06" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6.7" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="html5js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="singlepagewebapplications" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="单页Web应用：JavaScript前端到后端 源码" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ch05_06" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="6.5" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -270,11 +402,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/singlepagewebapplications" />
+      <recent name="$PROJECT_DIR$/singlepagewebapplications/6/spa/js" />
       <recent name="$PROJECT_DIR$/singlepagewebapplications/" />
       <recent name="$PROJECT_DIR$/singlepagewebapplications/5" />
       <recent name="$PROJECT_DIR$/singlepagewebapplications/5/spa/js/jq" />
-      <recent name="$PROJECT_DIR$/singlepagewebapplications/5/spa/js" />
-      <recent name="$PROJECT_DIR$/singlepagewebapplications/4" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/singlepagewebapplications/5/spa/js/jq" />
@@ -282,20 +414,20 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.spa.html (3)">
+  <component name="RunManager" selected="JavaScript Debug.spa.html (5)">
     <configuration default="false" name="spa.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/spa/spa.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="layout.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/spa/layout.html">
-      <method />
-    </configuration>
-    <configuration default="false" name="spa.html (1)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/4/spa/spa.html">
       <method />
     </configuration>
     <configuration default="false" name="spa.html (2)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/5/spa/spa.html">
       <method />
     </configuration>
     <configuration default="false" name="spa.html (3)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/6/spa/spa.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="spa.html (4)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch05_06/6.7/spa.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="spa.html (5)" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/html5js/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch05_06/6.5/spa.html">
       <method />
     </configuration>
     <configuration default="true" type="DartCommandLineRunConfigurationType" factoryName="Dart Command Line Application">
@@ -353,18 +485,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.spa.html" />
-      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.layout.html" />
-      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (1)" />
-      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (2)" />
-      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (3)" />
+      <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (2)" />
+      <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (3)" />
+      <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (4)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (5)" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (3)" />
-        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (2)" />
-        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (1)" />
-        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.layout.html" />
-        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.spa.html" />
+        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (5)" />
+        <item index="1" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (4)" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.spa.html" />
+        <item index="3" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (2)" />
+        <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.spa.html (3)" />
       </list>
     </recent_temporary>
   </component>
@@ -395,12 +527,12 @@
       <workItem from="1484034469632" duration="1435000" />
       <workItem from="1484535369000" duration="1197000" />
       <workItem from="1485008325330" duration="1497000" />
-      <workItem from="1486392502410" duration="70685000" />
+      <workItem from="1486392502410" duration="80981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="243939000" />
+    <option name="totallyTimeSpent" value="254235000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -413,17 +545,17 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="820" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24665257" sideWeight="0.4945055" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.50528544" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32967034" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32005495" sideWeight="0.4947146" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24665257" sideWeight="0.50549453" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3997253" sideWeight="0.49753347" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -449,160 +581,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/javascriptninja/5.3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="401">
-          <caret line="63" column="21" selection-start-line="63" selection-start-column="21" selection-end-line="63" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/5.7.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="131" column="14" selection-start-line="131" selection-start-column="14" selection-end-line="131" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/5.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/6.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/6.20.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="933">
-          <caret line="61" column="7" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/6.7.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="146">
-          <caret line="14" column="13" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/7.5.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="15" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="44" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/8.3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="73" column="22" selection-start-line="73" selection-start-column="22" selection-end-line="73" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/9.3.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="31" column="21" selection-start-line="0" selection-start-column="0" selection-end-line="39" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/10.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/13.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="273">
-          <caret line="282" column="0" selection-start-line="282" selection-start-column="0" selection-end-line="282" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/12.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="16" column="19" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/javascriptninja/14.1.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="49" column="27" selection-start-line="0" selection-start-column="0" selection-end-line="59" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/3/spa/js/jq/jquery-3.2.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="1" column="786" selection-start-line="1" selection-start-column="786" selection-end-line="1" selection-end-column="786" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/4/spa/js/jq/jquery-3.2.0.min.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="95">
-          <caret line="1" column="409" selection-start-line="1" selection-start-column="409" selection-end-line="1" selection-end-column="409" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/3/spa/js/spa.shell.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="305">
-          <caret line="152" column="51" selection-start-line="152" selection-start-column="51" selection-end-line="152" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/3/spa/js/spa.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="247">
-          <caret line="15" column="41" selection-start-line="15" selection-start-column="41" selection-end-line="15" selection-end-column="41" />
-          <folding>
-            <marker date="1489936559000" expanded="true" signature="385:418" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/3/spa/css/spa.shell.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="43" column="20" selection-start-line="43" selection-start-column="20" selection-end-line="43" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/3/spa/css/spa.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="48" column="1" selection-start-line="48" selection-start-column="1" selection-end-line="48" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/spa1.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="273">
@@ -758,7 +736,7 @@
         <state relative-caret-position="2158">
           <caret line="130" column="9" selection-start-line="130" selection-start-column="9" selection-end-line="130" selection-end-column="9" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -812,7 +790,7 @@
         <state relative-caret-position="155">
           <caret line="15" column="30" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="30" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -849,18 +827,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/spa.html">
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.shell.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="25" column="20" selection-start-line="25" selection-start-column="20" selection-end-line="25" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.chat.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="325">
+          <caret line="178" column="1" selection-start-line="178" selection-start-column="1" selection-end-line="178" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/css/spa.avtr.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="382">
+          <caret line="23" column="20" selection-start-line="23" selection-start-column="20" selection-end-line="23" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1490711729000" expanded="true" signature="905:917" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.shell.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="192" column="22" selection-start-line="192" selection-start-column="12" selection-end-line="192" selection-end-column="22" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="130" column="52" selection-start-line="130" selection-start-column="52" selection-end-line="130" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.model.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="270" column="0" selection-start-line="270" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
+        <state relative-caret-position="541">
+          <caret line="150" column="30" selection-start-line="150" selection-start-column="30" selection-end-line="150" selection-end-column="30" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="130" column="52" selection-start-line="130" selection-start-column="52" selection-end-line="130" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="146">
+          <caret line="121" column="0" selection-start-line="121" selection-start-column="0" selection-end-line="121" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1490711729000" expanded="true" signature="905:917" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.data.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake_bak.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="122" column="8" selection-start-line="122" selection-start-column="8" selection-end-line="122" selection-end-column="8" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
@@ -869,11 +973,61 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.fake.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="314">
-          <caret line="119" column="12" selection-start-line="119" selection-start-column="12" selection-end-line="119" selection-end-column="12" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/spa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="228">
+          <caret line="26" column="42" selection-start-line="26" selection-start-column="42" selection-end-line="26" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.util_b.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1121">
+          <caret line="59" column="31" selection-start-line="59" selection-start-column="21" selection-end-line="59" selection-end-column="31" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.avtr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="183" column="45" selection-start-line="183" selection-start-column="35" selection-end-line="183" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/6/spa/js/spa.chat.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="13">
+          <caret line="253" column="6" selection-start-line="253" selection-start-column="6" selection-end-line="253" selection-end-column="6" />
+          <folding>
+            <marker date="1490713596000" expanded="true" signature="1210:1222" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch01/spa-1.2.2.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/singlepagewebapplications/单页Web应用：JavaScript前端到后端 源码/ch05_06/6.7/spa.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
