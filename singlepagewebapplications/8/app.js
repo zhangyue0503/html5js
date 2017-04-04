@@ -7,7 +7,7 @@
 'use strict'
 var http = require('http'),
 	express = require('express'),
-	routes = require('./routes.js'),
+	routes = require('./lib/routes.js'),
 	app = express(),
 	server = http.createServer(app);
 
@@ -16,7 +16,7 @@ var http = require('http'),
 app.configure(function(){
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
-	app.use(express.basicAuth('user','spa'));
+	// app.use(express.basicAuth('user','spa'));
 	app.use(express.static(__dirname+'/public'));
 	app.use(app.router);
 });
