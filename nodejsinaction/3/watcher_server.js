@@ -2,6 +2,7 @@
  * Created by zhangyue on 2017/4/23.
  */
 
+//用事件发射器处理重复性事件
 var events = require('events'),
 	util = require('util');
 
