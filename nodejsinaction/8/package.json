@@ -1,0 +1,16 @@
+{
+  "name": "8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "connect-multiparty": "^2.0.0",
+    "express": "^4.15.2",
+    "mongoose": "^4.9.7"
+  }
+}
