@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <h1>Your input is {{message}}</h1>
+    <input type="text" v-model="message"/>
+
+    <message content="Hello World"></message>
+</div>
+<script type="text/javascript">
+
+    var Message = Vue.extend({
+        props:['content'],
+        template:'<h1>{{content}}</h1>'
+    });
+    Vue.component('message',Message);
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            message:'Hello world,I am Vue.js'
+        }
+    });
+</script>
+</body>
+</html>
