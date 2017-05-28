@@ -1,0 +1,11 @@
+/**
+ * Created by zhangyue on 2017/5/26.
+ */
+
+var http = require('http');
+
+http.createServer(function(req,res){
+	res.writeHead(200,{'Content-Type':'text/plain'});
+	res.end('Hello World\n');
+}).listen(Math.round(1+Math.random())*2000,'127.0.0.1');
+
