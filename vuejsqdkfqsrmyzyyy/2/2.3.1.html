@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+<ul>
+    <li v-for="item in items">
+        <h3>{{$index}} - {{item.title}}</h3>
+        <p>{{item.description}}</p>
+    </li>
+</ul>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            items:[
+                {title:'title-1',description:'description-1'},
+                {title:'title-2',description:'description-2'},
+                {title:'title-3',description:'description-3'},
+                {title:'title-4',description:'description-4'},
+            ]
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        beforeCreate:function(){
+            console.log('beforeCreate');
+        },
+        created:function(){
+            console.log('created');
+        },
+        beforeMount:function(){
+            console.log('beforeMount');
+        },
+        mounted:function(){
+            console.log('mounted');
+        },
+        beforeDestroy:function(){
+            console.log('beforeDestroy');
+        },
+        destroyed:function(){
+            console.log('destroyed');
+        },
+        beforeUpdate:function(){
+            console.log('beforeUpdate');
+        },
+        updated:function(){
+            console.log('updated');
+        },
+        activated:function(){
+            console.log('activated');
+        },
+        deactivated:function(){
+            console.log('deactivated');
+        }
+    });
+</script>
+</body>
+
+</html>

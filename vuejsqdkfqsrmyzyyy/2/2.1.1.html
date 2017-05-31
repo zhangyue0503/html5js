@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+    <p>123</p>
+</div>
+<script id="tpl" type="x-template">
+<div class="tpl">
+    <p>This is a tpl from script tag</p>
+    {{a}}{{b}}
+</div>
+</script>
+<script type="text/javascript">
+    var data = {a:1};
+    var vm = new Vue({
+        el:'#app',
+        template:'#tpl',
+        data:data
+    });
+    console.log(vm.$data === data);
+    console.log(vm.a === data.a);
+
+    vm.a = 2;
+    console.log(data.a);
+
+    data.a = 3;
+    console.log(vm.a);
+
+
+
+</script>
+</body>
+</html>

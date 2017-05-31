@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <span>Hello {{name}}</span>
+    <div v-bind:id="'id-'+id"></div>
+    {{index+1}}
+    {{index ==0 ? 'a':'b'}}
+    {{name.split('').join('|')}}
+    {{name | uppercase}}
+    <img v-bind:src="avatar"/>
+</div>
+
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            id:1,
+            index:0,
+            name:'Vue',
+            avatar:'http://.....',
+            count:[1,2,3,4,5],
+            names:['Vue1.0','Vue2.0'],
+            items:[
+                {name:'Vue1.0',version:'1.0'},
+                {name:'Vue1.1',version:'1.0'}
+            ]
+        }
+    });
+</script>
+</body>
+
+</html>
