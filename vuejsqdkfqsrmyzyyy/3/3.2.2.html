@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <div v-my-advance-directive a="paramA"></div>
+    <div v-my-advance-directive1 v-bind:a="a"></div>
+</div>
+<script type="text/javascript">
+    Vue.directive('my-advance-directive',{
+        params:['a'],
+        bind:function(){
+            console.log('params',this.params);
+        }
+    });
+    Vue.directive('my-advance-directive1',{
+        params:['a'],
+        paramWatchers:{
+            a:function(val,oldVal){
+                console.log('watcher: ',val,oldVal)
+            }
+        },
+        bind:function(){
+            console.log('params',this.params);
+        }
+    });
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            a:'dynamitc data'
+        }
+    });
+</script>
+</body>
+</html>

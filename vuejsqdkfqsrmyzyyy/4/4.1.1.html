@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+    Vue.filter('date',function(value){
+        console.log(value);
+        if(! (value instanceof Date)) return value;
+        return value;
+    });
+    </script>
+<div id="app">
+    <div>{{date|date }}</div>
+</div>
+<script type="text/javascript">
+
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            data:new Date()
+        }
+    });
+
+</script>
+</body>
+</html>
