@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="velocity.min.js"></script>
+    <style type="text/css">
+        .my-velocity-transition{
+            position:absolute;top:0px;width:100px;height:100px;background:black;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+    <div v-if="velocity" transition="my-velocity"></div>
+</div>
+<script type="text/javascript">
+    Vue.transition('my-velocity',{
+        css:false,
+        enter:function(el,done){
+            Velocity(el,{left:'100px'},500,'swing',done);
+        },
+        enterCancelled:function(el){
+            Velocity(el,'stop');
+        },
+        leave:function(el,done){
+            Velocity(el,{left:'0px'},500,'swing',done);
+        },
+        leaveCancelled:function(el){
+            Velocity(el,'stop');
+        },
+    });
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            velocity:false
+        }
+    });
+</script>
+</body>
+</html>
