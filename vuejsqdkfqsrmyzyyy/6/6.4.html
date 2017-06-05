@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div id="app">
+    <button @click="show = true">open</button>
+    <modal :show.sync="show" width="300px" :callback="close">
+        <div slot="modal-header" class="modal-header">Title</div>
+        <div slot="modal-body" class="modal-body">
+            <div class="inner">
+                Content
+            </div>
+        </div>
+    </modal>
+</div>
+
+<script id="modalTpl" type="x-template">
+<div role="dialog">
+    <div role="document" v-bind:style="{width: optionalWidth}">
+        <div class="modal-content">
+            <slot name="modal-header">
+                <div class="modal-header">
+                    <button type="button" class="close" @click="close"><span>&times;</span></button>
+                    <h4 class="modal-title">
+                        <slot name="title">
+                            {{title}}
+                        </slot>
+                    </h4>
+                </div>
+            </slot>
+            <slot name="modal-body">
+                <div class="modal-body"></div>
+            </slot>
+            <slot name="modal-footer">
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" @click="close">取消</button>
+                    <button type="button" class="btn btn-primary" @click="callback">确定</button>
+                </div>
+            </slot>
+        </div>
+    </div>
+</div>
+</script>
+<script type="text/javascript">
+    Vue.component('modal',{
+        template:'#modalTpl',
+        props:{
+            title:{
+                type:String,
+                default:''
+            },
+            show:{
+                required:true,
+                type:Boolean,
+                twoWay:true
+            },
+            width:{
+                default:null
+            },
+            callback:{
+                type:Function,
+                default:function(){}
+            }
+        },
+        computed:{
+            optionalWidth(){
+                if(this.width===null){
+                    return null;
+                }else if(Number.isInteger(this.width)){
+                    return this.width+'px';
+                }
+                return this.width;
+            }
+        },
+        watch:{
+            show(val){
+                var el = this.$el;
+                if(val){
+                    el.style.display = 'block';
+                }else{
+                    el.style.display = 'none';
+                }
+            }
+        },
+        methods:{
+            close(){
+                this.show = false;
+            }
+        }
+    });
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            show:false
+        },
+        methods:{
+            close:function(){
+                alert('save');
+                this.show = false;
+            }
+        }
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <ul>
+        <li @click="currentView = 'home'">Home</li>
+        <li @click="currentView = 'list'">List</li>
+        <li @click="currentView = 'detail'">Detail</li>
+    </ul>
+    <component :is="currentView" keep-alive></component>
+    <component :is="currentView" ></component>
+</div>
+<script type="text/javascript">
+    var vm = new Vue({
+        el:'#app',
+        data:{
+            currentView:'home'
+        },
+        components:{
+            home:{
+                template:'<div><p>Home</p><ul><li v-for"item in items">{{item}}</li></ul></div>',
+                data:function(){
+                    return {
+                        items:[]
+                    }
+                },
+                activate:function(done){
+                    var that = this;
+                    setTimeout(function(){
+                        that.items = [1,2,3,4,5];
+                        done();
+                    },1000);
+                }
+//                ready:function(){
+//                    console.log('fetch data');
+//                    this.items = [1,2,3,4,5];
+//                }
+            },
+            list:{
+                template:'<div>list</div>'
+            },
+            detail:{
+                template:'<div>Detail</div>'
+            },
+        }
+    });
+</script>
+</body>
+</html>
