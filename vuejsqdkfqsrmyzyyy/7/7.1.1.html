@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/vue/1.0.26/vue.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/vue.router/0.7.10/vue-router.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body>
+<div id="app">
+    <nav class="navbar navbar-inverse">
+        <div class="container">
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a v-link="{path:'/home'}">Home</a>
+                    </li>
+                    <li>
+                        <a v-link="{name:'list',params:{page:1}}">List</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <router-view></router-view>
+    </div>
+</div>
+<script type="text/javascript">
+    var Home  = Vue.extend({
+        template:'<h1>This is the home page</h1>',
+        route:{
+            data:function(transition){
+                console.log('data');
+                transition.next();
+            },
+            activate:function(transition){
+                console.log('activate');
+                transition.next();
+            },
+            deactivate:function(transition){
+                console.log('deactivate');
+                transition.next();
+            },
+            canActivate:function(transition){
+                console.log('canActivate');
+                transition.next();
+            },
+            canDeactivate:function(transition){
+                console.log('canDeactivate');
+                transition.next();
+            },
+            canReuse:function(transition){
+                console.log('canReuse');
+                transition.next();
+            }
+        }
+    });
+
+    var Biz = Vue.extend({
+        template:'<div>' +
+        '<h1>This is the some business channel</h1>' +
+        '<div class="container">' +
+        '<ul class="nav navbar-nav">' +
+        '<li>' +
+        '<a v-link="{path:\'/biz/list\'}">List</a>' +
+        '</li>' +
+        '<li>' +
+        '<a v-link="{path:\'/biz/detail\'}">Detail</a>' +
+        '</li>' +
+        '</ul>' +
+        '</div>' +
+        '<router-view></router-view>' +
+        '</div>'
+    });
+
+    var App = Vue.extend();
+    var router = new VueRouter();
+
+    router.map({
+        '/home':{
+            component:Home,
+        },
+        '/list/:page':{
+            name:'list',
+            component:{
+                template:'<h1>This is the NO.{{$route.params.page}} List page</h1>'
+            }
+        },
+        '/biz':{
+            component:Biz,
+            subRoutes:{
+                '/list':{
+                    component:{
+                        template:'<h2>This is the business list page</h2>'
+                    }
+                },
+                '/detail':{
+                    component:{
+                        template:'<h2>This is the business detail page</h2>'
+                    }
+                }
+            }
+        }
+    });
+    router.start(App,'#app');
+</script>
+</body>
+</html>
