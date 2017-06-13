@@ -1,0 +1,1 @@
+"use strict";var _extends=Object.assign||function(e){for(var r=1;r<arguments.length;r++){var n=arguments[r];for(var o in n)Object.prototype.hasOwnProperty.call(n,o)&&(e[o]=n[o])}return e},numbers=[1,2,3],doubleNumbers=numbers.map(function(e){return 2*e});console.log(doubleNumbers);var mike={name:"mike",age:40};mike=_extends({},mike,{sex:"male"}),console.log(mike);
