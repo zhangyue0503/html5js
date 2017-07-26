@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- 可选的 Bootstrap 主题文件（一般不用引入） -->
+        <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+
+        <!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+        <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <button data-toggle="modal" data-target="#myModal" class="btn btn-primary">单击弹出</button>
+        <button onclick="showModal()" class="btn btn-primary">JS弹出</button>
+        <!-- 模态弹窗 -->
+        <div class="modal fade popupCSS" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Modal 标题</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>这里是弹窗的具体内容……&hellip;</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default" data-dismiss="modal" aria-hidden="true">关闭</button>
+                        <button type="button" class="btn btn-primary">保存</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 选项卡 -->
+        <ul class="nav nav-tabs">
+            <li><a href="#home" data-toggle="tab">Home</a></li>
+            <li><a href="#profile" data-toggle="tab">Profile</a></li>
+            <li><a href="#message" data-toggle="tab">Messages</a></li>
+            <li><a href="#setting" data-toggle="tab">Setting</a></li>
+        </ul>
+        <div class="tab-content">
+            <div class="tab-pane active" id="home">
+                Home
+            </div>
+            <div class="tab-pane" id="profile">
+                Profile
+            </div>
+            <div class="tab-pane" id="message">
+                Messages
+            </div>
+            <div class="tab-pane" id="setting">
+                Setting
+            </div>
+        </div>
+
+        <a href="#" data-toggle="tooltip" data-original-title="显示内容">显示tooltip</a>
+        <a href="#" data-toggle="popover" data-original-title="显示内容" data-content="弹出框提示">显示popover</a>
+
+        <div class="alert alert-warning fade in">
+            <button type="button" name="button" data-dismiss="alert" class="close">x</button>
+            <h4>警告标题</h4>
+            <p>内容。。。。。。</p>
+        </div>
+
+        <button type="button" name="button" data-toggle="collapse" data-target="#collapse">折叠</button>
+        <div class="collapse in" id="collapse">
+            折叠区域
+        </div>
+
+        <!-- 滚动侦测 -->
+        <div id="selector" style="display:none;">
+            <nav class="navbar navbar-default navbar-fixed-bottom" role="navigation">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#fat">@fat</a></li>
+                    <li class=""><a href="#mdo">@mdo</a></li>
+                    <li class="dropdown">
+                        <a href="#" data-toggle="dropdown" class="dropdown-toggle"></a>
+                        <ul class="dropdown-menu">
+                            <li class=""><a href="#one">one</a></li>
+                            <li class=""><a href="#two">two</a></li>
+                            <li class="divider"></li>
+                            <li class=""><a href="#three">three</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div data-offset="0" data-target="#selector" data-spy="scroll" style="height:2500px;overflow:auto;display:none;">
+            <h4 id="fat"></h4>
+            <p style="">具体内容</p>
+            <h4 id="mdo"></h4>
+            <p style="">具体内容</p>
+            <h4 id="one"></h4>
+            <p style="">具体内容</p>
+            <h4 id="two"></h4>
+            <p style="">具体内容</p>
+            <h4 id="three"></h4>
+            <p style="">具体内容</p>
+
+        </div>
+
+
+
+        <script type="text/javascript">
+            //modal事件订阅
+            $('#myModal').on('shown.bs.modal',function(e){
+                console.log('shown');
+            });
+            function showModal(){
+                $('#myModal').modal({
+                    backdrop:true,
+                    keyboard:false
+                });
+                // $('#myModal').modal('toggle');
+            }
+
+            $('[data-toggle=tooltip]').tooltip();
+            $('[data-toggle=popover]').popover();
+        </script>
+
+
+    </body>
+</html>
