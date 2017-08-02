@@ -31,7 +31,7 @@
                     var dt = ev.dataTransfer;
                     var text = dt.getData("text/plain");
                     console.log(text);
-                    dest.text += text;
+                    dest.textContent += text;
                     ev.preventDefault();
                     ev.stopPropagation();
                 },false);
