@@ -1,0 +1,44 @@
+$color:red;
+$bg:green;
+
+div{
+    $color:pink;
+    h1{
+        background: $bg;
+        color:$color;
+    }
+}
+
+.title{
+    padding: {
+        top:10px;
+        left:10px;
+    }
+    border: 1px solid $color {
+        top:1px;
+    }
+}
+$color:blue;
+$bg:skyblue;
+
+@mixin link  {
+    border: {
+        top:2px solid $color;
+    }
+    height:30px;
+    line-height: 30px;
+    font-size:14px;
+    a{
+        color:$color;
+        text-decoration: none;
+        &:hover{
+            color:red;
+        }
+    }
+}
+
+
+.link-1 {
+    @include link
+}
+

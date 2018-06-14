@@ -1,0 +1,10 @@
+$test:#ccc;
+
+body{
+    background:$test;
+}
+div{
+    h1{
+        color:$test;
+    }
+}
