@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var json = {
+        a:10,
+        b:20
+    };
+
+    Object.seal(json);
+
+    json.c = 30;
+
+    delete json.a;
+
+    console.log(json);
+
+    function leo(){
+
+    };
+
+    Object.seal(leo.prototype);
+    leo.prototype.a = 30;
+    leo.prototype = {
+        a:30
+    };
+
+    console.log(new leo().a);
+
+
+    </script>
+</body>
+</html>

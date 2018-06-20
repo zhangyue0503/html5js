@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var a = Object.create(null);
+
+    console.log(a);
+
+    function leo(){
+
+    }
+    function leo2(){
+
+    }
+    leo2.prototype.f = 30;
+    // leo.prototype = Object.create(leo2.prototype);
+
+    leo.prototype = new leo2();
+
+    console.log(new leo().f);
+
+    var o = Object.create(null,{
+        a:{
+            'value':20,
+            'writable':true,
+            'enumerable':true,
+            'configurable':true
+        }
+    });
+    // o.a = 30;
+
+    // for(var i in o){
+    //     console.log(i);
+    // }
+
+    delete o.a;
+
+    console.log(o);
+
+    
+
+    // leo.prototype = leo2.prototype;
+    // leo.prototype.c = 5;
+    // console.log(new leo2().c);
+
+    </script>
+</body>
+</html>

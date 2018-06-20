@@ -6,4 +6,4 @@
 *.key
 *.pem
 *.srl
-
+.vscode/

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //json对象
+        var json = new Object();
+        json.a = 10;
+        console.log(json);
+
+        var string = '{"a":10,"b":20,"c":30}';
+        console.log(JSON.parse(string));
+
+        JSON.parse(string, function (key, value) {
+            console.log(key, value);
+        });
+
+        var json = {
+            a: 20,
+            b: 30,
+            c: 40,
+            z: 'hehehehehhehe'
+        };
+        console.log(JSON.stringify(json));
+
+        console.log(JSON.stringify(json, function (key, value) {
+            if (value == 30) {
+                return undefined;
+            } else {
+                return value;
+            }
+        }, 2));
+    </script>
+</body>
+
+</html>
