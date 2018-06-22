@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    var json = {
+        a:'leo'
+    };
+
+    console.log(json.hasOwnProperty('a'));
+    console.log('className' in document.body);
+    console.log(document.body.hasOwnProperty('className'));
+
+    function leo(){
+
+    }
+    leo.prototype = {
+        a:10
+    };
+
+    console.log('a' in leo.prototype);
+    console.log(leo.prototype.hasOwnProperty('a'));
+
+    var a = new String('aaa');
+
+    console.log(a.hasOwnProperty('split'));
+    console.log(String.prototype.hasOwnProperty('split'));
+    
+    </script>
+</body>
+</html>

@@ -8,18 +8,18 @@
 </head>
 <body>
     <script>
-    var json = {
-        a:20,
-        b:30
-    };
-
-    Object.freeze(json);
-
-    json.a = 30;
-    delete json.b;
-    json.c = 40;
-    console.log(json);
     
+    var json = {'leo':'18'};
+
+    Object.preventExtensions(json);
+
+    Object.defineProperty(json,'leo',{
+        'writable':false,
+        'configurable':false
+    })
+    
+    console.log(Object.isFrozen(json));
+
     </script>
 </body>
 </html>

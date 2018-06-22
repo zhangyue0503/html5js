@@ -8,18 +8,10 @@
 </head>
 <body>
     <script>
-    var json = {
-        a:20,
-        b:30
-    };
-
-    Object.freeze(json);
-
-    json.a = 30;
-    delete json.b;
-    json.c = 40;
-    console.log(json);
-    
+    var json  = {};
+    Object.seal(json);
+    console.log(Object.isExtensible(json));
     </script>
+    
 </body>
 </html>

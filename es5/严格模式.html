@@ -8,18 +8,22 @@
 </head>
 <body>
     <script>
-    var json = {
-        a:20,
-        b:30
-    };
-
-    Object.freeze(json);
-
-    json.a = 30;
-    delete json.b;
-    json.c = 40;
-    console.log(json);
     
+    'use strict';
+    // a = 10;
+    // alert(a);
+    // window = 1;
+    // console.log(window);
+
+    var json = Object.create(null,{
+        'a':{
+            value:'1',
+            writable:false
+        }
+    });
+    json.a = 2;
+    console.log(json.a);
+
     </script>
 </body>
 </html>

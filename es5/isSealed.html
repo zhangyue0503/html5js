@@ -8,18 +8,15 @@
 </head>
 <body>
     <script>
-    var json = {
-        a:20,
-        b:30
-    };
+    var json = {'leo':'18','bl':'19'};
+    Object.preventExtensions(json);
+    // delete json.leo;
 
-    Object.freeze(json);
+    Object.defineProperty(json,'leo',{
+        configurable:false
+    })
 
-    json.a = 30;
-    delete json.b;
-    json.c = 40;
-    console.log(json);
-    
+    console.log(Object.isSealed(json));
     </script>
 </body>
 </html>

@@ -8,18 +8,13 @@
 </head>
 <body>
     <script>
-    var json = {
-        a:20,
-        b:30
-    };
+    var arr = [1,2,3,'5','7',null,document.body];
 
-    Object.freeze(json);
+    console.log(arr.filter((x)=>{
+        console.log(x);
+        return typeof x == 'number';
+    }));
 
-    json.a = 30;
-    delete json.b;
-    json.c = 40;
-    console.log(json);
-    
     </script>
 </body>
 </html>
