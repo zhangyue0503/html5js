@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    let a = '李';
+    console.log(a.charCodeAt(0));
+
+    console.log(String.fromCharCode(26446));
+    // let name = '';
+    // for(let i = 0x4e00;i<0x9fa5;i++){
+    //     // console.log(i);
+    //     name += String.fromCharCode(i);
+    // }
+
+    // console.log(name.length);
+    // document.body.innerHTML = name;
+
+    document.onkeydown = function(e){
+        console.log(e.keyCode);
+        console.log(String.fromCharCode(e.keyCode));
+    }
+
+
+    </script>
+</body>
+</html>

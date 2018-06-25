@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+        function* show(){
+           yield () => {
+               alert(1);
+           }
+           yield function(){
+               alert(2);
+           }
+           yield () => {
+               document.body.style.background = 'black';
+           }
+
+           return 10;
+        }
+        var k = show();
+        // console.log(k.next().value());
+        // console.log(k.next().value());
+        // console.log(show().next().value());
+
+        document.onclick = x => {
+            k.next().value();
+        }
+
+    </script>
+</body>
+</html>
