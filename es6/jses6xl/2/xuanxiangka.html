@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.active {
+            background: red;
+        }
+
+        #box>div {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            display: none;
+        }
+
+        #box>div:first-of-type {
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="box">
+        <input type="button" class="active" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+    </div>
+    <div id="ccc">
+            <input type="button" class="active" value="1">
+            <input type="button" value="2">
+            <div>bbb</div>
+            <div>ccc</div>
+        </div>
+    <script>
+        class tab {
+            constructor(x) {
+                this.node = document.getElementById(x);
+                this.allIpt = this.node.getElementsByTagName('input');
+                this.allDiv = this.node.getElementsByTagName('div');
+                this.init();
+                this.index = 0;
+            }
+            init() {
+                for (let i = 0; i < this.allIpt.length; i++) {
+                    this.allIpt[i].onclick = function () {
+                        this.hide();
+                        this.show(i);
+                    }.bind(this);
+                }
+            }
+            hide() {
+                for (let i = 0; i < this.allIpt.length; i++) {
+                    this.allIpt[i].className = '';
+                    this.allDiv[i].style.display = 'none';
+                }
+            }
+            show(index) {
+                this.allDiv[index].style.display = 'block';
+                this.allIpt[index].className = 'active';
+            }
+
+        }
+
+        // new tab('box');
+
+        class autoTab extends tab{
+            constructor(x){
+                super(x);
+            }
+            autoPlay(){
+                // var _this = this;
+                setInterval(()=>{
+                    console.log(this);
+                    this.index++;
+                    if(this.index == this.allIpt.length)this.index = 0;
+                    this.hide();
+                    this.show(this.index);
+                },1000);
+            }
+        }
+        new tab('box');
+        new autoTab('ccc').autoPlay();
+    </script>
+</body>
+
+</html>

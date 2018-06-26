@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.active {
+            background: red;
+        }
+
+        #box>div {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            display: none;
+        }
+
+        #box>div:first-of-type {
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id="box">
+        <input type="button" class="active" value="1">
+        <input type="button" value="2">
+        <input type="button" value="3">
+        <div>aaa</div>
+        <div>bbb</div>
+        <div>ccc</div>
+    </div>
+    <script>
+        class show{
+            constructor(l){
+                this.x = l;
+            }
+            m(){
+                alert(this.x);
+            }
+        }
+
+        new show(1).m();
+
+        class wang extends show{
+            constructor(l){
+                super(l);
+            }
+        }
+
+        new wang(2).m();
+    </script>
+</body>
+
+</html>

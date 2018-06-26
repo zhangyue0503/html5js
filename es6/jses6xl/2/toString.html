@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var json  = {a:20,b:30};
+        console.log(String.prototype.substring.call(json,2));
+
+        var a = ['asdasd'];
+        
+        console.log(String.prototype.split.call(a));
+        // console.log(Object.prototype.toString.call({}));
+        function show(){
+            console.log(Object.prototype.toString.call(arguments));
+        }
+        show();
+    </script>
+</body>
+</html>

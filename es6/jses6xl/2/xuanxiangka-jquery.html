@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        input.active {
+            background: red;
+        }
+
+        #box>div {
+            width: 200px;
+            height: 200px;
+            background: #ccc;
+            display: none;
+        }
+
+        #box>div:first-of-type {
+            display: block;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div id='div1'></div>
+    <div class='div1'></div>
+    <div class='div1'></div>
+    <script>
+        class jquery {
+            constructor(obj) {
+                this.obj = obj;
+                this.allNode = [];
+                switch (this.obj.charAt(0)) {
+                    case '#':
+                        this.allNode.push(document.getElementById(this.obj.substring(1)));
+                        console.log(this.allNode);
+                        break;
+                    case '.':
+                        this.myObj = document.getElementsByClassName(this.obj.substring(1));
+                        for(let i=0;i<this.myObj.length;i++){
+                            this.allNode.push(this.myObj[i]);
+                        }
+                        console.log(this.allNode);
+                        break;
+                }
+            }
+
+            addClass(className){
+                for(let i=0;i<this.allNode.length;i++){
+                    this.allNode[i].classList.add(className);
+                }
+            }
+        }
+
+        function $(obj) {
+            return new jquery(obj);
+        }
+        $('#div1');
+        $('.div1').addClass('a');
+    </script>
+</body>
+
+</html>

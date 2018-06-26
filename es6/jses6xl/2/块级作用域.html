@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .active{
+        background:red;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="1">
+    <input type="button" value="2">
+    <input type="button" value="3">
+    <script>
+        let allInput = document.getElementsByTagName('input');
+        
+        for(let i =0;i<allInput.length;i++){
+            //块级作用域
+            allInput[i].onclick = function(){
+                for(var j = 0;j<allInput.length;j++){
+                    allInput[j].className = '';
+                }
+                allInput[i].className = 'active';
+                alert(i);
+            }
+
+            // (function(x){
+            //     // console.log(x);
+            //     allInput[x].onclick = function(){
+            //         alert(x);
+            //     }
+            // })(i);
+
+            // allInput[i].onclick = function(){
+            //     alert(i);
+            // }
+        }
+
+    </script>
+</body>
+</html>
