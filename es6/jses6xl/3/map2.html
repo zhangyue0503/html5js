@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var mapNode = new Map();
+        console.log(mapNode);
+        var json = {
+            '王':'瘦了',
+            '早':'有钱了',
+            '&&&&':'瘦了'
+        };
+
+        for(var i in json){
+            mapNode.set(i,json[i]);
+        }
+
+        mapNode.set('王艺蒙','瘦了');
+        mapNode.set();
+        console.log(mapNode);
+        console.log(mapNode.get('王艺蒙'));
+
+        for(let [k,v] of mapNode){
+            console.log(k,v);
+        }
+
+         mapNode.set(window,function(){
+             alert(1);
+         });
+         mapNode.get(window)();
+
+         
+
+    </script>
+</body>
+</html>

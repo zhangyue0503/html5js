@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+     
+     </style>
+</head>
+<body>
+    <script>
+        var arr = [1,2,3,4,5];
+        var arr2 = [1,2,3,4,5,6,7,8];
+        var set = new Set([...arr,...arr2]);
+        console.log(set);
+
+        for(let s of set.entries()){
+            console.log(s);
+        }
+
+        console.log([...set]);
+
+    </script>
+</body>
+</html>

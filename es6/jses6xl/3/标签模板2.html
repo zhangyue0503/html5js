@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+     .outNode>div{
+         width:200px;
+         height:200px;
+         background: #ccc;
+         display: none;
+     }
+     .outNode>div:first-of-type{
+         display:block;
+     }
+     </style>
+</head>
+<body>
+    <script>
+        const $=obj=>[...document.querySelectorAll(obj)];
+        let jsonData = {
+            'topValue':['李','申','王'],
+            'bottomInner':['瘦了','美了','挣钱了']
+        };
+        createNode = json => `<div class="outNode">
+            ${json.topValue.map((v)=>`<input type="button" value="${v}">`).join('')}
+            ${json.bottomInner.map(v=>`<div>${v}</div>`).join('')}
+            </div>`
+    //    alert`1`;
+        // console.log(createNode(jsonData));
+        document.body.innerHTML = createNode(jsonData);
+
+        let allDiv = new Set($('.outNode>div'));
+        let allInput = new Set($('input'));
+        [...allInput].forEach((i,index)=>{
+            i['onclick']=x=>{
+                [...allDiv].forEach(node => node.style.display = 'none');
+                [...allDiv][index].style.display = 'block';
+            }
+        });
+
+        </script>
+</body>
+</html>

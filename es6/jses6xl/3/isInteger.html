@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+     
+     </style>
+</head>
+<body>
+    <script>
+        var number  = 1.000001;
+        var string = String(number);
+        console.log(string.indexOf('.')!=-1?'不是整数':'是整数');
+
+        console.log(Number.isInteger('1231'));
+
+        console.log(Number.isNaN(123));
+        
+        console.log(Number.parseInt('123123'));
+
+    </script>
+</body>
+</html>
