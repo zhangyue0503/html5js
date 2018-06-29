@@ -1,0 +1,22 @@
+const http = require('http');
+
+const hostname = '127.0.0.1';
+const port = 3000;
+
+const server = http.createServer((req,res)=>{
+    res.statusCode = 200;
+    res.setHeader('Content-Type','text/plain');
+    res.setHeader('Access-Control-Allow-Origin','*');
+
+    Object.keys(require.cache).forEach(function(key){
+        delete require.cache[key];
+    });
+
+
+
+    res.end('aaaal;ksjdflkasjdf');
+});
+
+server.listen(port,hostname,()=>{
+    console.log(`Server running at http://${hostname}:${port}/`)
+});

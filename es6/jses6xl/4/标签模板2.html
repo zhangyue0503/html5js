@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+     <style>
+     .outNode>div{
+         width:200px;
+         height:200px;
+         background: #ccc;
+         display: none;
+     }
+     .outNode>div:first-of-type{
+         display:block;
+     }
+     input.active{
+         background:red;
+     }
+     </style>
+</head>
+<body>
+    <script>
+        const $=obj=>[...document.querySelectorAll(obj)];
+        let jsonData = {
+            'valueName':['李','申','王'],
+            'innerHtml':['瘦了','美了','挣钱了']
+        };
+
+        let index = 0;
+
+        const createNode = json => `<div class="outNode">
+        ${json.valueName.map((x)=>`<input type='button' value=${x} >`).join('')}
+
+        ${json.innerHtml.map((x)=>`<div>${x}</div>`).join('')}</div>`;
+
+        document.body.innerHTML = createNode(jsonData);
+
+        let allInput = new Set($('input'));
+        let allDiv = new Set($('.outNode>div'));
+        [...allInput][0].className = 'active';
+        [...allInput].forEach((x,y)=>{
+            x['onclick']=()=>{
+                [...allDiv].forEach(f=>f.style.display='none');
+                [...allDiv][y].style.display = 'block';
+            }
+        });
+        
+        setInterval(()=>{
+            index++;
+            (index == [...allInput].length) && (index = 0);
+            [...allInput].forEach(f=>f.className='');
+            [...allInput][index].className = 'active';
+            
+            [...allDiv].forEach(f=>f.style.display='none');
+            [...allDiv][index].style.display = 'block';
+        },1000);
+
+        </script>
+</body>
+</html>

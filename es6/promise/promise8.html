@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;padding:0;list-style: none;
+    }
+    div{
+        width:100px;height:100px;border:1px solid black;
+        background:#ccc;display: none;
+    }
+    div.active{
+        display:block;
+    }
+    input.active{
+        background:yellow;
+    }
+    </style>
+</head>
+<body>
+    <input value="1" type="button" class="active">
+    <input value="2" type="button">
+    <input value="3" type="button">
+    <div class="active">1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var ind = 0;
+        var allInput = document.getElementsByTagName('input');
+        var allDiv = document.getElementsByTagName('div');
+
+        for (let index = 0; index < allInput.length; index++) {
+            allInput[index].index = index;
+            allInput[index].onclick = function(){
+                for (let j = 0; j < allDiv.length; j++) {
+                    allInput[j].className = '';
+                    allDiv[j].style.display = 'none';
+                }
+                this.className = 'active';
+                allDiv[this.index].style.display = 'block';
+            }
+            
+        }
+
+        function show(){
+            ind ++;
+            return new Promise(function(resolve,reject){
+                ind == allDiv.length ? reject() : resolve();
+            }).then(function(){
+                for (let i = 0; i < allInput.length; i++) {
+                    allInput[i].className = '';
+                    allDiv[i].style.display = 'none'
+                }
+                allInput[ind].className = 'active';
+                allDiv[ind].style.display = 'block';
+            }).catch(function(){
+                ind = -1,show();
+            });
+        }
+        setInterval(show,2000);
+
+        // var changeNode = true;
+        // btn.addEventListener('click',show,false);
+
+        // function show(){
+        //     changeNode = !changeNode;
+        //     return new Promise(function(resolve,reject){
+        //         changeNode ? resolve() : reject();
+        //     }).then(function(){
+        //         div1.style.display = 'block';
+        //     }).catch(function () {  
+        //         div1.style.display = 'none';
+        //     });
+        // }
+
+
+    </script>
+</body>
+</html>

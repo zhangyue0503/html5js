@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin:0;padding:0;list-style: none;
+    }
+    div{
+        width:100px;height:100px;border:1px solid black;
+        background:#ccc;display: none;
+    }
+    div.active{
+        display:block;
+    }
+    input.active{
+        background:yellow;
+    }
+    </style>
+</head>
+<body>
+    <input type="button" value="123" id="btn">
+    <script>
+        btn.onclick = function(){
+            ajax('');
+        }
+        function ajax(url){
+            return new Promise(function(resolve,reject){
+                var xhr = new XMLHttpRequest();
+                xhr.open('get',url,true);
+                xhr.send();
+                xhr.onload = function(){
+                    if(xhr.status >= 200 && xhr.status < 300 || xhr.status == 304){
+                        resolve(xhr.responseText);
+                    }else{
+                        resolve(xhr.status);
+                    }
+                };
+                xhr.onerror = function(){
+                    reject('链接失败');
+                };
+            }).then(function(){
+
+            }).catch(function(){
+
+            });
+        };
+
+
+    </script>
+</body>
+</html>

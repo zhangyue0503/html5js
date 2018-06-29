@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function showPromise(res){
+            return new Promise((resolve,reject)=>{
+                resolve(res);
+            }).then(x=>{console.log(res);})
+        }
+
+        showPromise('haha');
+        showPromise('haha11');
+
+        // var pro = new Promise(function(reslove,reject){
+        //     reslove('heiehiehi');
+        // }).then(function(x){
+        //     alert('成功'+x);
+        // },function(){
+        //     alert('失败');
+        // });
+        
+    // console.log(pro);
+    </script>
+</body>
+</html>
