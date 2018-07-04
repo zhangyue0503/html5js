@@ -1,0 +1,40 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        let a = Symbol('this is symbol');
+        let b = Symbol();
+
+        console.log(a === b);
+        console.log(a);
+        
+        //file1.js
+        let name = Symbol();
+        {
+            var person = {};
+            person[name] = 'File1';
+            console.log(person);
+            
+        }
+        //file2.js
+        {
+            let name = Symbol();
+            person[name] = 'File2';
+            console.log(person);
+        }
+
+        console.log(person);
+        
+        
+
+
+        
+    </script>
+ </body>
+ </html>

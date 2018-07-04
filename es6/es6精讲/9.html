@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var user = {
+            full_name: function () {
+                return this.fname + ' ' + this.lname;
+            }
+        };
+        user.fname = 'Bob';
+        user.lname = 'Wood';
+        // var full_name = user.fname + ' '+user.lname;
+
+        console.log(user.full_name());
+
+
+        var user1 = new Proxy({}, {
+            get: function (obj, prop) {
+                if (prop == 'full_name') {
+                    return obj.fname + ' ' + obj.lname;
+                }
+            }
+        });
+        user1.fname = 'Bob';
+        user1.lname = 'Wood';
+        console.log(user1.full_name);
+    </script>
+</body>
+
+</html>

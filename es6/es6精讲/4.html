@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+ </head>
+ <body>
+    <script>
+        var obj = {
+            a:1,
+            b:2,
+
+        };
+        let {a:A,c,b} = obj;
+
+        // var A = obj.a;
+
+
+        console.log(A,b,c);
+        
+        let a = 0;
+        ({a,b} = obj);
+        console.log(a);
+
+        var obj2 = {
+            arr:[
+                'Yo.',
+                {
+                    a1:1
+                }
+            ]
+        };
+        let {arr:[greet,{a1}]} = obj2;
+        console.log(greet);
+        console.log(a1);
+
+        let {a3:A1=1,b3=2} = {a:10};
+        console.log(A1,b3);
+        
+        
+        
+
+    </script>
+ </body>
+ </html>
