@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id='fileName'>
+    <br/>
+    <textarea name="" id="txt" cols="30" rows="10"></textarea>
+    <button id="btn">提交生成</button>
+    <script>
+        btn.onclick = function () {
+            $.ajax({
+                url: 'http://localhost:9213/',
+                type: 'get',
+                dataType:'text',
+                data: {
+                    file: fileName.value,
+                    inner: txt.value
+                },
+                success: function () {
+                   alert('success');
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

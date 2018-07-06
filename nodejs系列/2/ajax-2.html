@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.open('post', 'http://localhost:2831', true);
+        ajax.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+        ajax.send('user=leo&pass=123456');
+
+        ajax.onreadystatechange = function () {
+            console.log(ajax.readyState);
+            if (ajax.readyState == 4) {
+                if (ajax.status >= 200 && ajax.status < 300 || ajax.status == 304) {
+                    console.log(ajax.responseText);
+                } else {
+                    console.log('服务器错误');
+                }
+                // console.log(ajax.status);
+                // console.log(ajax.responseText);
+            }
+        }
+
+        
+    </script>
+</body>
+
+</html>
