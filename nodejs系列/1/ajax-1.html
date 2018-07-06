@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var ajax = new XMLHttpRequest();
+        ajax.open('get', 'http://localhost:9217/?user=leo&ppt=ssd1', true);
+        ajax.send();
+
+        ajax.onreadystatechange = function () {
+            console.log(ajax.readyState);
+            if (ajax.readyState == 4) {
+                if (ajax.status >= 200 && ajax.status < 300 || ajax.status == 304) {
+                    console.log(ajax.responseText);
+                } else {
+                    console.log('服务器错误');
+                }
+                console.log(ajax.status);
+                console.log(ajax.responseText);
+            }
+        }
+
+        // console.log(ajax.readyState)
+
+        // setTimeout(function(){
+        //     console.log(ajax.readyState);
+        // },100);
+
+        console.log(ajax.responseText);
+    </script>
+</body>
+
+</html>
