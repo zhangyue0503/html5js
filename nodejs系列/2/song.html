@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="text" id='songs'>
+    <button id='btn'>搜索</button>
+    <ul id="ul"></ul>
+    <script>
+        btn.onclick = function () {
+            ul.innerHTML = '';
+            $.ajax({
+                url: 'http://myjavascript.cn:5213/myClevaly/addMp3',
+                type: 'get',
+                data: {
+                    user: 'Leo',
+                    mp3Name: songs.value
+                },
+                success: function (data) {
+
+                    var jsonData = JSON.parse(data.data);
+                    var arrData = jsonData.result.songs;
+
+                    for (var i = 0; i < arrData.length; i++) {
+                        var oLi = document.createElement('li');
+                        oLi.innerHTML = '<p>' + arrData[i].album.name + '</p>';
+                        oLi.innerHTML += '<img src="' + arrData[i].album.picUrl + '" width=200><br/>';
+                        oLi.innerHTML += '<audio controls src="' + arrData[i].audio + '"></audio><br/>';
+                        oLi.innerHTML += '<a href="' + arrData[i].page + '" target="_blank">' + arrData[
+                            i].page + '</a>';
+                        ul.appendChild(oLi);
+                    }
+
+                    console.log(songs.value, ul.outerHTML);
+
+                    $.ajax({
+                        url: 'http://localhost:2729/',
+                        type: 'get',
+                        data: {
+                            fname: songs.value,
+                            inner: ul.outerHTML
+                        },
+                        success: function (data) {
+                            alert(data);
+                        }
+                    });
+
+                }
+            });
+        };
+    </script>
+</body>
+
+</html>
