@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #setText {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            background: #ccc;
+            display: none;
+            top: 0;
+            z-index: 1;
+        }
+
+        #cls {
+            position: absolute;
+            top: 30px;
+            right: 100px;
+        }
+
+        #Wztext {
+            width: 100vw;
+            height: 100vh;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: #ccc;
+            text-align: center;
+            display: none;
+        }
+
+        #ul>li {
+            cursor: pointer;
+            transition: .3s;
+        }
+
+        #ul>li:hover {
+            color: red;
+        }
+
+        #gbbtn {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            display: none;
+        }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    <input type="button" value="写入文章" id='btSet'>
+    <div id='setText'>
+        文章名：
+        <input type="text" id='titName'>
+        <br/>
+        <textarea id="txt"></textarea>
+        <br/>
+        <button id="btn">提交</button>
+        <input id='cls' value="关闭" type="button" />
+    </div>
+    <div id="Wztext"></div>
+    <ul id="ul"></ul>
+    <button id="gbbtn">关闭</button>
+    <script>
+        // var allLi = ul.children;
+        // for (var i = 0; i < allLi.length; i++) {
+        //      allLi[i].onclick = function(){
+        //          alert(i);
+        //      }
+
+        // }
+
+        gbbtn.onclick = function(){
+            this.style.display = Wztext.style.display = 'none';
+        }
+
+        document.onclick = function (e) {
+            var ev = e || event;
+            var iTarget = ev.srcElement || ev.target;
+            if (iTarget.nodeName == 'LI') {
+                // alert(1);
+
+                Wztext.style.display = 'block';
+                gbbtn.style.display = 'block';
+                $.ajax({
+                    url: 'http://localhost:2140/',
+                    type: 'get',
+                    data: {
+                        titName: iTarget.innerHTML
+                    },
+                    success: function (data) {
+                        Wztext.innerHTML = data;
+                        // console.log(data);
+                    }
+                });
+
+            }
+        }
+
+        $.ajax({
+            url: 'http://localhost:2139/',
+            type: 'get',
+            data: {},
+            success: function (data) {
+                if (data != '') {
+                    allArr = JSON.parse(data);
+                    for (var i = 0; i < allArr.length; i++) {
+                        var oLi = document.createElement('li');
+                        oLi.innerHTML = allArr[i];
+                        ul.appendChild(oLi);
+                    }
+                }
+            }
+        });
+        btn.onclick = function () {
+
+            var allLi = ul.children;
+            for(var i=0;i<allLi.length;i++){
+                if(titName.value == allLi[i].innerHTML){
+                    return;
+                }
+            }
+
+            $.ajax({
+                url: 'http://localhost:2138/',
+                type: 'get',
+                data: {
+                    titName: titName.value,
+                    inner: txt.value
+                },
+                success: function (data) {
+                    alert(data);
+                }
+            });
+
+            var oLi = document.createElement('li');
+            oLi.innerHTML = titName.value;
+            ul.appendChild(oLi);
+        }
+        btSet.onclick = function () {
+            setText.style.display = 'block';
+        }
+        cls.onclick = function () {
+            setText.style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>

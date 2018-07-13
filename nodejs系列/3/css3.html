@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #div1 {
+            width: 400px;
+            height: 300px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            border: 1px solid black;
+            transition: .8s;
+            transform: perspective(800px);
+            transform-style: preserve-3d;
+        }
+
+        #div1:active {
+            transform: perspective(800px) rotateX(180deg);
+        }
+
+        #div1>div {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        #front {
+            background: url(1.jpg);
+            background-size: cover;
+            transform: translateZ(1px);
+        }
+
+        #back {
+            background: url(2.jpg);
+            background-size: cover;
+            transform: translateZ(-1px) scaleY(-1);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="div1">
+        <div id="front"></div>
+        <div id="back"></div>
+    </div>
+</body>
+
+</html>
