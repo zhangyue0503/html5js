@@ -1,104 +1,355 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <style>
-    *{margin:0;padding:0;}
-    #topNode{
-        width:100%;height:40px;border-bottom:1px solid black;box-shadow:0 0 10px #ccc;
-        background:#ccc;
-    }
-    #topNode > button{
-        float:left;
-        padding:3px;
-        margin-left:20px;
-        background:white;
-    }
-    #loginNode{
-        width:200px;height:170px;border:1px solid black;
-        position: absolute;left:0;top:0;right:0;bottom:0;right:0;margin:auto;
-        padding-top:30px;
-        background:white;
-        display:none;
-        z-index:4;
-    }
-    #cl{
-        position: absolute;top:10px;right:10px;
-    }
-    #allNodeDo{
-        width:100%;height:100%;position: absolute;left:0;top:0;z-index:3;background:rgba(0,0,0,.3);
-        display: none;
-    }
-    #pNode{
-        line-height: 30px;margin-left:10px;float:left;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #topNode {
+            width: 100%;
+            height: 40px;
+            border-bottom: 1px solid black;
+            box-shadow: 0 0 10px #ccc;
+            background: #ccc;
+        }
+
+        #topNode>button {
+            float: left;
+            padding: 3px;
+            margin-left: 20px;
+            background: white;
+        }
+
+        #loginNode {
+            width: 200px;
+            height: 170px;
+            border: 1px solid black;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            right: 0;
+            margin: auto;
+            padding-top: 30px;
+            background: white;
+            display: none;
+            z-index: 4;
+        }
+
+        #cl {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        #allNodeDo {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 1;
+            background: rgba(0, 0, 0, .3);
+            display: none;
+        }
+
+        #pNode {
+            line-height: 30px;
+            margin-left: 10px;
+            float: left;
+        }
+
+        #txtNode {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            background: white;
+            display: none;
+            z-index: 3;
+        }
+
+        #setText {
+            display: none;
+        }
+
+        #txtNode>input:nth-child(1) {
+            position: absolute;
+            right: 3px;
+            top: 3px;
+        }
+
+        #textNodeF {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: 3;
+            display: none;
+            text-align: center;
+            padding-top: 200px;
+            background: #ccc;
+            overflow: auto;
+        }
+
+        #clsNode {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            z-index: 4;
+            display: none;
+        }
+
+        ol>li {
+            text-decoration: none;
+            float: left;
+            margin-left: 20px;
+            list-style: none;
+        }
+
+        #searchAll {
+            display: none;
+        }
+
+        #allUser{
+            width:100%;height:100%;background:#ccc;z-index:4;
+        }
     </style>
     <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
+
 <body>
+    <div id='allUser'>
+        <ul id='userUl'></ul>
+    </div>
+    <input type="button" id='clsNode' value='关闭'>
+    <div id='textNodeF'></div>
+    <div id='txtNode'>
+        <input type="button" value="关闭"> 文章名：
+        <input type="text" id="fileName">
+        <br> 文章内容：
+        <textarea id='txt'></textarea>
+        <br>
+        <button id='tjNode'>提交</button>
+
+    </div>
     <div id='allNodeDo'></div>
     <div id='topNode'>
         <span id="pNode"></span>
+        <button id='searchAll'>查看所有帐号</button>
+        <button id='setText'>写文章</button>
         <button id='dl'>登录</button>
         <button id='zc'>注册</button>
     </div>
     <div id="loginNode">
         <button id="cl">关闭</button>
-        用户：<input type="text" id="user"><br>
-        密码：<input type="text" id="pass"><br>
-        <button id="loginBtn">登陆</button><button id='zcbtn'>注册</button>
+        用户：
+        <input type="text" id="user">
+        <br> 密码：
+        <input type="text" id="pass">
+        <br>
+        <button id="loginBtn">登陆</button>
+        <button id='zcbtn'>注册</button>
     </div>
+    <ul id="ul">
+    </ul>
+    <ol id="ol"></ol>
     <script>
-    dl.onclick = zc.onclick = function(){
-        loginNode.style.display = 'block';
-        allNodeDo.style.display = 'block';
-    }
-    cl.onclick = function(){
-        loginNode.style.display = 'none';
-        allNodeDo.style.display = 'none';
-    }
-    zcbtn.onclick = function(){
-        if(user.value == '' || pass.value == ''){
-            alert('用户名密码不能为空');
-            return;
+        searchAll.onclick = function(){
+            $.ajax({
+                url:'http://localhost:9290',
+                type:'get',
+                success:function(data){
+                    var arr = eval('('+data+')');
+                    for(var i=0;i<arr.length;i++){
+                        var oLi = document.createElement('li');
+                        oLi.innerHTML = '<span>'+arr[i]+'</span>';
+                        oLi.innerHTML+='<a href="javascript:;" class="needDelete">删除</a>'
+                        userUl.appendChild(oLi);
+                    }
+                }
+            });
         }
-        $.ajax({
-            url:'http://localhost:9281',
-            type:'get',
-            data:{
-                user:user.value,
-                pass:pass.value
-            },
-            success:function(data){
-                alert(data);
-            }
-        });
-    }
-    loginBtn.onclick = function(){
-        if(user.value == '' || pass.value == ''){
-            alert('用户名密码不能为空');
-            return;
-        }
-        $.ajax({
-            url:'http://localhost:9282',
-            type:'get',
-            data:{
-                user:user.value,
-                pass:pass.value
-            },
-            success:function(data){
-                alert(data);
-                if(data=='登录成功'){
-                    dl.style.display = zc.style.display = loginNode.style.display = 'none';
-                    allNodeDo.style.display = 'none';
-                    pNode.innerHTML = user.value;
+
+        document.onclick = function (e) {
+            var ev = e || event;
+            var iTarget = ev.srcElement || ev.target;
+            if (iTarget.className == 'classFileA') {
+                $.ajax({
+                    url: 'http://localhost:9285',
+                    type: 'get',
+                    data: {
+                        fileName: iTarget.innerHTML
+                    },
+                    success: function (data) {
+                        textNodeF.style.display = 'block';
+                        clsNode.style.display = 'block';
+                        textNodeF.innerHTML = data;
+
+                    }
+                });
+            } else if (iTarget.className == 'changePage') {
+                ul.innerHTML = '';
+                for (var i = 0; i < bigarrSer[iTarget.innerHTML - 1].length; i++) {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = '<a class="classFileA" href="javascript:void(0);">' + bigarrSer[iTarget.innerHTML -
+                        1][i] + '</a>';
+                    ul.appendChild(oLi);
                 }
             }
+            if (iTarget.className == 'needDelete') {
+                $.ajax({
+                url:'http://localhost:9300',
+                type:'get',
+                data:{
+                    'deleteName':iTarget.parentNode.children[0].innerHTML
+                },
+                success:function(data){
+                    alert('删除成功');
+                }
+            });
+            }
+        }
+
+        clsNode.onclick = function () {
+            textNodeF.style.display = 'none';
+            clsNode.style.display = 'block';
+        }
+
+        $.ajax({
+            url: 'http://localhost:9284',
+            type: 'get',
+            success: function (data) {
+                var arr = eval('(' + data + ')');
+                // window.jsonNode ={};
+                bigarrSer = [];
+                var arrSerpg = [];
+                for (var i = 0; i < arr.length; i++) {
+                    arrSerpg.push(arr[i]);
+                    if (i > 0) {
+                        if (i % 6 == 0) {
+                            bigarrSer.push(arrSerpg);
+                            arrSerpg = [];
+                        } else {
+                            if (i == arr.length - 1) {
+                                bigarrSer.push(arrSerpg);
+                            }
+                        }
+                    }
+
+                }
+
+                console.log(bigarrSer);
+
+
+                for (var i = 0; i < bigarrSer.length; i++) {
+                    var li = document.createElement('li');
+                    li.innerHTML = '<a href="javascript:void(0);" class="changePage">' + (Number(i) + 1) +
+                        '</a>';
+                    ol.appendChild(li);
+                }
+
+
+                for (var i = 0; i < bigarrSer[0].length; i++) {
+                    var oLi = document.createElement('li');
+                    oLi.innerHTML = '<a class="classFileA" href="javascript:void(0);">' + bigarrSer[0][i] +
+                        '</a>';
+                    ul.appendChild(oLi);
+                }
+
+            }
         });
-    }
+
+        tjNode.onclick = function () {
+            $.ajax({
+                url: 'http://localhost:9283',
+                type: 'get',
+                data: {
+                    fileName: fileName.value,
+                    inner: txt.value
+                },
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+
+        document.querySelector('#txtNode>input:nth-child(1)').onclick = function () {
+            allNodeDo.style.display = this.parentNode.style.display = 'none';
+        }
+        setText.onclick = function () {
+            allNodeDo.style.display = txtNode.style.display = 'block';
+        }
+        dl.onclick = zc.onclick = function () {
+            loginNode.style.display = 'block';
+            allNodeDo.style.display = 'block';
+        }
+        cl.onclick = function () {
+            loginNode.style.display = 'none';
+            allNodeDo.style.display = 'none';
+        }
+        zcbtn.onclick = function () {
+            if (user.value == '' || pass.value == '') {
+                alert('用户名密码不能为空');
+                return;
+            }
+            $.ajax({
+                url: 'http://localhost:9281',
+                type: 'get',
+                data: {
+                    user: user.value,
+                    pass: pass.value
+                },
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+        loginBtn.onclick = function () {
+            if (user.value == '' || pass.value == '') {
+                alert('用户名密码不能为空');
+                return;
+            }
+            $.ajax({
+                url: 'http://localhost:9282',
+                type: 'get',
+                data: {
+                    user: user.value,
+                    pass: pass.value
+                },
+                success: function (data) {
+                    alert(data);
+                    if (data == '大人您可回来了') {
+                        dl.style.display = zc.style.display = loginNode.style.display = 'none';
+                        allNodeDo.style.display = 'none';
+                        pNode.innerHTML = '尊敬的管理员：' + user.value;
+                        setText.style.display = 'block';
+                        searchAll.style.display = 'block';
+                    }
+                    if (data == '登录成功') {
+                        dl.style.display = zc.style.display = loginNode.style.display = 'none';
+                        allNodeDo.style.display = 'none';
+                        pNode.innerHTML = user.value;
+                        setText.style.display = 'block';
+                    }
+                }
+            });
+        }
     </script>
 </body>
+
 </html>
