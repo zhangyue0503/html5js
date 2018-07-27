@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+
+<body>
+    
+    <span id='span'></span>
+    <div id="div">
+    用户：
+    <input type="text" id='user'>
+    <br> 密码：
+    <input type="text" id='pass'>
+    <br>
+    <input type="button" value="登录" id='btn'>
+
+    <input type="checkbox" name="" id="c">自动登录
+</div>
+    <script>
+        $.ajax({
+            url: 'http://localhost:2731/leo',
+            type: 'get',
+            success: function (data) {
+                // var data = eval('('+data+')');
+                user.value = data.user;
+                pass.value = data.pass;
+
+
+                setTimeout(function () {
+                    $.ajax({
+                        url: 'http://localhost:2731/login',
+                        type: 'get',
+                        data: {
+                            user: user.value,
+                            pass: pass.value
+                        },
+                        success: function (data) {
+                            if(data == 'ok'){
+                                div.style.display = 'none';
+                                span.style.display = 'block';
+                                span.innerHTML = '欢迎您 '+user.value;
+                            }
+
+                        }
+                    });
+                }, 1000);
+
+
+
+            }
+        });
+    </script>
+
+</body>
+
+</html>

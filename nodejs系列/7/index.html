@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head lang="cn">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="reset.css?2131" type="text/css">
+    <link rel="stylesheet" href="index.css?12313" type="text/css">
+    <style type="text/css">
+        .big {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            top: -300px;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            transition: cubic-bezier(0.39, -0.18, 0, 1.27) 1.3s all;
+            opacity: 0;
+        }
+
+        input {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="big clearfix">
+        <div class="box clearfix">
+            <div class="right">
+                <div>Register</div>
+                <span>Free Account</span>
+                <p>Nunc purus diam, tdunt eu
+                    <br>rhocus vel, posere cogue
+                    <br>purus. Prent at orci quis
+                    <br>neue eleifend laoreet. </p>
+            </div>
+            <h3>Login</h3>
+            <input type="text" id="user" placeholder="Username">
+            <br/>
+            <input type="text" id="pass" placeholder="Password">
+            <br/>
+            <input type="checkbox" class="checkbox" id="check">
+            <span class="a1">Remember me.</span>
+            <button id="btn1">Resign</button>
+            <button id="btn2">Login</button>
+            <img src="img/x.png" class="x">
+        </div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+        var oDiv = document.querySelector('.box');
+
+        setTimeout(function () {
+            oDiv.style.opacity = 1;
+            oDiv.style.top = '0px';
+            
+
+
+        }, 1000);
+
+        btn1.onclick = function () {
+            $.ajax({
+                url: 'http://localhost:8020/resign',
+                type: 'get',
+                data: {
+                    user: user.value,
+                    pass: pass.value
+                },
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+        btn2.onclick = function(){
+            $.ajax({
+                url: 'http://localhost:8020/login',
+                type: 'get',
+                data: {
+                    user: user.value,
+                    pass: pass.value,
+                    isCookie:check.checked
+                },
+                success: function (data) {
+                    alert(data);
+                }
+            });
+        }
+
+        $.ajax({
+            url:'http://localhost:8020/cookieLogin',
+            type:'get',
+            success:function(data){
+                console.log(data);
+                // setTimeout(function(){
+                //     oDiv.style.top = "-1300px";
+                // },1300);
+            }
+
+        });
+
+    </script>
+</body>
+
+</html>

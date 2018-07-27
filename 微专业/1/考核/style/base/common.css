@@ -1,0 +1,30 @@
+.banner {
+    position: relative;
+    background: #9FC4E3;
+    height: 300px;
+}
+
+.banner>ul {
+    position: absolute;
+    left: 50%;
+    bottom: 10px;
+    transform: translateX(-50%);
+    z-index: 9;
+}
+
+.banner>ul li {
+    background: #000;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    margin-left: 5px;
+    float: left;
+}
+
+.banner>ul li:first-child {
+    margin: 0;
+}
+
+.banner>ul li.current {
+    background: #fff;
+}

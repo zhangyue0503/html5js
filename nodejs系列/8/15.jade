@@ -1,0 +1,13 @@
+html
+    head
+        meta(charset='utf-8')
+        title
+    body
+        input#in
+        span#sp
+        script.
+            in.oninput = function(){
+                sp.innerHTML = in.value;
+            }
+        
+        

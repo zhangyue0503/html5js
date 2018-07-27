@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <style type="text/css">
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    p {
+        background: #666;
+        color: white;
+    }
+
+    .parent-fix{
+    	margin-left: -20px;
+    }
+
+    .parent {
+        display: table;
+        width: 100%;
+        table-layout: fixed;
+    }
+
+    .column {
+        display: table-cell;
+        padding-left: 20px;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="parent-fix">
+        <div class="parent">
+            <div class="column">
+                <p>1</p>
+            </div>
+            <div class="column">
+                <p>2</p>
+            </div>
+            <div class="column">
+                <p>3</p>
+            </div>
+            <div class="column">
+                <p>4</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

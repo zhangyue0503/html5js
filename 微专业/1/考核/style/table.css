@@ -1,0 +1,30 @@
+.banner {
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+}
+
+/* 
+* 大图片情况下，需要嵌套一个div，并且定宽高
+* 然后让图片使用position居中定位
+*/
+
+.banner div {
+    display: none;
+    width: 100%;
+    height: 300px;
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.banner div.current {
+    display: inline-block;
+}
+
+.banner div>img {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
