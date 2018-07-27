@@ -15,11 +15,4 @@ server.listen(2813);
 
 server.use(static('./mp3/'))
 
-// fs.writeFile('./2.html',jade.renderFile('./12.jade',{pretty:true}),function(err){
-//     if(err){
-//         console.log(err);
-//     }else{
-//         console.log('生成完毕');
-//     }
-// });
 
