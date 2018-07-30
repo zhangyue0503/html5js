@@ -1,26 +1,38 @@
 .banner {
     position: relative;
+    display: flex;
+    justify-content: center;
     background: #9FC4E3;
     height: 300px;
     overflow: hidden;
 }
 
-/* 通用图片居中position定位 */
-.banner img{
-	position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+
+/* flex布局下图片直接高度会和父元素相同，因此嵌套一层div */
+
+.banner div {
+    height: 100%;
+    display: none;
+    position: relative;
 }
 
-/* 下方点导航默认样式，使用position */
+.banner div.current {
+    display: block;
+}
+
+.banner div img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%)
+}
 
 .banner>ul {
     position: absolute;
     left: 50%;
     bottom: 10px;
     transform: translateX(-50%);
-    z-index: 9;
+    display: flex;
 }
 
 .banner>ul li {
@@ -29,7 +41,6 @@
     width: 10px;
     height: 10px;
     margin-left: 5px;
-    float: left;
 }
 
 .banner>ul li:first-child {

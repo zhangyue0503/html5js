@@ -1,7 +1,6 @@
 .banner {
     display: flex;
     justify-content: center;
-    overflow: hidden;
 }
 
 /* flex布局下图片直接高度会和父元素相同，因此嵌套一层div */
@@ -15,12 +14,7 @@
     display: block;
 }
 
-.banner div img {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%)
-}
+/* 下方点导航也使用flex布局 */
 
 .banner>ul {
     display: flex;
