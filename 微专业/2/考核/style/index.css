@@ -1,0 +1,177 @@
+.m-flow {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, .6);
+        top: 0;
+        left: 0;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 6.23rem;
+        height: 9.65rem;
+        -webkit-transform: translate(-50%, -50%);
+        background: -webkit-linear-gradient(#e8e8e8, #b0b0b0);
+    }
+
+    /* 连接close按扭的竖线 */
+    .content:before {
+        content: "";
+        position: absolute;
+        top: -0.12rem;
+        right: 0.23rem;
+        width: 1px;
+        height: 0.15rem;
+        background: #fff;
+    }
+
+    /* 标题组件 */
+    .content .title {
+        padding: 0 0.57rem;
+        color: #47444c;
+        font-size: 0.35rem;
+        margin-top: 0.58rem;
+    }
+
+    .content .title strong {
+        font-size: 0.75rem;
+    }
+
+    .content .title span {
+        color: #cc3341;
+    }
+
+    /* content内容P，XXXXXXXXX部分 */
+    .content p {
+        font-size: 0.24rem;
+        text-align: center;
+        color: #47444c;
+        line-height: 1.2;
+    }
+
+    /* 头像行组件 */
+    .content .selfinfo {
+        display: flex;
+        align-items: center;
+        padding: 0 0.57rem;
+    }
+
+    .content .selfinfo .img {
+        text-align: center;
+        font-size: 0;
+        width: 0.64rem;
+        height: 0.64rem;
+    }
+
+    .content .selfinfo .img img {
+        width: 0.64rem;
+        height: 0.64rem;
+        display: block;
+        vertical-align: top;
+    }
+
+    .content .selfinfo .img p {
+        color: #797979;
+        text-align: center;
+        font-size: 0.14rem;
+        -webkit-transform: scale(0.75);
+        display: block;
+    }
+
+    .content .selfinfo .words {
+        font-size: 0.42rem;
+        color: #47444c;
+        border-bottom: 1px solid #47444c;
+        margin-left: 0.17rem;
+        line-height: 0.42rem;
+    }
+
+    /* 中部图片部分组件 */
+    .content .phone {
+        text-align: center;
+        width: 3.07rem;
+        margin: 0 auto;
+        position: relative;
+        margin-top: 0.30rem;
+        margin-bottom: 0.23rem;
+    }
+
+    .content .phone img {
+        width: 3.07rem;
+        height: 4.48rem;
+        vertical-align: middle;
+    }
+
+    /* 图片下方阴影 */
+    .content .phone:after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: -10px;
+        width: 100%;
+        background: rgba(0, 0, 0, .4);
+        border-radius: 50%;
+        box-shadow: 0 -12px 15px 2px #000;
+        -webkit-transform: translateX(-50%);
+    }
+
+    /* 保存按扭 */
+    .content .btn-save {
+        width: 4.05rem;
+        height: 0.87rem;
+        background: #b83a45;
+        font-size: 0.35rem;
+        color: #dcdcdc;
+        display: block;
+        text-align: center;
+        line-height: 0.87rem;
+        position: absolute;
+        left: 50%;
+        bottom: 0.63rem;
+        -webkit-transform: translateX(-50%);
+    }
+
+    /* 右上角关闭按扭组件 */
+    .u-close {
+        position: absolute;
+        top: -0.57rem;
+        right: 0;
+        width: 0.42rem;
+        height: 0.42rem;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        -webkit-transform-origin: 50% 50%;
+        -webkit-transform: rotate(45deg);
+    }
+
+    .u-close:after,
+    .u-close:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate3d(-50%, -50%, 0);
+        width: 1px;
+        height: 0.2rem;
+        background: #fff;
+        border-radius: 50%;
+    }
+
+    .u-close:before {
+        -webkit-transform: translate3d(-50%, -50%, 0) rotate(90deg);
+        -webkit-transform-origin: 50% 50%;
+    }
+
+	/* 浮层图片，用于微信长按保存实现 */
+    .content .up-img{
+		position: absolute;
+		top: 0;
+		left: 0;
+		opacity:0;
+		z-index: 99;
+		width: 100%;
+		height: 100%;
+    }

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="ContentType" content="text/html; charset=utf-8">
+	<meta name="keywords" content="">
+	<meta name="description" content="description">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-touch-fullscreen" content="yes">
+	<meta name="format-detection" content="telephone=no,email=no">
+	<meta name="screen-orientation" content="portrait">
+	<meta name="x5-orientation" content="portrait">
+	<meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<title></title>
+	<style type="text/css" media="screen">
+		.m-flow{
+			position: absolute;
+			width: 100%;height: 100%;
+			background: rgba(0,0,0,.6);
+		}
+		.m-flow .content{
+			position: absolute;top: 50%;left: 50%;
+			width: 5.31rem;height: 8.24rem;
+			-webkit-transform: translate3d(-50%, -50%);
+			background: -webkit-linear-gradient(#e8e8e8,#b0b0b0);
+		}
+		.u-close{
+			position: absolute;top: -0.57rem;right: 0;
+			width: 0.42rem;height: 0.42rem;
+			border: 1px solid #fff;border-redius: 50%;
+			-webkit-transform-origin: 50% 50%;
+			-webkit-transform: rotate(45deg);
+		}
+		.u-close:after,.u-close:before{
+			content: "";
+			position: absolute;top: 50%;left: 50%;
+			-webkit-transform: translate3d(-50%,-50%,0);
+			width: 1px;height: 10px;backgroun: #fff;border-radius: 50%;
+		}
+		.u-close:before{
+			-webkit-transform: translate3d(-50%, -50%) rotate(90deg);
+			-webkit-transform-origin: 50% 50%;
+		}
+	</style>
+</head>
+<body>
+	<div class="m-flow">
+		<div class="content">
+			<div class="title"></div>
+			<div class="selfinfo">
+				<div class="img">
+					<img src="thumb.jpg">
+					<p>name</p>
+				</div>
+				<div class="words">
+					用的是
+				</div>
+			</div>
+			<div class="phone">
+				<img src="phone.png">
+			</div>
+			<p>xxxxxx</p>
+			<p>xxxxxx</p>
+			<a href="javascript:;">长按保存至相册</a>
+			<img src="" alt="">
+			<a href="javascript:;" class="u-close"></a>
+		</div>
+	</div>
+
+	<script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+		function loadImage(url){
+			var img = new Image();
+			//图片跨域
+			img.crossOrigin = 'true';
+			img.src = '';
+			return img;
+		}
+
+		//文字生成
+		ctx.drawImage(limg,320-width/2,512-height/2)
+		ctx.font = '14px PingFangSC-Regular, "Microsoft Yahei", Helvetica, Arial, sans-serif'
+		ctx.fillStyle = '#797979';
+		var tw = ctx.measureText(u.nickname).width
+		ctx.fillText(u.nickname,64-86/2-tw/2,155+86+20)
+		ctx.fillStyle = '#47444c';
+		ctx.font = '24px PingFangSC-Regular, "Microsoft Yahei", Helvetica, Arial, sans-serif';
+
+		canvas.toDataURL(type,encoderOptions);
+
+	</script>		
+</body>
+</html>

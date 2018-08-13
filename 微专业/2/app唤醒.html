@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <script src="/javascripts/application.js" type="text/javascript" charset="utf-8" async defer>
+    var go = {
+        _openApp: function(openUrl, callback) {
+            $('body').append('<iframe src="' + openUrl + '" style="display:none; class="PSC_YX_J_schemeIframe></iframe>');
+            var _isopen = setTimeout(function() {
+                $('.PSC_YX_J_schemeIframe').remove();
+                callback && callback(1);
+            }, 800);
+        },
+        yx_appGo: function(_app, _href) {
+            this._openApp(_app, function(opened) {
+                if (opened) {
+                    console.log('app awake success');
+                } else {
+                    window.location.href = _href;
+                }
+            });
+        }
+    }
+    </script>
+</body>
+
+</html>

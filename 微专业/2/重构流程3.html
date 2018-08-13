@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <style type="text/css" media="screen">
+    	.m-tab{position:relative;display: block;width:100%;min-height:100px;background:#fff;}
+
+    	/* 代替border并且实现0.5px */
+		.m-tab:before{
+			content: '';
+			position: absolute;
+			bottom: 0px;
+			left: 0;
+			width: 100%;
+			height: 1px;
+			line-height: 0px;
+			font-size: 0;
+			background: #ccc;
+			-webkit-transform: scaleY(0.5)
+		}
+
+
+    	.m-tab .words{padding-left:16px;font-size:18px;}
+    	/* 用伪类代替i */
+    	.m-tab:after{
+    		content: '';
+    		position: absolute;
+    		display: block;
+    		width: 8px;
+    		height: 14px;
+    		top: 50%;
+    		-webkit-transform:translateY(-50%);
+    		right: 16px;
+    		background: url() no-repeat;
+    		background-size: contain;
+    	}
+
+    </style>
+</head>
+
+<body>
+	<a href="javascript:;" class="m-tab">
+		<div class="words">
+			coupon
+		</div>
+	</a>
+	<a href="javascript:;" class="m-tab">
+		<div class="words">
+			coupon2
+		</div>
+	</a>
+</body>
+
+</html>
