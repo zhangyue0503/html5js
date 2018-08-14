@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    用户：<input type="text" id='user'><br>
+    密码：<input type="pass" id='pass'><br>
+    <input type="button" value="注册" id='res'>
+    <input type="button" value="登录" id='login'>
+    <script>
+        res.onclick = function(){
+            $.ajax({
+                url:'http://localhost:2133/res',
+                type:'get',
+                data:{
+                    user:user.value,
+                    pass:pass.value
+                },
+                success:function(data){
+                    alert(data);
+                }
+            });
+        };
+        login.onclick = function(){
+            $.ajax({
+                url:'http://localhost:2133/log',
+                type:'get',
+                data:{
+                    user:user.value,
+                    pass:pass.value
+                },
+                success:function(data){
+                    alert(data);
+                }
+            });
+        };
+    </script>
+</body>
+</html>
