@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://localhost:2131/socket.io/socket.io.js">
+    </script>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    body,
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    body {
+        position: absolute;
+    }
+
+    .blood {
+        width: 600px;
+        height: 20px;
+        border: 3px solid black;
+        position: absolute;
+        left: 50%;
+        top: 50px;
+        margin-left: -300px;
+    }
+
+    .x {
+        width: 100%;
+        height: 100%;
+        background: red;
+    }
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 200px;
+    }
+</style>
+
+<body>
+
+    <div class="blood">
+        <div class='x' id="x1"></div>
+    </div>
+    <img src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534483477283&di=82ca481131d0eca28c2bdf3c51da78b1&imgtype=0&src=http%3A%2F%2Fimgsrc.baidu.com%2Fforum%2Fw%3D580%3Bcp%3Dtieba%2C10%2C835%3Bap%3D%25C6%25C6%25BB%25B5%25C9%25F1%25B0%25C9%2C90%2C843%2Fsign%3Df34fc0f15066d0167e199e20a710b777%2Fc799b851f3deb48f46c0e2e2f21f3a292cf578c0.jpg"
+        id="img">
+    <script>
+        onload = x => {
+            let conn = io.connect('ws://localhost:2131');
+
+            conn.on('blood',num=>{
+                x1.style.width = num*100 + '%';
+            });
+
+            conn.on('msg', str => {
+                console.log(str);
+                
+            });
+
+            ((b) => {
+                function play() {
+                    var x = 0,
+                        t = null;
+                   
+                    t = setInterval(() => {
+                        if (x == 10) {
+                            clearInterval(t);
+                            x = 0;
+                            b.style.top = b.style.left = 0;
+                            return;
+                        }
+                        x++;
+                        b.style.top = b.style.left = Math.random() * 20 - 10 + 'px';
+                    }, 3e1);
+                }
+                conn.on('kill', num => {
+                    play();
+                    x1.style.width = num[0]*100 + '%';
+                    var oDiv = document.createElement('div');
+                    oDiv.innerHTML = num[1];
+                    oDiv.style.position = 'absolute';
+                    oDiv.style.left = '50%';
+                    oDiv.style.top = '20px';
+                    oDiv.style.transtion = '0.7s';
+                    
+                    b.appendChild(oDiv);
+                //    setTimeout(()=>{
+                //         oDiv.style.transform = 'translateY(-20px)';
+                //         oDiv.style.opacity = '0';
+                //     },0);
+                    setTimeout(()=>{
+                        oDiv.remove()
+                    },700);
+                    
+                });
+                img.onclick = () => {
+                    conn.emit('kill', 1);
+                }
+
+            })(document.body);
+        }
+    </script>
+</body>
+
+</html>

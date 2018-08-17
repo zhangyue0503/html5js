@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #ld{width:0%;height:20px;position: absolute;left:0;bottom: 0;background:-webkit-linear-gradient(left,#ccc,black);}
+    </style>
+</head>
+<body>
+    <div id="ld"></div>
+    <input type="file" id="file">
+    <button id="tj">提交</button>
+    <img id="i" src="" alt="" srcset="">
+    <script>
+    
+    tj.onclick = function(){
+        // console.log(file.files[0]);
+        var oForm = new FormData();
+        oForm.append('files',file.files[0]);
+        var xhr = new XMLHttpRequest();
+        xhr.open('post','http://localhost:2313/setFiles',true);
+        xhr.onload = function(){
+            // console.log(xhr.responseText);
+            i.src = xhr.responseText.substring(3);
+        };
+        xhr.upload.onprogress = function(e){
+            console.log(((e.loaded/e.total)*100)+'%');
+            ld.style.width = parseInt(((e.loaded/e.total)*100))+'%';
+        };
+        xhr.send(oForm);
+    }
+    
+    </script>
+</body>
+</html>

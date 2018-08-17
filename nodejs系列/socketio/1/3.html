@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://localhost:2183/socket.io/socket.io.js">
+    </script>
+    <script>
+        var connection = io.connect('ws://localhost:2183');
+        onload = (x) => {
+
+            connection.on('style',(json)=>{
+                div1.style.left = json.x + 'px';
+                div1.style.top = json.y + 'px';
+            });
+
+            div1.onmousedown = function (e) {
+                var ev = e || event;
+                var l = ev.clientX - this.offsetLeft;
+                var t = ev.clientY - this.offsetTop;
+
+                document.onmousemove = function (e) {
+                    var ev = e || event;
+                    var x = ev.clientX -l;
+                    var y = ev.clientY - t;
+                    connection.emit('divNode',{x:x,y:y});
+                    this.style.left = x + 'px';
+                    this.style.top = y + 'px';
+                }.bind(this);
+
+                document.onmouseup = function () {
+                    this.onmousemove = this.onmouseup = null;
+                }.bind(this);
+                return false;
+            }
+
+            // let connection = io.connect('ws://localhost:2183');
+            // b.onclick = x=>{
+            //     connection.emit('msg',t.value);   
+            // }
+            // connection.on('msg',(str)=>{
+            //     // console.log(str);
+            //     var oLi = document.createElement('li');
+            //     oLi.innerHTML = str;
+            //     ul.appendChild(oLi);
+            // });
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #div1 {
+            width: 200px;
+            height: 200px;
+            background: black;
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='div1'></div>
+</body>
+
+</html>

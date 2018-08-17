@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://localhost:2183/socket.io/socket.io.js">
+    </script>
+    <script>
+        // var connection = io.connect('ws://localhost:2183');
+        onload = (x) => {
+
+            // connection.on('style',(json)=>{
+            //     div1.style.left = json.x + 'px';
+            //     div1.style.top = json.y + 'px';
+            // });
+
+            // div1.onmousedown = function (e) {
+            //     var ev = e || event;
+            //     var l = ev.clientX - this.offsetLeft;
+            //     var t = ev.clientY - this.offsetTop;
+
+            //     document.onmousemove = function (e) {
+            //         var ev = e || event;
+            //         var x = ev.clientX -l;
+            //         var y = ev.clientY - t;
+            //         connection.emit('divNode',{x:x,y:y});
+            //         this.style.left = x + 'px';
+            //         this.style.top = y + 'px';
+            //     }.bind(this);
+
+            //     document.onmouseup = function () {
+            //         this.onmousemove = this.onmouseup = null;
+            //     }.bind(this);
+            //     return false;
+            // }
+
+            function toLi(user, timer, inner) {
+                var oLi = document.createElement('li');
+                oLi.innerHTML = `<p>${user} ${timer}</p><p>${inner}</p> `
+                return oLi;
+            }
+
+            btnSure.onclick = function () {
+                window.conn = io.connect('ws://localhost:2183');
+                userName.style.transform = 'translateY(-100%)';
+                conn.emit('name', userInput.value);
+                conn.on('msg', (json) => {
+                    console.log(json);
+                    ul.appendChild(toLi(json.userName, json.timer, json.msg));
+                });
+                conn.on('allmsg',(arr)=>{
+                    for(var i=0;i<arr.length;i++){
+                        ul.appendChild(toLi(arr[i].userName, arr[i].timer, arr[i].msg));
+                    }
+                    textNode.scrollTop = (textNode.scrollHeight-300)+'px';
+                });
+                conn.on('user', (str) => {
+                    ol.innerHTML = '';
+                    for (var i = 0; i < str.length; i++) {
+                        var oLi = document.createElement('li');
+                        oLi.innerHTML = str[i];
+                        ol.appendChild(oLi);
+                    }
+                });
+                conn.on('userup',(str)=>{
+                    for (var i = 0; i < ol.children.length; i++) {
+                        if(ol.children[i].innerHTML == str){
+                            ol.children[i].remove();
+                        }
+                    }
+                });
+            };
+
+            btn.onclick = function () {
+                conn.emit('msg', txtNode.value);
+            }
+
+
+
+        }
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .textNode {
+            width: 400px;
+            height: 300px;
+            border: 1px solid black;
+            position: absolute;
+            left: 50%;
+            top: -1px;
+            margin-left: -200px;
+            overflow: auto;
+
+        }
+
+        #txtNode {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 300px;
+            margin-left: -200px;
+        }
+
+        #btn {
+            width: 400px;
+            height: 50px;
+            position: absolute;
+            left: 50%;
+            top: 400px;
+            margin-left: -200px;
+        }
+
+        .useNode {
+            width: 100px;
+            height: 450px;
+            border: 1px solid black;
+            position: absolute;
+            left: calc(50% + 250px);
+            top: -1px;
+            margin-left: -50px;
+        }
+
+        #userName {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            background: black;
+            z-index: 5;
+            transition: .8s;
+        }
+
+        #userName p {
+            text-align: center;
+            font-size: 45px;
+            color: white;
+            margin-top: 30px;
+        }
+
+        #userName input {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 200px;
+            margin-left: -200px;
+            font-size: 50px;
+        }
+
+        #btnSure {
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 350px;
+            margin-left: -200px;
+            font-size: 50px;
+        }
+
+        ul,ol {
+            text-indent: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id='userName'>
+        <p>请输入您 的名字</p>
+        <input type="text" id="userInput">
+        <button id="btnSure">确定</button>
+    </div>
+    <div class="textNode" id="textNode">
+        <ul id="ul"></ul>
+    </div>
+    <div class="useNode">
+        <ol id="ol">
+
+        </ol>
+    </div>
+    <textarea id="txtNode" style="resize: none;"></textarea>
+    <button id='btn'>发送</button>
+</body>
+
+</html>

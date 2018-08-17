@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    textarea{width:400px;height:300px;}
+    </style>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    用户：<input type="text" id="user"><br>
+    标题：<input type="text" id="textName"><br>
+    文章内容：<br>
+    <textarea id="txt">
+    </textarea><br>
+    <button id="btn">提交</button>
+    <script>
+    btn.onclick = function(){
+        $.ajax({
+            url:'http://localhost:3263/getText',
+            type:'get',
+            data:{
+                user:user.value,
+                textName:textName.value,
+                time:new Date().toLocaleDateString()+ ' '+ new Date().toLocaleTimeString(),
+                inner:txt.value
+            },success:function(data){
+                alert(data);
+            }
+        });
+    }
+    </script>
+</body>
+</html>

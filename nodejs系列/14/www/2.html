@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    #ld{width:0%;height:20px;position: absolute;left:0;bottom: 0;background:-webkit-linear-gradient(left,#ccc,black);}
+    #div1{
+        width:200px;height:200px;position:absolute;left:0;top:0;right:0;bottom:0;margin:auto;background: black;color:white;
+    }
+    </style>
+</head>
+<body>
+    <div id="ld"></div>
+    <div id="div1">请拖入文件</div>
+    <img id="i" src="" alt="" srcset="">
+    <script>
+    
+    div1.ondragenter = function(){
+        this.innerHTML = '请撒手';
+    };
+    div1.ondragleave = function(){
+        this.innerHTML = '请拖入文件';
+    };
+    div1.ondragover = function(){
+        return false;
+    };
+    div1.ondrop = function(e){
+        alert(1);
+        var onFile = e.dataTransfer.files[0];
+        console.log(onFile);
+        return false;
+    };
+    
+    </script>
+</body>
+</html>

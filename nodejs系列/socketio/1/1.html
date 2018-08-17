@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="http://localhost:2183/socket.io/socket.io.js">
+        
+    </script>
+    <script>
+         let connection = io.connect('ws://localhost:2183');
+            connection.on('aaa',(str)=>{
+                 console.log(str);
+            });
+
+            connection.emit('bbb','你好');
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
