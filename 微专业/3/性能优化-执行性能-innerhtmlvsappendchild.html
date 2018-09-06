@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<button onclick="list()">生成</button>
+	<button onclick="list2()">生成2</button>
+	<button onclick="list3()">生成3</button>
+	
+	<script type="text/javascript">
+		function list(){
+			console.log(console.time('1'));
+			var div = document.createElement('div');
+
+			var tpl = '<article>xxxxxxxxxx</article>';
+
+			for(let i=0;i<1024000;i++){
+				div.innerHTML += tpl;
+			}
+			console.log(console.timeEnd('1'));
+		}
+
+		function list2(){
+			console.log(console.time('1'));
+			var div = document.createElement('div');
+
+			var tpl = '<article>xxxxxxxxxx</article>';
+			var cnt = '';
+			for(let i=0;i<1024000;i++){
+				cnt += tpl;
+			}
+			div.innerHTML = cnt;
+			console.log(console.timeEnd('1'));
+		}
+
+		function list3(){
+			console.log(console.time('1'));
+			var div = document.createElement('div');
+
+			
+			for(let i=0;i<1024000;i++){
+				var ele = document.createElement('article');
+				ele.innerHTML = 'xxxxxxxxxx';
+				div.appendChild(ele);
+			}
+			console.log(console.timeEnd('1'));
+		}
+
+
+
+	</script>
+
+</body>
+</html>

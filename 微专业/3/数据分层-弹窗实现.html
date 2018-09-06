@@ -1,0 +1,18 @@
+//View
+
+<button :click="toogleCreateSong">创建歌单</button>
+{#if showCreateSong}
+<div class="create-song">
+	<i class="list-item"></i>
+	<input type="text" name="song-name">
+</div>
+{/if}
+
+<script type="text/javascript">
+	{
+		toogleCreateSong:function(){
+			this.showCreateSong = !this.showCreateSong;
+		}
+	}
+
+</script>

@@ -1,0 +1,10 @@
+body {
+    color: green;
+    text-shadow: 0 0 15px black;
+}
+
+#div2 {
+    width: 690px;
+    height: 459px;
+    background: url('1.jpeg');
+}

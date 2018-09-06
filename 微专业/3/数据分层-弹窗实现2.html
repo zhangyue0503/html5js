@@ -1,0 +1,24 @@
+//View
+<div class="app" :click="hideCreateSong">
+	
+
+<button :click="toogleCreateSong">创建歌单</button>
+{#if showCreateSong}
+<div class="create-song">
+	<i class="list-item"></i>
+	<input type="text" name="song-name">
+</div>
+{/if}
+
+</div>
+
+<script type="text/javascript">
+	{
+		showCreateSong: this.props.showCreateSong,
+		toogleCreateSong:function(){
+			//这里发布一个动作，动作的作用最终是更改全局状态变量 showCreateSong
+			dispatchAction('show-create-song');
+		}
+	}
+
+</script>

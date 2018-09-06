@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<script src="monitor.js" type="text/javascript" charset="utf-8"></script>
+	<script src="spa.js" type="text/javascript" charset="utf-8"></script>
+	<script src="app.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+	
+	<script type="text/javascript">
+		spa.add(function(context,next){
+			if(context.request.hash == '#aaa'){
+				console.log(111);
+			}
+			next();
+		});
+		spa.add(function(context,next){
+			if(context.request.hash == '#bbb'){
+				console.log(222);
+			}
+			next();
+		});
+		spa.add(function(context,next){
+			if(context.request.hash == '#aaa/bbb'){
+				console.log(333);
+				return;
+			}
+		});
+
+	</script>
+</body>
+</html>
