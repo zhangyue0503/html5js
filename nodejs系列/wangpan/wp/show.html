@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <style>
+        .outside{
+        margin-top:15px;
+    }
+    </style>
+    <title>网盘</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+</head>
+
+<body>
+    <div class="container outNode">
+        <table class="table text-center table-hover">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>上传者</td>
+                    <td>文件名</td>
+                    <td>文件大小</td>
+                    <td>上传时间</td>
+                    <td>下载次数</td>
+                    <td>下载</td>
+                    <td>预览</td>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+
+    </div>
+
+    <div class="modal fade bbb" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body bodytextNode">
+                  <p>One fine body&hellip;</p>
+                </div>
+              </div><!-- /.modal-content -->
+            </div><!-- /.modal-dialog -->
+          </div><!-- /.modal -->
+
+          <div class="modal fade abc" tabindex="-1" role="dialog">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                      <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body bodytextNode">
+                      <p>One fine body&hellip;</p>
+                    </div>
+                  </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+              </div><!-- /.modal -->
+
+    <script src="js/jq.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        //this js for zy
+        (() => {
+
+            let index = 1;
+
+            function toTr(index, userName, filesName, size, timer, download, hash,type) {
+                var oTr = document.createElement('tr');
+                // $(oTr).attr('hash',hash);
+                oTr.innerHTML =
+                    `
+                <td>${index}</td>
+                <td>${userName}</td>
+                    <td>${filesName}</td>
+                    <td>${size}</td>
+                    <td>${timer}</td>
+                    <td class="dw">${download}</td>
+                    <td><a rule="button" class="btn btn-default btn-xs btn-success btn-downl" href="allFile/${hash}" download="${hash}" hash="${hash}" user="${userName}">下载</a></td>
+                    <td><input type="button" class="btn btn-default btn-xs btn-primary btn-show" value="预览" data-toggle='modal' data-target='.abc' data-type="${type}"></td>
+                `;
+                return oTr;
+            }
+
+            $('body').on({
+                click() {
+                    $('.abc .modal-body')[0].innerHTML = '';
+                    var re = /\.gif|\.png|\.jpg/
+                    if(re.test($(this).attr('data-type'))){
+                        var img = new Image();
+                        img.onload = function(){
+                            $('.abc .modal-body')[0].appendChild(img);
+                        }
+                        img.src = this.parentNode.parentNode.querySelector('.btn-downl').href;
+                        img.className = 'img-thumbnail';
+                        img.style.cssText = 'max-width:100%;max-height:100%;';
+                    };
+                }
+            }, '.btn-show');
+
+            $('body').on({
+                click() {
+                    var _this = $(this);
+                    $.ajax({
+                        url:'http://localhost:9111/show/addDownload',
+                        type:'get',
+                        data:{
+                            hash: _this.attr('hash'),
+                            user: _this.attr('user')
+                        },
+                        success:function(data){
+                            $('.bodytextNode p').html(data.msg);
+                            $('.bbb').modal('toggle');
+                            if(data.ok == 1){
+                                var downloadNode = this.parentNode.parentNode.querySelector('.dw');
+                    downloadNode.innerHTML = Number(downloadNode.innerHTML)+1;
+                            }
+                        }
+                    });
+
+                    
+                }
+            }, '.btn-downl');
+
+            $.ajax({
+                url: 'http://localhost:9111/show/showPage',
+                type: 'get',
+                success: function (data) {
+                    // console.log(data);
+                    for (var i = 0; i < data.data.length; i++) {
+                        $('.outNode tbody')[0].appendChild(toTr(index, data.data[i].user, data.data[i].LastName,
+                            (data.data[i].size / 1024).toFixed(2) + 'KB', data.data[i].lastTime,
+                            data.data[i].download, data.data[i].hashName,data.data[i].type));
+                        index++;
+                    }
+                }
+            });
+        })();
+        // -------
+    </script>
+</body>
+
+</html>

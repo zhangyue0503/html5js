@@ -1,0 +1,13 @@
+div{
+    width:200px;height:200px;background:black;
+    color:white;transition: 0.7s;
+}
+div:hover{
+    background:green;
+}
+.aaa{
+    background: yellow;
+}
+.bbb{
+    background:red;
+}

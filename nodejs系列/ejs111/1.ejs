@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        <% include 1.css %>
+    </style>
+</head>
+<body>
+
+    <div class="<%=classN%>"></div>
+
+    <% var div = "<div>hehehe </div>"%>
+    <%-div%>
+
+    <div>
+        <%=a+a%>
+    </div>
+    <ul>
+    <% for(var i=0;i<arr.length;i++){%>
+        <li><%=arr[i]%></li>
+    <%}%>
+    
+    </ul>
+    <% var b = 10 %>
+    <% if(b==10){%>
+        <div class="<%=json.a%>">今天心情超级好</div>
+        <%}else{%>
+            <div>今天心情超级棒</div>
+    <%}%>
+</body>
+</html>
