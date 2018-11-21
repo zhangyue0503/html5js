@@ -1,0 +1,16 @@
+{
+    "code": 200,
+    "msg": "siQ8RQh6c1",
+    "result": {
+        "id": 76016,
+        "username": "cEoC9xVS5u",
+        "nickname": "95axpaweVz",
+        "sex": 1,
+        "province": 15668,
+        "city": 330200,
+        "district": 330000,
+        "birthday": "2003-12-03",
+        "createTime": 1538637993834,
+        "updateTime": 1538637782179
+    }
+}

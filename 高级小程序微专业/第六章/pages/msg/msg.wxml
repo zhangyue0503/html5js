@@ -1,0 +1,12 @@
+<!-- report-submit属性必须的 -->
+<form report-submit='true' bindsubmit='submitData'>
+  <input placeholder='请输入用户名'></input>
+  <!-- 提交按扭 -->
+  <button form-type='submit'>发布模板消息</button>
+</form>
+
+<button bindtap="showMessageTitleList">获取模板标题列表</button>
+<button bindtap="showBuySuccessDetail">查看购买成功标题字段 </button>
+<button bindtap="addTemplate">添加模板</button>
+<button bindtap="deleteTemplate">删除模板</button>
+<button bindtap="showTemplateList">获取 已经存在的模板列表</button>

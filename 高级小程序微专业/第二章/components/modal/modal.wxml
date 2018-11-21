@@ -1,0 +1,15 @@
+<view class="app-modal" style="display:{{isOpen ? '' : 'none'}}">
+  <view class="modal-content">
+    <view class="modal-header">
+      {{title}}
+    </view>
+    <view class="modal-body">
+    <!-- 引入自定义组件内部的其他组件，我们使用slot插槽组件 -->
+    <slot></slot>
+    </view>
+    <view class="modal-footer">
+      <view class="modal-btn" style="color:{{confirmColor}}" wx:if="{{showConfirm}}" bindtap="tapConfirm">{{confirmText}}</view>
+      <view class="modal-btn" style="color:{{cancelColor}}" wx:if="{{showCancel}}" bindtap="tapCancel">{{cancelText}}</view>
+    </view>
+  </view>
+</view>

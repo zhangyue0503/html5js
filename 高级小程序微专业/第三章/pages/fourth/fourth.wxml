@@ -1,0 +1,3 @@
+<button bindtap="intoNext">进入第五个页面</button>
+<!--pages/fourth/fourth.wxml-->
+<text>pages/fourth/fourth.wxml</text>

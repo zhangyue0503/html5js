@@ -1,0 +1,258 @@
+body,
+html,
+ul,
+ol,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 14px;
+}
+
+a,a:hover{
+	text-decoration: none;
+	color: #727171;
+}
+
+input,button,textarea{
+	outline: none;
+}
+
+.mr-top-20{
+	margin-top: 20px;
+}
+
+.boldfont{
+	font-weight: bold;
+}
+
+.f-dn{
+	display: none;
+}
+
+.u-btn{
+	display: inline-block;
+	width: 90px;
+	text-align: center;
+	height:  38px;
+	line-height:  38px;
+	text-decoration: none;
+	border-radius: 3px;
+	border: 1px solid #5ed0ba;
+	
+}
+
+
+.u-btn-primary{
+	color: #fff;
+	background-color: #5ed0ba;
+}
+
+.u-btn-link{
+	color: #5ed0ba;
+	background-color: #fff;
+	border: 1px solid #fff;
+}
+
+
+.u-icon{
+	border: none;
+	background: none;
+	outline: none;
+}
+.u-icon-search{
+	background-image: url('../res/images/search.jpg');
+	width: 20px;height: 20px;
+	position: absolute;top: 12px;right: 15px;
+}
+
+.u-icon-male, .u-icon-female{
+	width: 11px;
+	height: 16px;
+	margin-left: 5px;
+	background: url('../res/images/gender.png');
+	display: inline-block;
+}
+
+.u-icon-down{
+	width: 16px;
+	height: 10px;
+	margin-left: 10px;
+	background: url('../res/images/down_arrow.png');
+	display: inline-block;
+}
+
+
+
+/* 通用顶栏 */
+.g-header {
+    width: 1080px;
+    margin: 0 auto;
+    height: 90px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.m-tabs {
+	margin-left: 40px;
+	position: relative;
+}
+.m-tabs ul>li{
+	display: inline-block;
+	height: 30px;
+	text-align: center;
+	padding:0 20px;
+}
+.m-tabs a{
+	color: #dcdddd;
+}
+.m-tabs .z-active a{
+	color: #5ed0ba;
+}
+.m-tabs .tabs_track{
+	position: relative;
+	height: 4px;
+	background: #dcdddd;
+}
+.m-tabs .tabs_thumb {
+    position: absolute;
+    left: 300px;
+    height: 4px;
+    border-radius: 2px;
+    background: #5ed0ba;
+    transition: ease 0.1s;
+    width:68px;
+    left:0px;
+}
+
+.m-tabs-1 ul>li {
+    padding: 0 5px;
+}
+
+.u-search{
+	margin-left: 38px;
+	position: relative;
+}
+.u-search input{
+	border: 1px solid #5ed0ba;
+	height: 38px;
+	border-radius: 5px;
+	width: 170px;
+	padding-left: 15px;
+	padding-right: 38px;
+	outline: none;
+}
+
+.m-login{
+	margin-left: 30px;
+}
+
+.m-user{
+	margin-left: 30px;
+	position: relative;
+}
+
+.m-user .user_name{
+	max-width: 64px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.m-user .user_list{
+	display: none;
+	position: absolute;
+	width: 100%;
+	padding-left: 5px;
+	z-index: 999;
+	background: #fff;
+	
+}
+.m-user:hover .user_list{
+	display: block;
+	border: 1px solid #ddd;
+	border-top: 0px;
+	z-index: 99;
+}
+.user_list li{
+	width: 100%;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	cursor: pointer;
+}
+.user_list li:hover{
+	background: #eee;
+}
+
+.m-user .user_info{
+	display: flex;
+	align-items: center;
+	width: 100%;
+	height: 90px;
+	padding-left: 5px;
+}
+.m-user:hover .user_info{
+	border:1px solid #ddd;
+	border-bottom: 0px;
+
+}
+.m-user .user_avater{
+
+}
+.m-user .user_name{
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+
+
+.m-form-1 ::placeholder{
+	color: #7ad7c4;
+}
+
+.u-checkbox input[type="checkbox"]{
+	display: none;
+}
+.u-checkbox .u-icon-checkboxchecked{
+	display: none;
+}
+.u-checkbox input[type="checkbox"]:checked~.u-icon-checkboxchecked{
+	display: inline-block;
+}
+.u-checkbox input[type="checkbox"]:checked~.u-icon-checkbox{
+	display: none;
+}
+
+.g-body {
+    width: 1080px;
+    margin: 0px auto;
+    background: #efefef;
+    overflow: hidden;
+    padding-top: 50px;
+}
+
+.g-main {
+    width: 760px;
+    float: left;
+
+}
+
+.g-side {
+    width: 295px;
+    float: right;
+    height: 300px;
+}
+
+.container{
+	background:#efefef;
+}
+
+

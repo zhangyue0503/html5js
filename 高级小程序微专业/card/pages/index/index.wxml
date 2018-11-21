@@ -1,0 +1,14 @@
+<!--index.wxml-->
+<view class="container">
+	<view class="card">
+		<image src="{{userInfo.avatarUrl}}"></image>
+		<text class="username">{{card.username}}</text>
+		<text class="job">{{card.job}}</text>
+		<text class="tel">{{card.tel}}</text>
+		<text class="work">{{card.work}}</text>
+		<text class="address">{{card.address}}</text>
+		<text class="email">{{card.email}}</text>
+		<text class="weibo">{{card.weibo}}</text>
+	</view>
+	<view><button bindtap="goToCardPage" class="edit">编辑名片</button></view>
+</view>

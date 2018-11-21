@@ -1,0 +1,5 @@
+<!-- 兄弟组件关系 -->
+<!-- 1 注册事件 -->
+<tab data="{{tabs}}" bindtabChange="changeList" categorys="{{categorys}}"></tab>
+<!-- 5 传递tabID -->
+<list data="{{data}}" choose="{{tabID}}"></list>

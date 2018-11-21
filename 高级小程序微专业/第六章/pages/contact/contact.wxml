@@ -1,0 +1,3 @@
+<button open-type="contact">客服聊天</button>
+
+<button bindtap='sendMessage'>通知用户</button>

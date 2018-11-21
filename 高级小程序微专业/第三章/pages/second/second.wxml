@@ -1,0 +1,4 @@
+<button bindtap="intoNext">进入第三个页面</button>
+
+<!--pages/second/second.wxml-->
+<text>pages/second/second.wxml</text>

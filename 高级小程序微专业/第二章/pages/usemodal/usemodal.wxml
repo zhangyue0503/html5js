@@ -1,0 +1,17 @@
+<!-- 打开模态框的按扭 -->
+<button bindtap="showModal">打开模态框</button>
+
+<my-modal
+  title="标题"
+  isOpen="{{isOpen}}"
+  showConfirm="{{true}}"
+  showCancel="{{true}}"
+  confirmText="确定"
+  cancelText="取消"
+  bindConfirm="confirmHandler"
+  bindCancel="cancelHandler"
+  confirmColor="#f30"
+  cancelColor="#999"
+>
+  <view>网易云课堂</view>
+</my-modal>

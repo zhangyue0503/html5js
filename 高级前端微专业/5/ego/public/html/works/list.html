@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="user-scalable=no, width=device-width">
+    <meta name="description" content="ego"/>
+    <meta name="keywords" content="ego"/>
+    <title>我的作品</title>
+    <link href="../../common/base.css" rel="stylesheet"/>
+    <link href="../../page/works/list.css" rel="stylesheet"/>
+</head>
+<body>
+
+<div class="g-header">
+        <img src="../res/images/logo.jpg" class="logo"/>
+        <div class="m-tabs" id="hdtabs">
+            <ul>
+                <li class="z-active"><a href="/index">首页</a></li>
+                <li><a href="/works">作品</a></li>
+                <li><a href="">圈子</a></li>
+                <li><a href="">奇思秒想</a></li>
+            </ul>
+            <div class="tabs_track">
+                <div class="tabs_thumb"></div>
+            </div>
+        </div>
+        <form action="/search" method="get" id="hdSearch">
+            <div class="u-search">
+                <input type="text" id="keyword" name="keyword" placeholder="输入搜索内容">
+                <button type="submit" class="u-icon u-icon-search u-icon-btn"></button>
+            </div>
+        </form>
+        <div class="m-login" id="guest">
+            <button class="u-btn u-btn-primary u-btn-icon" id="login">
+                <i class="u-icon u-icon-user"></i>登录
+            </button>
+            <button class="u-btn u-btn-link" id="register">注册</button>
+        </div>
+        <div class="m-user f-dn" id="userdropdown">
+            <div class="user_info">
+                <span class="user_avater">
+				<img src="/res/images/avatar.png" alt="">
+			</span>
+                <span>
+				<span class="user_name" id="nickname"></span>
+                <span class="u-icon" id="sexIcon"></span>
+                </span>
+                <span class="u-icon u-icon-down"></span>
+            </div>
+            <ul class="user_list">
+            	<li>个人中心</li>
+            	<li>信息</li>
+            	<li>设置</li>
+            	<li id="logout">退出帐号</li>
+            </ul>
+        </div>
+    </div>
+<div class="g-banner">
+	banner
+</div>
+<div class="g-body">
+	<div class="g-profile">
+		<div class="u-avatar" style="background-img:url(avatar.png);">
+		</div>
+		<div class="u-info">
+			<em class="name" title="Amber">Amber</em>
+			<span class="sex">
+				<em class="u-icon u-icon-female"></em>
+			</span>
+		</div>
+		<div class="u-info">
+			<em class="age">15岁</em>
+			<em class="constellation">双鱼座</em>
+			<span class="address-info">
+				<em class="u-icon u-icon-address"></em>
+				<em class="address">杭州</em>
+			</span>
+		</div>
+	</div>
+	<div class="g-main">
+		<div class="m-aside">
+			
+		</div>
+		<div class="g-warp">
+			<ul class="m-works">
+				<li class="item">
+					<a href="#">
+						<img src="default_cover.png" alt="作品默认封面">
+						<h3>唯美的</h3>
+					</a>
+					<div class="icons">
+						<i class="u-icon u-icon-edit"></i>
+						<i class="u-icon u-icon-delete"></i>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<script src="../common/js/nav.js"></script>
+<script src="../../page/works/list.js"></script>
+</body>
+</html>

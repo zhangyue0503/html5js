@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "abc-modal": "/components/modal/modal",
+    "searchbar": "/components/searchbar/searchbar"
+  }
+}

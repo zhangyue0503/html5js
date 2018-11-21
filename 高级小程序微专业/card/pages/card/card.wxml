@@ -1,0 +1,13 @@
+<!--pages/card/card.wxml-->
+<view class="container">
+	<form bindsubmit="submitFormData">
+		<view class="item"><label>姓名：</label><input name="username" type="text" placeholder="请输入姓名" value="{{card.username}}"/></view>
+		<view class="item"><label>手机：</label><input name="tel" type="text" placeholder="请输入手机号" value="{{card.tel}}"/></view>
+		<view class="item"><label>邮箱：</label><input name="email" type="text" placeholder="请输入邮箱" value="{{card.email}}"/></view>
+		<view class="item"><label>单位：</label><input name="work" type="text" placeholder="请输入单位地址" value="{{card.work}}"/></view>
+		<view class="item m-b-20"><label>职位：</label><input name="job" type="text" placeholder="请输入职位" value="{{card.job}}"/></view>
+		<view class="item"><label>地址：</label><input name="address" type="text" placeholder="请输入地址" value="{{card.address}}"/></view>
+		<view class="item"><label>微博：</label><input name="weibo" type="text"  placeholder="请输入微博" value="{{card.weibo}}"/></view>
+		<view class="btns"><button form-type="submit">提交</button></view>
+	</form>
+</view>

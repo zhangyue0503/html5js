@@ -1,0 +1,16 @@
+{
+    "code": 200,
+    "msg": "N2Fu2xpbwl",
+    "result": {
+        "id": 80087,
+        "username": "2IrrdMD0w0",
+        "nickname": "7reQsSXOR5",
+        "sex": 1,
+        "province": 10599,
+        "city": 330200,
+        "district": 330000,
+        "birthday": "2003-12-03",
+        "createTime": 1538639069765,
+        "updateTime": 1538638929696
+    }
+}

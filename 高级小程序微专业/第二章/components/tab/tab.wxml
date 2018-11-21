@@ -1,0 +1,9 @@
+<view class="app-tab">
+  <view class="tab-item" wx:for="{{data}}" wx:key="this" bindtap="changeTab" data-id="{{item.id}}">
+    <text>{{item.title}}</text>
+    <text wx:if="{{item.id === 'fenlei'}}" class="tab-arrow {{arrow}}"></text>
+  </view>
+</view>
+<!-- 使用categorys组件 -->
+<!-- 第一种通信方式，传递属性数据实现 -->
+<category id="category" data="{{categorys}}" bindchangeTab="receiveMessage"></category>

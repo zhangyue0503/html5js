@@ -1,0 +1,4 @@
+.m-tab{overflow:hidden;border-bottom:1px solid #aaa;}
+.m-tab .item{float:left;width:100px;height:40px;line-height:40px;margin:0;border:0;list-style: none;}
+.m-tab .item.j-selected{background:#aaa;}
+.m-tab .item a{display:block;text-decoration:none;text-align:center;color:#000;}

@@ -1,0 +1,9 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/card/card"
+  ],
+  "window":{
+    "navigationBarTitleText": "网易明信片"
+  }
+}

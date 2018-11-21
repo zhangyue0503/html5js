@@ -1,0 +1,44 @@
+.app-modal{
+  position: fixed;
+  top:0;right:0;
+  bottom:0;
+  left:0;
+  background:rgba(0,0,0,.2);
+}
+
+.app-modal .modal-content{
+  width:600rpx;
+  position:absolute;
+  top:50%;
+  left:50%;
+  margin-top:-120rpx;
+  margin-left:-300rpx;
+  background:#fff;
+  border-radius: 10rpx;
+  text-align: center;
+}
+
+.app-modal .modal-header{
+  padding:20px 0 0 5px;
+  font-size:16px;
+}
+.app-modal .modal-body{
+  font-size:20px;
+  padding:10px;
+}
+.app-modal .modal-footer{
+  font-size:16px;
+  display: flex;
+  border-top: 1px solid #efefef;
+}
+
+.app-modal .modal-btn{
+  flex:1;
+  height:40px;
+  line-height:40px;
+  border-right: 1px solid #efefef;
+}
+
+.app-modal .modal-btn:last-child{
+  border-right:none;
+}

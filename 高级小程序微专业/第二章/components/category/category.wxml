@@ -1,0 +1,5 @@
+<view class="app-category" style="display: {{isShow ? '' : 'none'}}">
+  <view class="category-item" wx:for="{{data}}" wx:key="this" bindtap="changeTab" data-id="{{item.id}}">
+    <text>{{item.title}}</text>
+  </view>
+</view>

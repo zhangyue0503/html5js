@@ -1,0 +1,29 @@
+<!-- <view class="title" bindtap="clickIndexPage">index page</view>
+<navigator url="/pages/intro/intro">网易介绍</navigator>
+<view>
+<text >name: {{user.name}}</text>
+<text>age: {{user.age}}</text>
+</view>
+
+<!-- 事件委托 -->
+<!-- 事件委托模式，将子组件的事件委托给父组件，当触发事件的时候，根据事件的冒泡原理，我们判断触发事件的元素具有哪些特征，来确定是哪一个元素，来执行哪一个逻辑 -->
+<!-- <view bindtap="clickParent">
+  <view data-id="first" bindtap="tapFirst">第一个</view>
+  <view data-id="second" bindtap="tapSecond">第二个</view>
+  <view data-id="third" bindtap="tapThird">第三个</view>
+  <view data-id="fourth">第四个</view>
+  <view>第五个</view>
+</view>
+
+<button bindtap="intoNext">进入第二个页面</button> -->
+
+<!-- 使用wxs组件，定义方法 -->
+<!-- <wxs module='m'>
+module.exports.dealMsg = function(msg){
+  return msg.toUpperCase();
+} 
+</wxs>
+<view>{{msg + 'world'}}</view>
+<view>{{m.dealMsg(msg)}}</view> -->
+
+<view class="demo"></view>

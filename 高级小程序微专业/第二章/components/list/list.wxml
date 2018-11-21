@@ -1,0 +1,16 @@
+<view class="app-list">
+  <view class="list-item" wx:for="{{renderData}}" wx:key="this">
+    <image src="{{item.img}}"></image>
+    <view class="list-content">
+      <view class="list-title">{{item.title}}</view>
+      <view class="list-seller">{{item.seller}}</view>
+      <view class="list-sales">{{item.sales}}人正在参加</view>
+      <view class="list-price">
+        <text>现价</text>
+        <text class="list-price-num">{{item.price}}</text>
+        <text class="list-origin">原价{{item.origin}}</text>
+      </view>
+      <view class="list-buy">去砍价</view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> SPA APP </title>
+</head>
+<body>
+    <script type="module">
+        import { start } from "../src/app.js";
+
+        start({
+            matchers: [
+                '/user/:uid',
+                '/group/:gid'
+            ],
+            rules: [
+                {
+                    matcher: /\/user\/[\d]+/i,
+                    target: '/m/user/'
+                },
+                {
+                    matcher: /\/group\/[\d]+/i,
+                    target: '/m/group/'
+                }
+            ],
+
+            parent: document.body,
+            root: '../src/',
+            routes: {
+                '/m'        : 'module/Tab/module.html',
+                '/m/user/'  : 'module/User/module.html',
+                '/m/group/' : 'module/Group/module.html',
+                '/login'    : 'module/Login/module.html',
+                '/404'      : 'module/NotFound/module.html'
+            }
+        });
+    </script>
+</body>
+</html>

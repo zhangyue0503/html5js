@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="user-scalable=no, width=device-width">
+	<meta name="description" content="ego" />
+	<meta name="keywords" content="ego" />
+	<title>ego</title>
+	<link href="../../common/base.css" rel="stylesheet" />
+	<link href="../../page/works/create.css" rel="stylesheet" />
+</head>
+
+<body>
+
+	<div class="g-header">
+		<img src="../res/images/logo.jpg" class="logo" />
+		<div class="m-tabs" id="hdtabs">
+			<ul>
+				<li class="z-active"><a href="/index">首页</a></li>
+				<li><a href="/works">作品</a></li>
+				<li><a href="">圈子</a></li>
+				<li><a href="">奇思秒想</a></li>
+			</ul>
+			<div class="tabs_track">
+				<div class="tabs_thumb"></div>
+			</div>
+		</div>
+		<form action="/search" method="get" id="hdSearch">
+			<div class="u-search">
+				<input type="text" id="keyword" name="keyword" placeholder="输入搜索内容">
+				<button type="submit" class="u-icon u-icon-search u-icon-btn"></button>
+			</div>
+		</form>
+		<div class="m-login" id="guest">
+			<button class="u-btn u-btn-primary u-btn-icon" id="login">
+				<i class="u-icon u-icon-user"></i>登录
+			</button>
+			<button class="u-btn u-btn-link" id="register">注册</button>
+		</div>
+		<div class="m-user f-dn" id="userdropdown">
+			<div class="user_info">
+				<span class="user_avater">
+					<img src="/res/images/avatar.png" alt="">
+				</span>
+				<span>
+					<span class="user_name" id="nickname"></span>
+					<span class="u-icon" id="sexIcon"></span>
+				</span>
+				<span class="u-icon u-icon-down"></span>
+			</div>
+			<ul class="user_list">
+				<li>个人中心</li>
+				<li>信息</li>
+				<li>设置</li>
+				<li id="logout">退出帐号</li>
+			</ul>
+		</div>
+	</div>
+
+	<div class="container" >
+		<div class="g-body f-cb">
+			<!-- 主栏 -->
+			<div class="g-main" >
+				<div class="section-left">
+					<h3>作品分类</h3>
+					<!-- 互斥按扭组 -->
+					<div class="u-cnt">
+						<label>
+							<input type="radio" name="category" checked>
+							<span class="u-btn">原 创</span>
+						</label>
+						<label>
+							<input type="radio" name="category">
+							<span class="u-btn">临 摹</span>
+						</label>
+					</div>
+				</div>
+				<div class="section-left2">
+					<h3>上传图片</h3>
+					<label class="upload-label">
+						<input type="radio" name="category2" checked>
+						<span class="u-btn u-success">选择图片上传</span>
+						<input type="file">
+					</label>
+
+					<progress value="50" max="100" style="display:none;"></progress>
+
+					<div class="drop"></div>
+					<br/>
+					<span class="info">提示：作品可以包含多张图片 ，一次选择多张图片，最多不超过10张（单张图片大小小于1M）</span>
+				</div>
+				<div class="img-item">
+					<ul>
+						<li>
+							<img src="" alt="">
+							<button>设为封面</button>
+						</li>
+					</ul>
+				</div>
+				<div class="from-item">
+					<div>
+						<label for="">作品名称</label>
+						<input type="text" name="" placeholder="给作品起个名字吧" class="work-name">
+						<span class="" class="error">您的作品还没有名字哦</span>
+					</div>
+					<div>
+						<label for="" style="vertical-align: top;">作品说明</label>
+						<textarea name="" class="work-desc"></textarea>
+						<span></span>
+					</div>
+					<div>
+						<h4>标签</h4>
+						<ul class="m-tag">
+							<li class="tag">
+								<button class="close">x</button>
+								<span>少女系</span>
+							</li>
+							<li class="tag">
+								<button class="close">x</button>
+								<span>萌神</span>
+							</li>
+							<li class="tag">
+								<button class="close">x</button>
+								<span>萝莉</span>
+							</li>
+							<li class="tag tag-add">
+								<input type="text" class="u-inp">
+								<span class="txt">+ 自定义标签</span>
+							</li>
+						</ul>
+					</div>
+					<div>
+						<h4>推荐标签</h4>
+						<ul class="m-tag def_mtag">
+							<li class="tag">
+								<span>+</span>
+								<span>少女系</span>
+							</li>
+							<li class="tag">
+								<span>+</span>
+								<span>萌神</span>
+							</li>
+							<li class="tag">
+								<span>+</span>
+								<span>萝莉</span>
+							</li>
+						</ul>
+					</div>
+					<button class="u-btn u-btn-primary" type="">创建</button>
+				</div>
+			</div>
+			<div class="g-side">
+				<div>
+					<h4>权限设置</h4>
+					<input type="radio" name="show" value="1"/>所有人可见
+					<input type="radio" name="show" value="1"/>关注者粉丝可见
+					<input type="radio" name="show" value="1"/>仅自己可见
+				</div>
+				<div>
+					<h4>作品授权</h4>
+					<select name="">
+						<option value="">不限制作品用途</option>
+						<option value="">不限制作品用途</option>
+						<option value="">不限制作品用途</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 互斥按扭组 -->
+	<!-- <div class="u-cnt">
+	<label>
+		<input type="radio" name="category" checked>
+		<span class="u-btn">原 创</span>
+	</label>
+	<label>
+		<input type="radio" name="category">
+		<span class="u-btn">临 摹</span>
+	</label>
+</div> -->
+
+	<!-- 标签组件结构 -->
+	<!-- <ul class="m-tag">
+	<li class="tag">
+		<button class="close">x</button>
+		<span>少女系</span>
+	</li>
+	<li class="tag">
+		<button class="close">x</button>
+		<span>萌神</span>
+	</li>
+	<li class="tag">
+		<button class="close">x</button>
+		<span>萝莉</span>
+	</li>
+	<li class="tag tag-add">
+		<input type="text" name="u-inp">
+		<span class="txt">+ 自定义标签</span>
+	</li>
+</ul>
+
+
+<input type="radio" name="category">
+
+<label><input type="file"></label>
+
+<progress value="50" max="100"></progress>
+
+<div class="drop"></div>
+ -->
+	<script type="text/javascript">
+		window.App = {};
+	</script>
+
+	<script src="../common/js/common.js"></script>
+	<script src="../common/js/nav.js"></script>
+	<script src="../../page/works/create.js"></script>
+</body>
+
+</html>

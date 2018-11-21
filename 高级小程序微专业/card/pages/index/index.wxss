@@ -1,0 +1,45 @@
+.card {
+	background: #fff;
+	margin: 10px;
+	border-radius: 5px;
+	position: relative;
+	padding: 20px;
+}
+.card .username {
+	font-size: 24px;
+}
+.card .job {
+	font-size: 16px;
+	color: #999;
+}
+.card .tel {
+	display: block;
+	color: blue;
+	font-size: 24px;
+	line-height: 50px;
+}
+.card .work {
+	font-size: 16px;
+	line-height: 40px;
+}
+.card .address,
+.card .email,
+.card .weibo {
+	font-size: 16px;
+	color: #999;
+	line-height: 22px;
+	display: block;
+}
+.card image {
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	position: absolute;
+	top: 20px;
+	right: 20px;
+}
+.edit {
+	margin: 50px 10px;
+	background: skyblue;
+	color: #fff;
+}

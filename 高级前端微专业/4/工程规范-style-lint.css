@@ -1,0 +1,7 @@
+div,p,ul,ol,li{
+	margin: 0;
+	padding: 0;
+}
+.s-fc, a.s-fc:hover{
+	color: #ffffff;
+}

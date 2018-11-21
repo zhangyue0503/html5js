@@ -1,0 +1,45 @@
+.app-tab {
+  display: flex;
+}
+
+.app-tab .tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 14px;
+  line-height: 30px;
+  height: 30px;
+}
+
+.app-tab .tab-arrow {
+  font-size: 0;
+  border: 5px solid transparent;
+  position: relative;
+  left: 2px;
+  top: -6px;
+}
+
+.app-tab .tab-arrow:after{
+  content:'';
+  position:absolute;
+  top:-5px;
+  left:-5px;
+  border: 5px solid transparent;
+}
+
+.app-tab .down {
+  border-top-color: #333;
+  top: -2px;
+}
+.app-tab .down:after {
+  border-top-color: #fff;
+  top: -7px;
+}
+
+.app-tab .up {
+  border-bottom-color: #333;
+}
+
+.app-tab .up:after {
+  border-bottom-color: #fff;
+  top: -3px;
+}

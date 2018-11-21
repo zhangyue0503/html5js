@@ -1,0 +1,27 @@
+<searchbar bindsearch="searchValue" bindchange="changeValue" placeholder="搜索你想要的"></searchbar>
+
+<text>正在搜索：{{searchChangeText}}</text>
+
+
+<navigator url="/pages/webview/webview">进入web view页面</navigator>
+
+<abc-modal 
+  isOpen="{{isOpen}}"
+  title="提示"
+  showConfirm="{{true}}"
+  showCancel="{{false}}"
+  confirmText="确定"
+  cancelText="取消"
+  bindConfirm="confirmHandler"
+  bindCancel="cancelHandler"
+  confirmColor="#f30"
+  cancelColor="#999"
+>
+<view>搜索成功：您搜索的内容是{{searchText}}</view>
+</abc-modal>
+
+<navigator url="/pages/pagemsg/pagemsg?num=100">进入pagemsg页面</navigator>
+<view>msg: {{msg}}</view>
+<view>讲师: {{teacher}}</view>
+
+<button bindtap="initOther">进入其他小程序</button>

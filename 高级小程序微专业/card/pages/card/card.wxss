@@ -1,0 +1,27 @@
+/* pages/card/card.wxss */
+.item {
+	border-bottom: 1px solid #ccc;
+	background: #fff;
+}
+.item input {
+	margin-left: 20%;
+	padding: 15px;
+	font-size: 14px;
+}
+.item label {
+	float: left;
+	width: 20%;
+	text-align: right;
+	line-height: 53px;
+	font-size: 14px;
+	color: #666;
+}
+.btns button {
+	background: skyblue;
+	color: #fff;
+	margin: 0 10px;
+	margin-top: 50px;
+}
+.m-b-20 {
+	margin-bottom: 20px;
+}

@@ -1,0 +1,124 @@
+{
+	"rebang": [
+		{
+			"id": "4",
+			"title": "薯片",
+			"price": "2.00",
+			"origin": "3.00",
+			"sales": "60",
+			"img": "https://localhost:3001/static/img/04.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"tuijian": [
+		{
+			"id": "1",
+			"title": "凤梨酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "20",
+			"img": "https://localhost:3001/static/img/01.jpg",
+			"seller": "小仙女"
+		},
+		{
+			"id": "2",
+			"title": "草莓酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "50",
+			"img": "https://localhost:3001/static/img/02.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"huodong": [
+		{
+			"id": "3",
+			"title": "奥利奥",
+			"price": "10.00",
+			"origin": "11.00",
+			"sales": "6",
+			"img": "https://localhost:3001/static/img/03.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"quanbu": [
+		{
+			"id": "3",
+			"title": "奥利奥",
+			"price": "10.00",
+			"origin": "11.00",
+			"sales": "6",
+			"img": "https://localhost:3001/static/img/03.jpg",
+			"seller": "小仙女"
+		},
+		{
+			"id": "4",
+			"title": "薯片",
+			"price": "2.00",
+			"origin": "3.00",
+			"sales": "60",
+			"img": "https://localhost:3001/static/img/04.jpg",
+			"seller": "小仙女"
+		},
+		{
+			"id": "1",
+			"title": "凤梨酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "20",
+			"img": "https://localhost:3001/static/img/01.jpg",
+			"seller": "小仙女"
+		},
+		{
+			"id": "2",
+			"title": "草莓酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "50",
+			"img": "https://localhost:3001/static/img/02.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"jujia": [
+		{
+			"id": "1",
+			"title": "凤梨酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "20",
+			"img": "https://localhost:3001/static/img/01.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"shichu": [
+		{
+			"id": "2",
+			"title": "草莓酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "50",
+			"img": "https://localhost:3001/static/img/02.jpg",
+			"seller": "小仙女"
+		}
+	],
+	"peijian": [
+		{
+			"id": "1",
+			"title": "凤梨酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "20",
+			"img": "https://localhost:3001/static/img/01.jpg",
+			"seller": "小仙女"
+		},
+		{
+			"id": "2",
+			"title": "草莓酥",
+			"price": "6.00",
+			"origin": "6.50",
+			"sales": "50",
+			"img": "https://localhost:3001/static/img/02.jpg",
+			"seller": "小仙女"
+		}
+	]
+}

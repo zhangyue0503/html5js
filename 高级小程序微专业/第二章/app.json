@@ -1,0 +1,17 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/usemodal/usemodal",
+    "pages/mvvm/mvvm",
+    "pages/webview/webview",
+    "pages/home/home",
+    "pages/logs/logs",
+    "pages/pagemsg/pagemsg"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  }
+}
