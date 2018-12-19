@@ -1,0 +1,16 @@
+<view class='shopping'>
+  <lesson-card wx:for='{{lessons}}' wx:key='this' data='{{item}}' bindlessontap='showDetailPage'></lesson-card>
+  <!-- 优惠券 zy -->
+  <view class='coupon-view' bindtap='showCoupons' wx:if='{{useCoupons}}' >
+    <text>使用优惠礼券</text>
+  </view>
+  
+</view>
+<!-- 优惠券列表 zy -->
+<view class='show-coupon' wx:if='{{showCoupons}}'>
+    <coupon-card wx:for='{{coupons}}' wx:key='this' data='{{item}}' bindchoosecoupon='chooseCoupon'></coupon-card>
+</view>
+<view class='shopping-part'>
+  <view class='price'>￥{{price}}</view>
+  <view class='buy-btn' bindtap='buyLessons'>立即购买</view>
+</view>

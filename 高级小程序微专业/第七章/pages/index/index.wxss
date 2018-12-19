@@ -1,0 +1,77 @@
+.search {
+  padding: 0 40rpx 10px;
+  background: #fff;
+  display: block;
+}
+.search input {
+  padding: 0 40rpx;
+  width: 590rpx;
+  background: #efefef;
+  height: 40px;
+  line-height: 40px;
+  display: block;
+  border-radius: 20px;
+  font-size: 14px;
+}
+/* banner */
+.swiper image{
+  width: 100%;
+  height: 100%;
+}
+/* 广告 */
+.ads {
+  width: 100%;
+  margin-top: 10px;
+  display: flex;
+  padding-left: 10px;
+  text-align: center;
+}
+.ads .item {
+  height: 140px;
+  width:170px;
+  margin-right: 10px;
+}
+.ads .item image {
+  height: 100px;
+  width: 170px;
+}
+.ads .item text {
+  font-size: 14px;
+}
+/* 课程部分 */
+.lesson-title {
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  text-align: center;
+  margin-top: 10px;
+}
+.lesson-title text {
+  padding: 0 10px;
+  display: inline-block;
+  border-bottom: 3px solid transparent;
+}
+.lesson-title text.choose {
+  color: #f30;
+  border-bottom-color: #f30;
+}
+
+.lessons {
+  padding: 10px;
+}
+
+/* 优惠券 */
+.coupon-view {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 30px;
+  text-align: center;
+}
+.coupon-view text {
+  background:#ffdedf;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  font-size: 36rpx;
+  padding: 5px 15px;
+}

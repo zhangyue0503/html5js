@@ -1,0 +1,63 @@
+.lesson-card {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 1px 1.5px 2px rgba(0, 0, 0, .1);
+  margin-bottom: 20px;
+}
+.lesson-card image {
+  width: 100%;
+}
+.lesson-card .lesson-container {
+  position: relative;
+}
+.lesson-card .time {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #f90;
+  color: #fff;
+  padding: 2px 4px 2px 8px;
+  font-size: 12px;
+  border-bottom-left-radius: 10px;
+  font-weight: bold;
+}
+.lesson-card .intro {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  line-height: 40px;
+  height:40px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size:16px;
+  padding-left: 0 5px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lesson-card .info {
+  height: 35px;
+  line-height: 35px;
+  padding: 0 5px 5px;
+  display: flex;
+}
+.lesson-card .title {
+  flex: 1;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+.lesson-card .price{ 
+  color: #f30;
+}
+.lesson-card .line {
+  padding: 0 3px;
+}
+.lesson-card .work {
+  max-width: 100px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}

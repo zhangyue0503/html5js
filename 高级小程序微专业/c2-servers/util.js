@@ -33,11 +33,12 @@ function createTradeNumber(){
 
 function getIp(){
 	var interfaces = os.networkInterfaces();
+	// console.log(interfaces)
 	var ip;
 	// 解析该对象，寻找每个成员数组，成员属性中，family值为IPv4的以及internal是false
 	for(let key in interfaces){
 		// 断言方法来判断
-		if(interfaces.some(item=>{
+		if(interfaces[key].some(item => {
 			if(item.family === 'IPv4' && item.internal === false){
 				return ip = item.address;
 			}

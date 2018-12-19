@@ -1,0 +1,8 @@
+<view class='save-lesson'>
+  <!-- 没有数据提示文案 -->
+  <view wx:if='{{showTips}}'>我的收藏空空如也，赶快去收藏课程吧！</view>
+  <lesson-card wx:for='{{data}}' wx:key='this' data='{{item}}' bindlessontap='chooseLesson'></lesson-card>
+</view>
+
+<!-- 客服会话按扭 -->
+<button open-type='contact' class='icons-contact'><text></text></button>

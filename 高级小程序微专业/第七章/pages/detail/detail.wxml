@@ -1,0 +1,44 @@
+<view class='detail'>
+  <!-- banner部分 -->
+  <view class='banner'>
+    <image  src='{{lesson[3]}}'></image>
+    <view class='info'>
+      <view class='title'>{{lesson[1]}}</view>
+      <view class='work'>{{lesson[5]}}</view>
+    </view>
+    <view class='time'>{{lesson[2]}}</view>
+  </view>
+  <!-- 讲师部分 -->
+  <view class='teacher'>
+    <image src='{{teacher.url}}'></image>
+    <view class='content'>
+      <view class='name'>{{teacher.name}}</view>
+      <view class='job'>{{teacher.job}}</view>
+    </view>
+  </view>
+  <!-- 价格部分 -->
+  <view class='price'>
+    <view class='content'>
+      <text>总价：</text>
+      <text class='price-num'>￥{{lesson[6]}}</text>
+    </view>
+    <view class='buy-btn {{hasBuy ? "cancel" : ""}}' bindtap='buyLesson'>{{hasBuy ? '取消购买' : '加入购物车'}}</view>
+  </view>
+  <!-- 课程简介 -->
+  <view class='intro'>
+    <view class='title'>{{lesson[1]}}</view>
+    <view class='content'>{{lesson[4]}}</view>
+  </view>
+  <!-- 目录部分 -->
+  <view class='menus'>
+    <view class='title'>课程目录</view>
+    <view class='menu-container' wx:for='{{menus}}' wx:key='this'>
+        <text class='index'>{{index < 9 ? '0' + (index + 1) : (index + 1)}}</text>
+        <text class='line'>|</text>
+        <text class='content'>{{item}}</text>
+    </view>
+  </view>
+</view>
+<button open-type='contact' class='icons-contact'><text></text></button>
+<button class='icons-star {{hasSave ? "choose" : ""}}' bindtap='saveLesson'><text></text></button>
+<button open-type='share' class='icons-share'><text></text></button>

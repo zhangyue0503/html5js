@@ -1,0 +1,5 @@
+<view class='search'>
+  <view wx:if='{{showTips}}'>对不起，没有找到相关课程</view>
+    <lesson-card wx:for='{{lessons}}' wx:key='this' data='{{item}}' bindlessontap='chooseLesson'></lesson-card>
+</view>
+<button open-type='contact' class='icons-contact'><text></text></button>

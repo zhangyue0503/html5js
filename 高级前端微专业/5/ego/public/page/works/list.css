@@ -1,44 +1,104 @@
+
 .g-nav{
 	height: 90px;
 	background-color: #ccc;
 }
 .g-banner{
+	width: 100%;
 	height: 250px;
-	background-color: #cc7832;
+	text-align: center;
+	background: url('../..//res/images/list_banner.jpg');
+	background-repeat: no-repeat;
+	background-size:100% 100%; 
 }
+
 .g-body{
-	width: 850px;
 	margin: 0 auto;
+	overflow: visible;
+	background:#eeeeee;
+	width:100%;
+	
 }
 
 .g-profile{
 	height: 216px;
-	background-color: #3759ff;
+	background-color: white;
+	margin:0 auto;
 	margin-top: -115px;
+	text-align: center;
+	padding-top: 28px;
+	width: 850px;
+	
+}
+
+.u-info{
+	padding:5px 0;
+}
+
+.u-info .name{
+	font-weight: bold;
+	font-size:18px;
 }
 
 .g-main{
 	height: 600px;
 	position: relative;
-	background-color: #4ca7cc;
+	float: none;
+	width: auto;
+	
+	width: 850px;
+	margin: 0 auto;
+	background:white;
 }
 
 .u-avatar{
 	height: 111px;
 	background: no-repeat 50%;
+	
+}
+
+.g-warp{
+	border-top: 1px solid #e2e3e3;
+	margin:0 10px;
+	padding:35px;
 }
 
 .m-aside{
 	width: 100px;
 	height: 276px;
-	background-color: #ffae35;
 	position: absolute;
 	left: -100px;
+	background:#fdfdfd;
+	border-radius: 5px 0 0 5px ;
+	text-align: center;
+	z-index: 1;
+}
+.m-aside li{
+	height:46px;
+	line-height:46px;
+	color:#5ed0ba;
+	font-size: 12px;
+	position: relative;
+	cursor: pointer;
+}
+.m-aside li.active,.m-aside li:hover{
+	color: white;
+	background:#5ed0ba;
+}
+
+.m-aside .red_cri{
+	position: absolute;
+	border-radius: 50%;
+	background:red;
+	right:10px;
+	top:10px;
+	width:8px;
+	height:8px;
 }
 
 .m-works{
 	display: flex;
-	flex-warp: warp;
+	flex-wrap: wrap;
 	margin-right: -28px;
 	margin-left: 3px;
 }
@@ -110,3 +170,9 @@
 	color: #fff;
 }
 
+
+.u-icon-address{
+	background-image: url('../../res/images/u-address.png');
+	width: 12px;height: 16px;display:inline-block;margin-left:10px;
+	
+}

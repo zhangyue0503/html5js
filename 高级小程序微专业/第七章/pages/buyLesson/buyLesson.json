@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "已购课程",
+  "usingComponents": {
+    "lesson-card": "/components/lessonCard/lessonCard"
+  }
+}

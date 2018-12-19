@@ -1,0 +1,36 @@
+<form class='search'>
+  <input type='search' placeholder='搜索' bindconfirm='showSearchPage' value='{{searchValue}}'/>
+</form>
+<!-- banner -->
+<scroll-view scroll-y style="height: {{height}}px;">
+  <swiper class='swiper' interval='3000' autoplay>
+    <swiper-item wx:for='{{banner}}' wx:key='this'>
+      <image src='{{item.path}}'></image>
+    </swiper-item>
+  </swiper>
+  <!-- 广告容器 -->
+  <scroll-view scroll-x>
+    <!-- 广告容器 -->
+    <view class='ads' style="width: {{adWidth}}px;">
+      <view wx:for='{{ads}}' wx:key='this' class='item' >
+      <image src='{{item.image}}'></image>
+      <text>{{item.name}}</text>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 分类标题 -->
+  <view class='lesson-title'>
+    <text wx:for='{{lessonTitle}}' wx:key='this' data-id='{{item.id}}' class='{{item.cls}}' bindtap='toogleLesson'>{{item.title}}</text>
+  </view>
+  <!-- 课程主体 -->
+  <view class='lessons'>
+    <lesson-card wx:for='{{lessons}}' wx:key='this' data='{{item}}' bindlessontap='showDetailPage'></lesson-card>
+  </view>
+</scroll-view>
+<!-- 客服会话按扭 -->
+<button open-type='contact' class='icons-contact'><text></text></button>
+<!-- 优惠券领取 zy -->
+<view class='coupon-view' wx:if='{{showCoupon}}' bindtap='saveCoupon' >
+  <text>点击领取￥{{coupon.discount}}元优惠礼券
+  </text>
+</view>

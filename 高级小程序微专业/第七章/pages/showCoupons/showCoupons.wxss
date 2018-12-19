@@ -1,0 +1,6 @@
+page {
+  background: #eee;
+}
+.show-coupons {
+  padding: 0 20px;
+}

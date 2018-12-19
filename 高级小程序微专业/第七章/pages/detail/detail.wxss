@@ -1,0 +1,149 @@
+page {
+  background: #efefef;
+}
+.detail .banner {
+  position: relative;
+}
+.detail .banner image {
+  width: 100%;
+  display: block;
+}
+.detail .banner .time {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  height: 20px;
+  line-height: 20px;
+  border-top-left-radius: 10px;border-bottom-left-radius: 10px;
+  padding: 0 4px 0 10px;
+  background: #f60;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+}
+.detail .banner .info {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .4);
+  padding: 0px 10px;
+  display: flex;
+}
+.detail .banner .title {
+  font-size: 20px;
+  line-height: 40px;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.detail .banner .work {
+  padding-top: 12px;
+  max-width: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+}
+/* teacher */
+.detail .teacher {
+  padding: 10px;
+  flex: 1;
+  display: flex;
+  background: #fff;
+}
+.detail .teacher image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 1px solid #ccc;
+}
+.detail .teacher .content {
+  flex: 1;
+  padding-left: 10px;
+}
+.detail .teacher .name {
+  font-size: 20px;
+  line-height: 36px;
+}
+.detail .teacher .job {
+  color: #666;
+}
+/* price */
+.detail .price {
+  display: flex;
+  padding: 10px;
+  margin: 6px auto;
+  background: #fff;
+}
+.detail .price .content {
+  flex: 1;
+  line-height: 40px;
+  font-size: 18px;
+}
+.detail .price .price-num {
+  color: #f30;
+}
+.detail .price .buy-btn {
+  width: 100px;
+  height: 36px;
+  line-height: 36px;
+  color: #fff;
+  background: #f30;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.detail .price .buy-btn.cancel {
+  background: #999;
+  color: #eee;
+}
+/* 课程介绍 */
+.detail .intro {
+  background: #fff;
+  padding-top: 40px;
+}
+.detail .intro .title {
+  font-size: 26px;
+  text-align: center;
+  line-height: 60px;
+}
+.detail .intro .content {
+  font-size: 18px;
+  padding: 10px 10px 20px;
+  line-height: 30px;
+  text-indent: 2em;
+}
+/* 目录部分 */
+.detail .menus {
+  background: #fff;
+  padding-top: 20px;
+  padding-bottom: 40px;
+}
+.detail .menus .title {
+  font-size: 26px;
+  text-align: center;
+  line-height: 60px;
+}
+.detail .menus .menu-container {
+  margin: 0 10px;
+  border-bottom: 1px solid #efefef;
+  line-height: 40px;
+  font-size: 18px;
+  display: flex;
+}
+.detail .menus .index {
+  display: inline-block;
+  width: 30px;
+}
+.detail .menus .line {
+  padding-right: 10px;
+}
+.detail .menus .content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "分享有奖",
+  "usingComponents": {
+    "lesson-card": "/components/lessonCard/lessonCard"
+  }
+}

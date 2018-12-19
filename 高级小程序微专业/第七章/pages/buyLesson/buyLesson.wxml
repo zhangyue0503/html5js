@@ -1,0 +1,6 @@
+<view class='buy-lesson'>
+  <lesson-card wx:for='{{data}}' wx:key='this' data='{{item}}' bindlessontap='chooseLesson'></lesson-card>
+</view>
+
+<!-- 客服会话按扭 -->
+<button open-type='contact' class='icons-contact'><text></text></button>

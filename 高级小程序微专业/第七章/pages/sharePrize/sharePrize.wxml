@@ -1,0 +1,17 @@
+<view class='share-price'>
+  <!-- 奖励部分 -->
+  <view class='prize'>
+    <view class='title'>现金奖励</view>
+    <view class='price'>￥{{price}}</view>
+  </view>
+  <!-- 课程部分 -->
+  <view class='lessons'>
+    <view class='title'>分享的课程</view>
+    <view class='list'>
+      <lesson-card wx:for='{{lessons}}' wx:key='this' data='{{item}}' bindlessontap='chooseLesson'></lesson-card>
+    </view>
+  </view>
+</view>
+
+<!-- 客服会话按扭 -->
+<button open-type='contact' class='icons-contact'><text></text></button>

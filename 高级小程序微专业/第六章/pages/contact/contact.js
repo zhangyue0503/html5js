@@ -3,6 +3,7 @@ Page({
 
   // 通知用户
   sendMessage(){
+    // 获取登录code
     wx.login({
       success(res){
         console.log(res)
@@ -11,10 +12,11 @@ Page({
           url: `https://api.weixin.qq.com/sns/jscode2session?appid=wx5dd579583ada76e1&secret=d8238bb8336e5e3f15525cc3217e1033&js_code=${res.code}&grant_type=authorizaction_code`,
           success(res){
             var openid = res.data.openid;
-            console.log(res)
+            // 获取token
             wx.request({
               url: `https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=wx5dd579583ada76e1&secret=d8238bb8336e5e3f15525cc3217e1033`,
               success(res) {
+                // 发送消息
                 wx.request({
                   url: 'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=' + res.data.access_token,
                   method: 'post',

@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "搜索结果页",
+  "usingComponents": {
+    "lesson-card": "/components/lessonCard/lessonCard"
+  }
+}

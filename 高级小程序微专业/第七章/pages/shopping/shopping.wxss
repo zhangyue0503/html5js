@@ -1,0 +1,43 @@
+.shopping {
+  padding: 0 20px 80px;
+}
+.shopping-part {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 60px;
+  line-height: 60px;
+  display: flex;
+  text-align: center;
+  font-size: 26px;
+}
+.shopping-part .price {
+  flex: 1;
+  background: #efefef;
+  color: #f03;
+}
+.shopping-part .buy-btn {
+  width: 120px;
+  background: #f03;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* 优惠券 zy */
+.coupon-view {
+  padding-top: 30px;
+  text-align: center;
+}
+.coupon-view text {
+  background:#ffdedf;
+  color: #ff0000;
+  border: 1px solid #ff0000;
+  font-size: 36rpx;
+  padding: 5px 15px;
+}
+.show-coupon {
+  background: #eee;
+  padding: 20px 20px 80px;
+}

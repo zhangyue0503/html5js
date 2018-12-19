@@ -1,0 +1,13 @@
+<view class="lesson-card" bindtap="chooseLesson">
+  <view class="lesson-container">
+    <image src="{{data[3]}}" mode="widthFix"></image>
+    <text class="intro">{{data[4]}}</text>
+    <text class="time">{{data[2]}}</text>
+  </view>
+  <view class="info">
+    <text class="title">{{data[1]}}</text>
+    <text class="price">￥{{data[6]}}</text>
+    <text class="line">|</text>
+    <text class="work">{{data[5]}}</text>
+  </view>
+</view>

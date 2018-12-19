@@ -1,0 +1,8 @@
+<view class='coupon-card {{data.choose ? "choose" : ""}}' bindtap='chooseCoupon'>
+  <view class='info'>
+    <text>￥</text>
+    {{data.discount}}
+    <text>代金礼券</text>
+  </view>
+  <view class='bg'></view>
+</view>

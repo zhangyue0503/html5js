@@ -1,5 +1,5 @@
 var _ = {
-	extend: function(obj, options) {
+	extend: function (obj, options) {
 		// obj.container = document.getElementById(options.id)
 		// obj.container = options.container;
 		for (var k in options) {
@@ -10,35 +10,40 @@ var _ = {
 		// console.log(options)
 		// console.log(obj)
 	},
-	delClassName: function(node, className) {
+	delClassName: function (node, className) {
 		node.classList.remove(className);
 	},
-	addClassName: function(node, className) {
+	addClassName: function (node, className) {
 		node.classList.add(className);
 	},
-	hasClassName: function(node, className) {
-		var div = document.createElement("div"); 
-		if ("classList" in div && typeof div.classList.contains === "function") {  
-				return node.classList.contains(className);  
-		} else {  
-			
-				var classes = node.className.split(/\s+/);   
-				for (var i = 0; i < classes.length; i++) {    
-					if (classes[i] === className) {     
-						return true;    
-					}   
-				}   
-				return false;  
-			
+	hasClassName: function (node, className) {
+		var div = document.createElement("div");
+		if ("classList" in div && typeof div.classList.contains === "function") {
+			return node.classList.contains(className);
+		} else {
+
+			var classes = node.className.split(/\s+/);
+			for (var i = 0; i < classes.length; i++) {
+				if (classes[i] === className) {
+					return true;
+				}
+			}
+			return false;
+
 		}
 	},
-	$: function(id) {
-		return document.querySelector('#' + id);
+	$: function (id) {
+		if (id.indexOf('.') >= 0) {
+			return document.querySelector(id);
+		} else {
+			return document.querySelector('#' + id);
+		}
+
 	},
-	html2node: function(html) {
+	html2node: function (html) {
 		// const template = `<div class='child'>${txt}</div>`;
-		  
-		let tempNode = document.createElement('div');  
+
+		let tempNode = document.createElement('div');
 		tempNode.innerHTML = html;
 		console.log(tempNode.innerHTML)
 		console.log(tempNode.firstChild)
@@ -50,14 +55,14 @@ var _ = {
 		//   return div;
 	},
 	//将对象序列化
-	ajaxParmas: function(data) {
+	ajaxParmas: function (data) {
 		var arr = [];
 		for (var i in data) {
 			arr.push(encodeURIComponent(i) + '=' + encodeURIComponent(data[i]));
 		}
 		return arr.join('&');
 	},
-	ajax: function(obj) {
+	ajax: function (obj) {
 		//创建xhr对象;
 		obj.xhr = new XMLHttpRequest();
 		//后面随机数防止浏览器缓存
@@ -74,7 +79,7 @@ var _ = {
 		//异步调用
 		if (obj.async == true) {
 			//监听响应状态
-			obj.xhr.onreadystatechange = function() {
+			obj.xhr.onreadystatechange = function () {
 				if (obj.xhr.readyState == 4) {
 					callback();
 				}
@@ -104,5 +109,16 @@ var _ = {
 				alert("失败，失败状态码：" + obj.xhr.status);
 			}
 		}
+	},
+	createElement: function(dom, className, inner){
+		var d = document.createElement(dom);
+		if(className){
+			d.classList.add(className);
+		}
+		if(inner){
+			d.innerHTML = inner;
+		}
+		return d;
 	}
 };
+

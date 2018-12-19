@@ -1,0 +1,57 @@
+page {
+  background: #efefef;
+}
+.mine .user {
+  background: #fff;
+  padding: 40px;
+  text-align: center;
+}
+.mine .user .img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: block;
+  overflow: hidden;
+  margin: 0 auto;
+}
+.mine .user .name {
+  display: block;
+  margin-top: 20px;
+  color: #666;
+  font-size: 16px;
+}
+.mine .list {
+  margin-top: 10px;
+  background: #fff;
+}
+.mine .list .item {
+  line-height: 50px;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  position: relative;
+}
+.mine .list image {
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+.mine .list text {
+ margin-left: 10px;
+}
+.mine .list .item::after,
+.mine .list .item::before {
+  content: '';
+  display: block;
+  position: absolute;
+  border: 10px solid transparent;
+  border-left-color: #ccc;
+  right: 10px;
+  top: 15px;
+}
+.mine .list .item::after {
+  border-left-color: #fff;
+  right: 12px;
+}
+
+
