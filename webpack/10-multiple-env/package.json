@@ -1,0 +1,6 @@
+{
+    "scripts":{
+        "start":"npx webpack serve -c ./config/webpack.config.js --env development",
+        "build":"npx webpack -c ./config/webpack.config.js --env production"
+    }
+}
