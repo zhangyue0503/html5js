@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        {{mytext}}
+        <textarea v-model="mytext"></textarea>
+
+       <div>
+
+        <div>用户名：<input type="text" v-model="mytext"></div>
+        <label for="remember">
+            
+            <input id="remember" type="checkbox" v-model="isRemember" >记住用户名
+            <button>登录</button>
+        </label>
+       </div>
+
+       <input type="checkbox" value="1" v-model="checkList">vue
+       <input type="checkbox" value="2" v-model="checkList">react
+       <input type="checkbox" value="3" v-model="checkList">小程序
+       {{checkList}}
+    </div>
+    <script>
+        var vm = new Vue({
+            el:'#box',
+            data:{
+                mytext:'',
+                isRemember:true,
+                checkList:[]
+
+            }
+        })
+    </script>
+</body>
+</html>

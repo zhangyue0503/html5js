@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+    <!-- <script src="lib/vue.next.js"></script> -->
+</head>
+<body>
+    <div id="box">
+        <navbar></navbar>
+        <child></child>
+        
+    </div>
+    <script>
+        Vue.component('navbar', {
+            template:`<div>
+                <button @click="handleLeft()">left</button>
+                aaaa{{myname}}
+                <button @click="handleRight()">right</button>
+                <child></child>
+                <zychild></zychild>
+                </div>`,
+            methods:{
+                handleLeft(){
+                    console.log("left");
+                },
+                handleRight(){
+                    console.log("right");
+                }
+            },
+            data(){
+                return {
+                    myname:"111"
+                }
+            },
+            components:{
+                "zychild":{
+                    template:`
+                    <div>zychild</div>
+                    `
+                }
+            }
+        })
+
+        Vue.component('child',{
+            template:`<div style="background:yellow">child</div>`
+        })
+        new Vue({
+            el:'#box'
+        })
+        // let obj = {
+        //     data(){
+        //         return {
+
+        //         }
+        //     },
+        //     methods:{
+                
+        //     }
+        // }
+        // var vm = Vue.createApp(obj).mount('#box')
+    </script>
+</body>
+</html>

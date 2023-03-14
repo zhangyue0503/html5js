@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+    <style>
+        
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div :class="classobj" >动态切换class-1对象</div>
+        <div :class="classarr" >动态切换class-2数组</div>
+
+        <div :style="styleobj">动态切换style-1-对象</div>
+    </div>
+    <script>
+        var obj = {
+            data(){
+                return {
+                    classobj:{
+                    aa:true,
+                    bb:true,
+                    cc:false 
+                },
+                classarr:['aa', 'bb'],
+                styleobj:{
+                    backgroundColor:'red'
+                }
+                }
+            }
+        }
+        var vm = Vue.createApp(obj).mount("#box")
+        // var vm = new Vue({
+        //     el:'#box',
+        //     data:{
+        //         classobj:{
+        //             aa:true,
+        //             bb:true,
+        //             cc:false 
+        //         },
+        //         classarr:['aa', 'bb'],
+        //         styleobj:{
+        //             backgroundColor:'red'
+        //         }
+        //     },
+        //     methods:{
+        //         handleClick(index){
+        //             this.current = index
+        //         }
+        //     }
+        // })
+    </script>
+</body>
+</html>

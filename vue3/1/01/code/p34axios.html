@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+    <script src="lib/axios.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        <button @click="handleClick">click</button>
+    </div>
+    <script>
+        var vm = Vue.createApp({
+            data(){
+                return {
+                   
+                }
+            },
+            methods:{
+                handleClick(){
+                    axios.get("json/test.json")
+                        .then(res=>{console.log(res)})
+                }
+
+            },
+            computed:{
+                
+            },
+            watch:{
+                
+            }
+        }).mount('#box')
+    </script>
+</body>
+</html>

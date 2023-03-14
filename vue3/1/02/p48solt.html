@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.js"></script>
+</head>
+<body>
+    <div id="box">
+        <child>
+            <!-- <div slot="a">111111111</div> -->
+            <div>2222</div>
+            <template #a>
+                <div>aabbcc</div>
+            </template>
+        </child>
+
+    </div>
+    <script>
+        Vue.component('child', {
+            template:`
+                <div>
+                    child
+                    <slot name="a"></slot>
+                    <slot></slot>
+                    </div>
+            `
+
+        })
+        var vm = new Vue({
+            el:'#box',
+            data:{
+
+            },
+            methods:{
+
+            }
+        })
+    </script>
+</body>
+</html>

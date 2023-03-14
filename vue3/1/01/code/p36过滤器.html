@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+    <script src="lib/axios.js"></script>
+</head>
+
+<body>
+    <div id="box">
+        {{myname | tfil}}
+    </div>
+    <script>
+
+        // Vue("tfil", (t)=>{
+        //     console.log(t)
+        // })
+
+        var vm = Vue.createApp({
+            data(){
+                return {
+                   myname:'aaa'
+                }
+            },
+            methods:{
+               tfil(v){
+                
+               }
+
+            },
+            computed:{
+                
+            },
+            watch:{
+                
+            }
+        }).mount('#box')
+    </script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./lib/vue.js"></script>
+    <style>
+        .red{
+            background-color: red;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        {{myname}}-{{myage}}
+        
+        {{10>20?'aaa':'bbb'}}
+
+        <div :class="whichcolor">切换背景色</div>
+        <button @click="handleChange()">change</button>
+
+         <img :src="imgpath" alt="">
+
+        <div v-show="isShow">我是动态显示隐藏的1</div>
+        <div v-if="isShow">我是动态显示隐藏的2</div>
+
+        <ul>
+            <li v-for="(data,index) in list">
+                {{data}}
+            </li>
+        </ul>
+        
+
+    </div>
+
+
+
+    <script>
+        var vm = new Vue({
+            el:"#box",
+            data:{
+                myname:"zy",
+                myage:100,
+                whichcolor:'red',
+                imgpath:'',
+                isShow: true,
+                list:['aaa','bbb','ccc','ddd']
+            },
+            methods:{
+                handleChange(){
+                    console.log('handleChange')
+                    this.myname = 'tiechui'
+                    this.myage=20
+                    this.whichcolor='yellow'
+                    this.imgpath = 'https://www.zyblog.com.cn/f/static/images/mpwx.jpeg'
+                    this.isShow = !this.isShow
+                }
+            }
+        })
+    </script>
+</body>
+</html>

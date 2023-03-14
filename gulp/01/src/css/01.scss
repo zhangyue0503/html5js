@@ -1,0 +1,10 @@
+$color: red;
+
+div {
+    width: 100px;
+    height: 100px;
+
+    p {
+        background-color: $color;
+    }
+}

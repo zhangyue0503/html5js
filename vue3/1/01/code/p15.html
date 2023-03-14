@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+</head>
+<body>
+    <div id="box">
+        <ul>
+            <li v-for="item of datalist" :key="item">
+                {{item}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="(item,key) in obj">
+                {{item}}--{{key}}
+            </li>
+        </ul>
+        <ul>
+            <li v-for="item in 10" >
+                {{item}}
+            </li>
+        </ul>
+    </div>
+    <script>
+        var vm = Vue.createApp({
+            data(){
+                return {
+                    datalist:["111","222","333"]
+                }
+            }
+        }).mount('#box')
+        // var vm = new Vue({
+        //     el:'#box',
+        //     data:{
+        //         datalist:["111","222","333"],
+        //         obj:{
+        //         name:"zy",
+        //         age:100,
+        //         location:"hn"
+        //     }
+        //     },
+            
+        // })
+    </script>
+</body>
+</html>

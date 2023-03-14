@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/vue.next.js"></script>
+    <style>
+        label{
+            display:block;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+        <input type="checkbox" v-model="allChecked" @change="handleAll()" >全选
+
+        <label v-for="data in datalist" :key="data.id">
+            <input type="checkbox" v-model="checkList" :value="data" @change="handleItemClick">{{data.name}}
+        </label>
+        
+        {{checkList}}
+        {{allChecked}}
+        
+
+    </div>
+    <script>
+        let obj = {
+            data(){
+                return {
+                    allChecked:false,
+                    checkList:[],
+                    datalist:[
+                        {
+                            id:1,
+                            name:'aaa'
+                        },
+                        {
+                            id:2,
+                            name:'bbb'
+                        },
+                        {
+                            id:3,
+                            name:'ccc'
+                        },
+                    ]
+                }
+            },
+            methods:{
+                handleAll(){
+                    // this.allChecked = !this.allChecked
+                    // this.datalist.map(item=>{
+                    //     item.checked = this.allChecked
+                    // })
+                    this.checkList = this.allChecked ? this.datalist:[]
+                },
+                handleItemClick(){
+                    console.log(this.checkList.length,this.datalist.length);
+                    this.allChecked = this.checkList.length === this.datalist.length ? true : false
+                }
+            }
+        }
+        Vue.createApp(obj).mount('#box')
+    </script>
+</body>
+</html>
